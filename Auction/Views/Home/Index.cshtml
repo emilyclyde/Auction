@@ -1,31 +1,40 @@
-﻿@{
+﻿@model Auction.ViewModels.HomeVM
+@{
     ViewBag.Title = "Home Page";
 }
+<body style="background-color:rgb(0, 100, 150); text-align:center">
+    @*<div class="jumbotron"></div>*@
+    <table>
+        <tr>
+            <td>
+                <img src="~/Images/Logos Academy Logo.jpg" alt="Opps! Logo here" width="300" height="142" style="border-radius: 15px; border-style: solid; border-color:lightblue; border-width:5px">            @*displays picture*@
+            </td>
+            
+            <td style="padding:50px; text-align:center" >
+                <h2 style="color:goldenrod"><b>Annual Benefit Auction</b></h2>
+                <h3 style="color:goldenrod; font-style:italic">@Html.DisplayFor(model => model.Theme)</h3>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h2 style=" border-radius: 5px; background-color:lightblue;text-align:center;padding:10px"><a href=" " style="color:rgb(2,78,127)"><b>View Auction Items</b></a></h2>
+            </td>
+            <td style="padding-left:50px; text-align:center">
+                <h4 style="color:lightblue; font-style:italic">@Html.DisplayFor(model => model.Date)</h4>
+                <h4 style="color:lightblue; font-style:italic">@Html.DisplayFor(model => model.LocationName)</h4>
+                <h4 style="color:lightblue; font-style:italic">@Html.DisplayFor(model => model.LocationAddress)</h4>
+            </td>
+        </tr>
+    </table>
+    <div style="text-align:center; margin-top:50px">
+        <h3 style="color:lightblue">Tickets: @Html.DisplayFor(model => model.EarlyCost) before @Html.DisplayFor(model => model.EarlyTicketDate) and @Html.DisplayFor(model => model.DoorCost) at the door. </h3>
+    </div>
+</body>
+<footer>
+    <div style ="text-align:center; color:lightblue; margin-top:50px">
+        <h5> For more information, or to donate items, please contact:</h5>
+        <h5>@Html.DisplayFor(model => model.Name)  @Html.DisplayFor(model => model.PhoneNumber)  or email:  @Html.DisplayFor(model => model.Email) </h5>
+    </div>
+</footer>
 
-<div class="jumbotron">
-    <h1>logos christian academy</h1>
-    <p class="lead">This is a test to make sure i can upload to git.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
