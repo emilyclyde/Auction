@@ -15,10 +15,14 @@ namespace Auction.Models
 
         public string Description { get; set; }
 
+        // Img saveing and naming 
+        //do not change
         public string ImageURL
         {
             get { return Title.Replace(" ", string.Empty) + ".jpg"; }
         }
+        //do not change
+        // Img saveing and naming 
        
         public int AuctionType { get; set; }
 

@@ -40,9 +40,11 @@
         <td>
             @Html.DisplayFor(modelItem => item.Description)
         </td>
+        <!--Show Image in list-->
         <td>
             <img src="@Url.Content("~/Images/Items/"+ item.ImageURL)" width="100px" alt="No Image" />
         </td>
+        <!--Show Image in list-->
         <td>
             @Html.DisplayFor(modelItem => item.AuctionType)
         </td>

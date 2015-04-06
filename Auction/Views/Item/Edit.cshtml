@@ -51,10 +51,11 @@
             </div>
 
         }
-    <div id="imgUpload" style="float: right;width: 40%;">
+<!--Image upload code. Donot Delete. Donot Modify-->
+<div id="imgUpload" style="float: right;width: 40%;">
 
     @if (File.Exists(Server.MapPath("~/Images/Items/"
- + Html.DisplayFor(modelItem => Model.ImageURL))))
+                                    + Html.DisplayFor(modelItem => Model.ImageURL))))
     {
         <img alt="" src="~/Images/Items/@Html.DisplayFor(modelItem   => Model.ImageURL)" />
         <form action="/Item/DeletePhoto" method="post" name="deletePhoto">
@@ -78,6 +79,7 @@
         </form>
     }
 </div>
+<!--Image upload code. Donot Delete. Donot Modify-->
         @section Scripts {
             @Scripts.Render("~/bundles/jqueryval")
         }
