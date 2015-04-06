@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace Auction.Models
 {
@@ -14,8 +15,11 @@ namespace Auction.Models
 
         public string Description { get; set; }
 
-        public string ImageURL { get; set; }
-
+        public string ImageURL
+        {
+            get { return Title.Replace(" ", string.Empty) + ".jpg"; }
+        }
+       
         public int AuctionType { get; set; }
 
         public int WinningBidder { get; set; }

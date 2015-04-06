@@ -41,7 +41,7 @@
             @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ImageURL)
+            <img src="@Url.Content("~/Images/Items/"+ item.ImageURL)" width="100px" alt="No Image" />
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.AuctionType)
