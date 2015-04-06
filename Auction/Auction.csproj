@@ -196,6 +196,9 @@
     <Content Include="Images\goatbaby - Copy.jpg" />
     <Content Include="Images\goatbaby.jpg" />
     <Content Include="Images\Items\1.jpg" />
+    <Content Include="Images\Items\goat.jpg" />
+    <Content Include="Images\Items\test.jpg" />
+    <Content Include="Images\Logos Academy Logo.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
