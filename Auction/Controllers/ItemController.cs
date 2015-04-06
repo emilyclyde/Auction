@@ -66,6 +66,7 @@ namespace Auction.Controllers
         // GET: Item/Edit/5
         public ActionResult Edit(int? id)
         {
+            string sess = (string)System.Web.HttpContext.Current.Session["blah"];
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -127,10 +128,11 @@ namespace Auction.Controllers
 
 
 
-
-
-
-
+        //Image upload and delete code
+        //Do not delete
+        //
+        //
+        //
         [HttpPost]
         public ActionResult UploadPhoto(string image,
         HttpPostedFileBase photo)
@@ -141,7 +143,6 @@ namespace Auction.Controllers
             */
             if (photo != null)
                 photo.SaveAs(path);
-
 
             return RedirectToAction("Index");
         }
@@ -159,22 +160,13 @@ namespace Auction.Controllers
             {
                 System.IO.File.Delete(fullPath);
                 
-            }
-            return RedirectToAction("Index");
+            }return RedirectToAction("Index");
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
+        //
+        //
+        //
+        //Do not delete
+        //Image upload and delete code
 
 
 
