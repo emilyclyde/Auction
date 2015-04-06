@@ -33,7 +33,7 @@ namespace Auction.Controllers
             return View(contents);
         }
 
-       /* public ActionResult List()
+       public ActionResult List()
         {
             //temporary hardcoded Data used untill the DB context is created
             ListVM list = new ListVM();
@@ -58,7 +58,7 @@ namespace Auction.Controllers
 
             return View(list);
 
-        }*/
+        }
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
