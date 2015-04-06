@@ -1,5 +1,13 @@
 ﻿@model Auction.Models.Item
 
+
+<style>
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
 <hgroup class="title">
     <h1>Edit Items</h1>
     <hr />
@@ -57,7 +65,7 @@
     @if (File.Exists(Server.MapPath("~/Images/Items/"
                                     + Html.DisplayFor(modelItem => Model.ImageURL))))
     {
-        <img alt="" src="~/Images/Items/@Html.DisplayFor(modelItem   => Model.ImageURL)" />
+        <img alt="" src="~/Images/Items/@Html.DisplayFor(modelItem   => Model.ImageURL)" width="400px" />
         <form action="/Item/DeletePhoto" method="post" name="deletePhoto">
             @Html.AntiForgeryToken()
             <br />
