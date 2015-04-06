@@ -12,7 +12,9 @@ namespace Auction.ViewModels
 
         public string Date { get; set; }
 
-        public string Location { get; set; }
+        public string LocationName { get; set; }
+
+        public string LocationAddress { get; set; }
 
         public string Time1 { get; set; }
 
@@ -31,5 +33,7 @@ namespace Auction.ViewModels
         public string Email { get; set; }
 
         public string PhoneNumber { get; set; }
+
+        public string EarlyTicketDate { get; set; }
     }
 }

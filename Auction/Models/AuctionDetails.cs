@@ -13,7 +13,9 @@ namespace Auction.Models
 
         public string Date { get; set; }
 
-        public string Location { get; set; }
+        public string LocationName { get; set; }
+
+        public string LocationAddress { get; set; }
 
         public string Time1 { get; set; }
 
@@ -24,5 +26,7 @@ namespace Auction.Models
         public string DoorCost { get; set; }
 
         public string EarlyCost { get; set; }
+
+        public string EarlyTicketDate { get; set; }
     }
 }

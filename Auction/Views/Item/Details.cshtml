@@ -9,6 +9,7 @@
 <div>
     <h4>Item</h4>
     <hr />
+    <img src="@Url.Content("~/Images/Items/"+ Model.ImageURL)" width="700px" alt="No Image" />
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Title)
@@ -25,15 +26,7 @@
         <dd>
             @Html.DisplayFor(model => model.Description)
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ImageURL)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ImageURL)
-        </dd>
-
+        
         <dt>
             @Html.DisplayNameFor(model => model.AuctionType)
         </dt>
