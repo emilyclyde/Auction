@@ -195,6 +195,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\goatbaby - Copy.jpg" />
     <Content Include="Images\goatbaby.jpg" />
+    <Content Include="Images\Items\1.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
