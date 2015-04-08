@@ -30,5 +30,7 @@ namespace Auction.Models
     public string EarlyCost { get; set; }
 
     public string EarlyTicketDate { get; set; }
+
+
   }
 }

@@ -32,7 +32,7 @@ namespace Auction.Models
 
     public decimal BidAmount { get; set; }
 
-    public virtual AuctionType AuctionType { get; set; }
+
 
   }
 }

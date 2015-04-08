@@ -162,8 +162,8 @@ C:\Users\Emily\Documents\GitHub\Auction\Auction\bin\Microsoft.Owin.Security.OAut
 C:\Users\Emily\Documents\GitHub\Auction\Auction\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Emily\Documents\GitHub\Auction\Auction\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Emily\Documents\GitHub\Auction\Auction\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Emily\Documents\GitHub\Auction\Auction\obj\Debug\Auction.csprojResolveAssemblyReference.cache
 C:\Users\Emily\Documents\GitHub\Auction\Auction\obj\Debug\Auction.Migrations.InitialCreate.resources
 C:\Users\Emily\Documents\GitHub\Auction\Auction\obj\Debug\Auction.csproj.GenerateResource.Cache
 C:\Users\Emily\Documents\GitHub\Auction\Auction\obj\Debug\Auction.dll
 C:\Users\Emily\Documents\GitHub\Auction\Auction\obj\Debug\Auction.pdb
+C:\Users\Emily\Documents\GitHub\Auction\Auction\obj\Debug\Auction.csprojResolveAssemblyReference.cache
