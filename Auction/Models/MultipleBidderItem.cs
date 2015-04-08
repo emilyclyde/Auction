@@ -11,5 +11,7 @@ namespace Auction.Models
     [DatabaseGenerated(DatabaseGeneratedOption.None)]
     public int ID { get; set; }
     public string Title { get; set; }
+    public virtual Item item { get; set; }
+
   }
 }

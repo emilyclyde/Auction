@@ -31,5 +31,9 @@ namespace Auction.Models
     public int WinningBidder { get; set; }
 
     public decimal BidAmount { get; set; }
+
+    public virtual AuctionType AuctionType { get; set; }
+
   }
 }
+

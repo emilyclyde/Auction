@@ -19,5 +19,7 @@ namespace Auction.Models
     public string Zip { get; set; }
     public string Items { get; set; }
     public decimal Value { get; set; }
+
+    public virtual Item Item { get; set; }
   }
 }
