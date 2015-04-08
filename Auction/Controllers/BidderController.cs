@@ -7,13 +7,16 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Auction.Models;
+using Auction.DAL;
 
 namespace Auction.Controllers
 {
     public class BidderController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
-
+      // private ApplicationDbContext db = new ApplicationDbContext();
+      
+      //using LocalDB connection string and initializer for now
+       private AuctionContext db = new AuctionContext();
         // GET: Bidder
         public ActionResult Index()
         {

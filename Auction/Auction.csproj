@@ -164,6 +164,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="DAL\AuctionContext.cs" />
+    <Compile Include="DAL\AuctionInitializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -173,7 +175,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\AuctionDetails.cs" />
+    <Compile Include="Models\AuctionDetail.cs" />
     <Compile Include="Models\AuctionType.cs" />
     <Compile Include="Models\Bidder.cs" />
     <Compile Include="Models\Contact.cs" />

@@ -8,14 +8,18 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Auction.Models;
+using Auction.DAL;
 
 namespace Auction.Controllers
 {
     public class ItemController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
-
-        // GET: Item
+      //private ApplicationDbContext db = new ApplicationDbContext();
+      
+      //using LocalDB connection string and initializer for now
+      private AuctionContext db = new AuctionContext();
+       
+      // GET: Item
         public ActionResult Index()
         {
             return View(db.Items.ToList());
