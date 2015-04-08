@@ -164,11 +164,18 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="DAL\AuctionContext.cs" />
+    <Compile Include="DAL\AuctionInitializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504052038160_InitialCreate.cs" />
+    <Compile Include="Migrations\201504052038160_InitialCreate.Designer.cs">
+      <DependentUpon>201504052038160_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\AuctionDetails.cs" />
+    <Compile Include="Models\AuctionDetail.cs" />
     <Compile Include="Models\AuctionType.cs" />
     <Compile Include="Models\Bidder.cs" />
     <Compile Include="Models\Contact.cs" />
@@ -190,6 +197,10 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\goatbaby - Copy.jpg" />
     <Content Include="Images\goatbaby.jpg" />
+    <Content Include="Images\Items\1.jpg" />
+    <Content Include="Images\Items\goat.jpg" />
+    <Content Include="Images\Items\test.jpg" />
+    <Content Include="Images\Logos Academy Logo.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -264,6 +275,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201504052038160_InitialCreate.resx">
+      <DependentUpon>201504052038160_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
