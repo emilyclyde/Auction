@@ -73,6 +73,8 @@ namespace Auction.DAL
           new Item{ID=3, AuctionType=1, Title="Cedar Creek Weekend Getaway", Description="2 night stay at a secuded 2 bedroom cabin along Cedar Creek."},
           new Item{ID=4, AuctionType=1, Title="Flowers for a Year", Description="Humbolt Florists will supply a colorful bouquet of seasonal flowers each month. Great for you home or office."},
           new Item{ID=5, AuctionType=1, Title="Oregon Coast Salmon fishing", Description="Bill Reynolds Salmon Carters, Florence OR, will take you and 3 guests out for a full day of Pacific salmon fishing. "},
+          new Item{ID=1, AuctionType=1, Title="Hoodo Ski Trip", Description="Lift tickets and ski rental for two people at Hoodo ski resort "},
+ 
         };
 
       items.ForEach(i => context.Items.Add(i));
