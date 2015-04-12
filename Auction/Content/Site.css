@@ -47,6 +47,14 @@ body {
     color:lightblue;
     font-style:italic;
 }
+#ListButton
+{
+    border-radius: 5px; 
+    background-color:lightblue;
+    text-align:center;
+    padding:10px;
+    color:rgb(2,78,127);
+}
 #IndexTable
 {
     margin-top:20px;
