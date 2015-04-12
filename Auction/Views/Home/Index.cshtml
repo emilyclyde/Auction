@@ -11,8 +11,8 @@
             </td>
 
             <td class="TableDataIndex2">
-                <h2 id="title"><b>Annual Benefit Auction</b></h2>
-                <h3 id="Theme">@Html.DisplayFor(model => model.Theme)</h3>
+                <h1 id="title"><b>Annual Benefit Auction</b></h1>
+                <h2 id="Theme">@Html.DisplayFor(model => model.Theme)</h2>
             </td>
         </tr>
         <tr>
@@ -34,12 +34,10 @@
         </tr>
         <tr>
             <td colspan="2" class="TableDataIndex2">
-                <h3 id="Tickets">Tickets: @Html.DisplayFor(model => model.EarlyCost) before @Html.DisplayFor(model => model.EarlyTicketDate) and @Html.DisplayFor(model => model.DoorCost) at the door. </h3>
+                <h3 id="Tickets">Tickets: <b> @Html.DisplayFor(model => model.EarlyCost)</b> before @Html.DisplayFor(model => model.EarlyTicketDate) and<b> @Html.DisplayFor(model => model.DoorCost) </b>at the door. </h3>
             </td>
         </tr>
     </table>
-    
-   
 </body>
 <footer class="AuctionFooter">
     <div>
