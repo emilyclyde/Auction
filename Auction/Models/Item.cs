@@ -17,10 +17,10 @@ namespace Auction.Models
     [Required]
     [StringLength(50)]
     public string Title { get; set; }
-    [StringLength(50, ErrorMessage = "Title cannot be longer than 50 characters.")]
+    //[StringLength(50, ErrorMessage = "Title cannot be longer than 50 characters.")]
     [Required]
     public string Description { get; set; }
-    [StringLength(50, ErrorMessage = "Description cannot be longer than 50 characters.")]
+    //[StringLength(50, ErrorMessage = "Description cannot be longer than 50 characters.")]
 
     // Img saveing and naming 
     //do not change
