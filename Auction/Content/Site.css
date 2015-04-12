@@ -29,6 +29,7 @@ body {
     background: -moz-radial-gradient(rgb(0, 100, 150),lightblue); /* For Firefox 3.6 to 15 */
     background: radial-gradient(rgb(0, 100, 150) 40%,lightblue); /* Standard syntax (must be last) */
 }
+
 #logo
 {
    
@@ -45,6 +46,7 @@ body {
 #Location
 {
     color:lightblue;
+    /*color:rgb(0,150,200);*/
     font-style:italic;
 }
 #ListButton
@@ -62,7 +64,11 @@ body {
     margin-right: auto;
 }
 
-#title{ color:goldenrod;}
+#title
+{
+    color:goldenrod;
+    font-family:'Berlin Sans FB';
+}
 #Theme
 {
     color:goldenrod; 
@@ -96,14 +102,7 @@ body {
 
 }
 
-
-
-
-
-
-
-
-
+ 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
