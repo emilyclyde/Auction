@@ -2,36 +2,47 @@
 @{
     ViewBag.Title = "Home Page";
 }
-<body style="background-color:rgb(0, 100, 150); text-align:center">
+<body id="BackgroundGrad2" >
     @*<div class="jumbotron"></div>*@
-    <table>
+    <table id="IndexTable" >
         <tr>
-            <td>
-                <img src="~/Images/Logos Academy Logo.jpg" alt="Opps! Logo here" width="300" height="142" style="border-radius: 15px; border-style: solid; border-color:lightblue; border-width:5px">            @*displays picture*@
+            <td id="LogoCell">
+                <img src="~/Images/Logos Academy Logo.jpg" alt="Opps! Logo here" width="300" height="142" id="logo">            @*displays picture*@
             </td>
-            
-            <td style="padding:50px; text-align:center" >
-                <h2 style="color:goldenrod"><b>Annual Benefit Auction</b></h2>
-                <h3 style="color:goldenrod; font-style:italic">@Html.DisplayFor(model => model.Theme)</h3>
+
+            <td class="TableDataIndex2">
+                <h2 id="title"><b>Annual Benefit Auction</b></h2>
+                <h3 id="Theme">@Html.DisplayFor(model => model.Theme)</h3>
+            </td>
+        </tr>
+        <tr>
+            <td class="TableDataIndex2" id="Location" colspan="2">
+                <h4>@Html.DisplayFor(model => model.Date)</h4>
+                <h4>@Html.DisplayFor(model => model.LocationName)</h4>
+                <h4>@Html.DisplayFor(model => model.LocationAddress)</h4>
             </td>
         </tr>
         <tr>
             <td>
-                <h2 style=" border-radius: 5px; background-color:lightblue;text-align:center;padding:10px"><a href="@Url.Action("List", "Home") " style="color:rgb(2,78,127)"><b>View Auction Items</b></a></h2>
+                <h2 id="ListButton" ><a href="@Url.Action("List", "Home")"><b>View Auction Items</b></a></h2>
             </td>
-            <td style="padding-left:50px; text-align:center">
-                <h4 style="color:lightblue; font-style:italic">@Html.DisplayFor(model => model.Date)</h4>
-                <h4 style="color:lightblue; font-style:italic">@Html.DisplayFor(model => model.LocationName)</h4>
-                <h4 style="color:lightblue; font-style:italic">@Html.DisplayFor(model => model.LocationAddress)</h4>
+            <td class="TableDataIndex2" id="Times">
+                <h4 >@Html.DisplayFor(model => model.Time1)</h4>
+                <h4 >@Html.DisplayFor(model => model.Time2)</h4>
+                <h4 >@Html.DisplayFor(model => model.Time3)</h4>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="TableDataIndex2">
+                <h3 id="Tickets">Tickets: @Html.DisplayFor(model => model.EarlyCost) before @Html.DisplayFor(model => model.EarlyTicketDate) and @Html.DisplayFor(model => model.DoorCost) at the door. </h3>
             </td>
         </tr>
     </table>
-    <div style="text-align:center; margin-top:50px">
-        <h3 style="color:lightblue">Tickets: @Html.DisplayFor(model => model.EarlyCost) before @Html.DisplayFor(model => model.EarlyTicketDate) and @Html.DisplayFor(model => model.DoorCost) at the door. </h3>
-    </div>
+    
+   
 </body>
-<footer>
-    <div style ="text-align:center; color:lightblue; margin-top:50px">
+<footer class="AuctionFooter">
+    <div>
         <h5> For more information, or to donate items, please contact:</h5>
         <h5>@Html.DisplayFor(model => model.Name)  @Html.DisplayFor(model => model.PhoneNumber)  or email:  @Html.DisplayFor(model => model.Email) </h5>
     </div>
