@@ -11,8 +11,12 @@ namespace Auction.Models
   {
     [DatabaseGenerated(DatabaseGeneratedOption.None)]
     public int ID { get; set; }
-    public string Name { get; set; }
-    [Display(Name = "Bidder Name")]
+
     public string BidderName { get; set; }
+
+    [Display(Name = "Bidder Number")]
+    public string BidderNumber { get; set; }
+
+    public string BidderContact { get; set; }
   }
 }
