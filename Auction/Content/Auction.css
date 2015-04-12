@@ -1,9 +1,7 @@
 ﻿/* Logos Auction web site Styles */
 
-
-body 
-{
-    background-color:rgb(0, 100, 150); 
-    text-align:center;
+#TestRob
+{font-size:3em;
+ color:red;
 }
 
