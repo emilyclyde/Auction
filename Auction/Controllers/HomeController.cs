@@ -14,7 +14,10 @@ namespace Auction.Controllers
   {
     private AuctionContext db = new AuctionContext();
 
-    public ActionResult Index()
+
+//**Index Home page********************************************************************************
+
+      public ActionResult Index()
     {
 
       HomeVM contents = new HomeVM();
@@ -43,32 +46,39 @@ namespace Auction.Controllers
       return View(contents);
     }
 
-    /* public ActionResult List()
+
+//**List Page************************************************************************************
+    
+     public ActionResult List()
      {
          //temporary hardcoded Data used untill the DB context is created
          ListVM list = new ListVM();
          DateTime date = new DateTime();
-         List<string> items = new List<string>(); 
- 
+         List<Item> items = new List<Item>(); 
+          
          date = DateTime.Now;
 
-         list.Name = "Debra Norland";
-         list.Email = "logosacademymusic@gmail.com";
-         list.PhoneNumber = "(541)747-0702";
-         list.CurrentDate = date.ToString("d");
+         foreach (var c in db.Contacts)             // gets and sets contact info
+         {
+             list.Name = c.Name;
+             list.Email = c.Email;
+             list.PhoneNumber = c.PhoneNumber;
+         }
 
-         items.Add("Sun River 5 Night Getaway");
-         items.Add("Mckenzie River Rafting Adventure");
-         items.Add("NewPort Deep Sea Fishing Excursion");
-         items.Add("Hoodoo Ski Weekend");
-         items.Add("24 Karat Diamond Necklace");
-         items.Add("Cedar Patio Furniture Set");
+         list.CurrentDate = date.ToString("d");    //sets the current date
+
+         foreach(var i in db.Items)                //gets all Items that are Auction type 1(Live)
+         {
+             if (i.AuctionType == 1)
+                 items.Add(i);
+         }
 
          list.ItemList = items;
 
          return View(list);
+     }
 
-     }*/
+//**About Page********************************************************************************
     public ActionResult About()
     {
       ViewBag.Message = "Your application description page.";
@@ -76,6 +86,8 @@ namespace Auction.Controllers
       return View();
     }
 
+
+//**About Page********************************************************************************
     public ActionResult Contact()
     {
       ViewBag.Message = "Your contact page.";
