@@ -16,17 +16,16 @@
             </td>
         </tr>
         <tr>
-            <td>
-                <h2 style=" border-radius: 5px; background-color:lightblue;text-align:center;padding:10px"><a href="@Url.Action("List", "Home") " style="color:rgb(2,78,127)"><b>View Auction Items</b></a></h2>
-            </td>
-            <td class="TableDataIndex2">
-                <h4 style="color:lightblue; font-style:italic">@Html.DisplayFor(model => model.Date)</h4>
-                <h4 style="color:lightblue; font-style:italic">@Html.DisplayFor(model => model.LocationName)</h4>
-                <h4 style="color:lightblue; font-style:italic">@Html.DisplayFor(model => model.LocationAddress)</h4>
+            <td class="TableDataIndex2" id="Location" colspan="2">
+                <h4>@Html.DisplayFor(model => model.Date)</h4>
+                <h4>@Html.DisplayFor(model => model.LocationName)</h4>
+                <h4>@Html.DisplayFor(model => model.LocationAddress)</h4>
             </td>
         </tr>
         <tr>
-            <td></td>
+            <td>
+                <h2 id="ListButton" ><a href="@Url.Action("List", "Home")"><b>View Auction Items</b></a></h2>
+            </td>
             <td class="TableDataIndex2" id="Times">
                 <h4 >@Html.DisplayFor(model => model.Time1)</h4>
                 <h4 >@Html.DisplayFor(model => model.Time2)</h4>
