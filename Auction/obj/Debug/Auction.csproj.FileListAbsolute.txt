@@ -224,3 +224,5 @@ E:\College Stuff\Capstone\Auction\Auction\obj\Debug\Auction.Migrations.InitialCr
 E:\College Stuff\Capstone\Auction\Auction\obj\Debug\Auction.csproj.GenerateResource.Cache
 E:\College Stuff\Capstone\Auction\Auction\obj\Debug\Auction.dll
 E:\College Stuff\Capstone\Auction\Auction\obj\Debug\Auction.pdb
+L:\MyGits\Auction\Auction\obj\Debug\Auction.Migrations.InitialCreate.resources
+L:\MyGits\Auction\Auction\obj\Debug\Auction.csproj.GenerateResource.Cache
