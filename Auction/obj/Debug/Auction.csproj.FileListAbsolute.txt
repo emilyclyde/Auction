@@ -166,7 +166,6 @@ C:\Users\Emily\Documents\GitHub\Auction\Auction\obj\Debug\Auction.Migrations.Ini
 C:\Users\Emily\Documents\GitHub\Auction\Auction\obj\Debug\Auction.csproj.GenerateResource.Cache
 C:\Users\Emily\Documents\GitHub\Auction\Auction\obj\Debug\Auction.dll
 C:\Users\Emily\Documents\GitHub\Auction\Auction\obj\Debug\Auction.pdb
-C:\Users\Emily\Documents\GitHub\Auction\Auction\obj\Debug\Auction.csprojResolveAssemblyReference.cache
 E:\College Stuff\Capstone\Auction\Auction\bin\Auction.dll.config
 E:\College Stuff\Capstone\Auction\Auction\bin\Auction.dll
 E:\College Stuff\Capstone\Auction\Auction\bin\Auction.pdb
