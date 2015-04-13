@@ -21,15 +21,21 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Item", "Index", "Item")</li>
-                    <li>@Html.ActionLink("Bidder", "Index", "Bidder")</li>
-                    <li>@Html.ActionLink("Auction Type", "Index", "Auction Type")</li>
-                    <li>@Html.ActionLink("Auction Detail", "Index", "Auction Detail")</li>
-                    <li>@Html.ActionLink("Multiple Bidder Item ", "Index", "Multiple Bidder Item")</li>
-                    
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Administration <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Bidder", "Index", "Bidder")</li>
+                            <li>@Html.ActionLink("Auction Type", "Index", "Auction Type")</li>
+                            <li>@Html.ActionLink("Auction Detail", "Index", "Auction Detail")</li>
+                            <li>@Html.ActionLink("Multiple Bidder Item ", "Index", "Multiple Bidder Item")</li>
+                        </ul>
+                    </li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -37,7 +43,7 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        
+
         <footer>
             <hr />
             <p>&copy; @DateTime.Now.Year - Lane Community College Capstone A-Team:  Emily Clyde, Ryan Recinos, and Rob Callahan</p>
