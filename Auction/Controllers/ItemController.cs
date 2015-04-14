@@ -88,12 +88,20 @@ namespace Auction.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Title,Description,ImageURL,AuctionType,WinningBidder,BidAmount")] Item item)
+        public ActionResult Edit([Bind(Include = "ID,Title,Description,ImageURL,AuctionType,WinningBidder,BidAmount")] Item item
+            , string image,
+        HttpPostedFileBase photo)
         {
+            string path = HttpContext.Server.MapPath("~/Images/Items/" + image);
+            /*string path = @"~/Images/Items/"
+            + image;
+            */
+            if (photo != null)
+                photo.SaveAs(path);
  // orriginal code
              if (ModelState.IsValid)
             {
-                db.Items.Add(item);
+                //db.Items.Add(item);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -138,21 +146,6 @@ namespace Auction.Controllers
         //
         //
         [HttpPost]
-        public ActionResult UploadPhoto(string image,
-        HttpPostedFileBase photo)
-        {
-            string path = HttpContext.Server.MapPath("~/Images/Items/" + image);
-            /*string path = @"~/Images/Items/"
-            + image;
-            */
-            if (photo != null)
-                photo.SaveAs(path);
-
-            return RedirectToAction("Index");
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult DeletePhoto(string photoFileName)
         {
             var photoName = "";
