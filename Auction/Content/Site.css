@@ -6,7 +6,7 @@ h4{font-size:1.3em; }
 h5{font-size:1em; }
 h6{ font-size:0.85em;}
 
-/*td{border:1px solid black}*/
+td{border:1px solid black;}
 
 body {
     padding-top: 50px;
@@ -30,6 +30,12 @@ body {
     background: radial-gradient(rgb(0, 100, 150) 40%,lightblue); /* Standard syntax (must be last) */
 }
 
+#Date
+{
+    text-align:right; 
+    color:lightblue; 
+    margin-top:10px;
+}
 #logo
 {
    
@@ -95,13 +101,19 @@ body {
  }
 .AuctionFooter
 {
-    margin-top:5px;
     text-align:center; 
     color:lightblue; 
     margin-top:50px;
 
 }
 
+#Label1
+{
+    text-align:right; 
+    color:lightblue; 
+    margin-top:10px;
+
+}
  
 /* Set padding to keep content from hitting the edges */
 .body-content {
