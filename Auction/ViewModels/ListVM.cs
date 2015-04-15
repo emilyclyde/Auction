@@ -18,5 +18,7 @@ namespace Auction.ViewModels
         public string PhoneNumber { get; set; }
 
         public string CurrentDate { get; set; }
+
+        public string Theme { get; set; }
     }
 }
