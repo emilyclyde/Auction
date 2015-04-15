@@ -159,8 +159,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AuctionDetailController.cs" />
     <Compile Include="Controllers\AuctionTypeController.cs" />
     <Compile Include="Controllers\BidderController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DonorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemController.cs" />
@@ -290,6 +292,16 @@
     <Content Include="Views\Donor\Details.cshtml" />
     <Content Include="Views\Donor\Edit.cshtml" />
     <Content Include="Views\Donor\Index.cshtml" />
+    <Content Include="Views\Contact\Create.cshtml" />
+    <Content Include="Views\Contact\Delete.cshtml" />
+    <Content Include="Views\Contact\Details.cshtml" />
+    <Content Include="Views\Contact\Edit.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\AuctionDetail\Create.cshtml" />
+    <Content Include="Views\AuctionDetail\Delete.cshtml" />
+    <Content Include="Views\AuctionDetail\Details.cshtml" />
+    <Content Include="Views\AuctionDetail\Edit.cshtml" />
+    <Content Include="Views\AuctionDetail\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
