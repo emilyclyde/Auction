@@ -161,9 +161,11 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AuctionTypeController.cs" />
     <Compile Include="Controllers\BidderController.cs" />
+    <Compile Include="Controllers\DonorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MultipleBidderItemController.cs" />
     <Compile Include="DAL\AuctionContext.cs" />
     <Compile Include="DAL\AuctionInitializer.cs" />
     <Compile Include="Global.asax.cs">
@@ -199,9 +201,11 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\goatbaby - Copy.jpg" />
     <Content Include="Images\goatbaby.jpg" />
+    <Content Include="Images\Items1.jpg" />
     <Content Include="Images\Items\1.jpg" />
     <Content Include="Images\Items\goat.jpg" />
     <Content Include="Images\Items\test.jpg" />
+    <Content Include="Images\Koala.jpg" />
     <Content Include="Images\Logos Academy Logo.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -268,6 +272,16 @@
     <Content Include="Views\Item\Edit.cshtml" />
     <Content Include="Views\Item\Index.cshtml" />
     <Content Include="Views\Home\List.cshtml" />
+    <Content Include="Views\MultipleBidderItem\Create.cshtml" />
+    <Content Include="Views\MultipleBidderItem\Delete.cshtml" />
+    <Content Include="Views\MultipleBidderItem\Details.cshtml" />
+    <Content Include="Views\MultipleBidderItem\Edit.cshtml" />
+    <Content Include="Views\MultipleBidderItem\Index.cshtml" />
+    <Content Include="Views\Donor\Create.cshtml" />
+    <Content Include="Views\Donor\Delete.cshtml" />
+    <Content Include="Views\Donor\Details.cshtml" />
+    <Content Include="Views\Donor\Edit.cshtml" />
+    <Content Include="Views\Donor\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
