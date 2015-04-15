@@ -11,7 +11,6 @@ namespace Auction.DAL
   {
     protected override void Seed(AuctionContext context)
     {
-      //This is used in the view model
       var auctiondetails = new List<AuctionDetail> 
       {
         new AuctionDetail{ID=1, Theme="Polynesian Paradise", Date="May 23, 2015", LocationName = "Emanuel Baptist Church", LocationAddress = "3050 Game Farm Rd Springfield, OR",
@@ -21,8 +20,7 @@ namespace Auction.DAL
 
       auctiondetails.ForEach(d => context.AuctionDetails.Add(d));
       context.SaveChanges();
-      
-      //This is used in a view model
+
       var contacts = new List<Contact>
       {
         new Contact{ID= 1,Name = "Debra Norland", Email = "logosacademymusic@gmail.com", PhoneNumber = "(541)747-0702"},
@@ -82,12 +80,11 @@ namespace Auction.DAL
       items.ForEach(i => context.Items.Add(i));
       context.SaveChanges();
 
-      var multiplebidderitems = new List<MultipleBidderItem>
-        {
-          new MultipleBidderItem{ ID=1,Title="Desert Dash" },
-          new MultipleBidderItem{ID=2, Title="Television Raffle"},
-          new MultipleBidderItem{ID=3, Title="Rase the Paddle"},
-        };
+      //  var multiplebidderitems = new List<MultipleBidderItem>
+      //  {
+      //    new MultipleBidderItem{},
+      //    new MultipleBidderItem{},
+      //  };
 
       //  multiplebidderitems.ForEach(m => context.MultipleBidderItems.Add(m));
       //  context.SaveChanges();

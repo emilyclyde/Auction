@@ -159,15 +159,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AuctionDetailController.cs" />
     <Compile Include="Controllers\AuctionTypeController.cs" />
     <Compile Include="Controllers\BidderController.cs" />
-    <Compile Include="Controllers\ContactController.cs" />
-    <Compile Include="Controllers\DonorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\MultipleBidderItemController.cs" />
     <Compile Include="DAL\AuctionContext.cs" />
     <Compile Include="DAL\AuctionInitializer.cs" />
     <Compile Include="Global.asax.cs">
@@ -194,14 +190,6 @@
     <Compile Include="ViewModels\ListVM.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\aspnet-Auction-20150330083550.mdf" />
-    <Content Include="App_Data\aspnet-Auction-20150330083550_log.ldf">
-      <DependentUpon>aspnet-Auction-20150330083550.mdf</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Auction1.mdf" />
-    <Content Include="App_Data\Auction1_log.ldf">
-      <DependentUpon>Auction1.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\Auction.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -211,11 +199,9 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\goatbaby - Copy.jpg" />
     <Content Include="Images\goatbaby.jpg" />
-    <Content Include="Images\Items1.jpg" />
     <Content Include="Images\Items\1.jpg" />
     <Content Include="Images\Items\goat.jpg" />
     <Content Include="Images\Items\test.jpg" />
-    <Content Include="Images\Koala.jpg" />
     <Content Include="Images\Logos Academy Logo.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -281,29 +267,10 @@
     <Content Include="Views\Item\Details.cshtml" />
     <Content Include="Views\Item\Edit.cshtml" />
     <Content Include="Views\Item\Index.cshtml" />
-    <Content Include="Views\Home\List.cshtml" />
-    <Content Include="Views\MultipleBidderItem\Create.cshtml" />
-    <Content Include="Views\MultipleBidderItem\Delete.cshtml" />
-    <Content Include="Views\MultipleBidderItem\Details.cshtml" />
-    <Content Include="Views\MultipleBidderItem\Edit.cshtml" />
-    <Content Include="Views\MultipleBidderItem\Index.cshtml" />
-    <Content Include="Views\Donor\Create.cshtml" />
-    <Content Include="Views\Donor\Delete.cshtml" />
-    <Content Include="Views\Donor\Details.cshtml" />
-    <Content Include="Views\Donor\Edit.cshtml" />
-    <Content Include="Views\Donor\Index.cshtml" />
-    <Content Include="Views\Contact\Create.cshtml" />
-    <Content Include="Views\Contact\Delete.cshtml" />
-    <Content Include="Views\Contact\Details.cshtml" />
-    <Content Include="Views\Contact\Edit.cshtml" />
-    <Content Include="Views\Contact\Index.cshtml" />
-    <Content Include="Views\AuctionDetail\Create.cshtml" />
-    <Content Include="Views\AuctionDetail\Delete.cshtml" />
-    <Content Include="Views\AuctionDetail\Details.cshtml" />
-    <Content Include="Views\AuctionDetail\Edit.cshtml" />
-    <Content Include="Views\AuctionDetail\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
