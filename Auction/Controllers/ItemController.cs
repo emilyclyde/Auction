@@ -52,8 +52,17 @@ namespace Auction.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(
-            [Bind(Include = "ID,Title,Description,ImageURL,AuctionType,WinningBidder,BidAmount")] Item item)
+            [Bind(Include = "ID,Title,Description,ImageURL,AuctionType,WinningBidder,BidAmount")] Item item, 
+            string image,
+        HttpPostedFileBase photo)
         {
+            string path = HttpContext.Server.MapPath("~/Images/Items/" + image);
+            /*string path = @"~/Images/Items/"
+            + image;
+            */
+            if (photo != null)
+                photo.SaveAs(path);
+        
             // orriginal code
              if (ModelState.IsValid)
             {
