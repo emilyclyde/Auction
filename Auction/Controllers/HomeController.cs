@@ -74,7 +74,7 @@ namespace Auction.Controllers
          }
 
          list.ItemList = items;
-
+         
          return View(list);
      }
 
