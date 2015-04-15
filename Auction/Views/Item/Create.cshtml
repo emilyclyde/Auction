@@ -3,11 +3,11 @@
 @{
     ViewBag.Title = "Create";
 }
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
 <h2>Create</h2>
 
 
-@using (Html.BeginForm("Create", "Item", FormMethod.Post, new { enctype = "multipart/form-data", id = "form"  }))
+@using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
@@ -17,7 +17,7 @@
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10" id="title">
+            <div class="col-md-10">
                 @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
             </div>
@@ -54,13 +54,17 @@
                 @Html.ValidationMessageFor(model => model.BidAmount, "", new { @class = "text-danger" })
             </div>
         </div>
-        <!--Image upload code. Donot Delete. Donot Modify-->
+        
         <div class="form-group">
+
             @Html.LabelFor(model => model.ImageURL, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <input class="tiny button" id="photo" type="file" name="photo" />
-                <input type="hidden" id="ImageName" name="image" value="" />
-                <!--Image upload code. Donot Delete. Donot Modify-->
+                @Html.Label("Image can be uploaded in item edit pages", new { htmlAttributes = new { @class = "form-control" } })
+                @*  @Html.LabelFor(model => model.ImageURL, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ImageURL, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ImageURL, "", new { @class = "text-danger" })
+                </div>*@
             </div>
         </div>
 
@@ -79,14 +83,3 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
-
-<script>
-    $(document).ready(function(){
-        $("form").submit(function() {
-            var fname = $('#Title').val();
-
-            var ImageName = document.getElementById("ImageName");
-            ImageName.value = fname + ".jpg";
-        });
-    });
-</script>

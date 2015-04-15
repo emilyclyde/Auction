@@ -5,14 +5,14 @@
     footer {
         position: absolute;
         bottom: 0;
-        width: 80%;
+        width: 100%;
     }
 </style>
 <hgroup class="title">
     <h1>Edit Items</h1>
     <hr />
         </hgroup>
-        @using (Html.BeginForm("Edit", "Item", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()
 
@@ -21,7 +21,7 @@
 
 
                     @Html.ValidationSummary(true)
-                    @Html.HiddenFor(model => model.Id)
+                    @Html.HiddenFor(model => model.ID)
                     <div class="form-group">
                         @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
@@ -50,62 +50,44 @@
                             @Html.ValidationMessageFor(model => model.WinningBidder, "", new { @class = "text-danger" })
                         </div>
                     </div>
-                    
-                </div>
-
-                </div>
-
-
-
-                <!--Image upload code. Donot Delete. Donot Modify-->
-                    <div id="imgUpload" style="float: right;width: 40%;">
-
-                        @if (File.Exists(Server.MapPath("~/Images/Items/"
-                                    + Html.DisplayFor(modelItem => Model.ImageURL))))
-                        {
-                            <img alt="" src="~/Images/Items/@Html.DisplayFor(modelItem   => Model.ImageURL)" width="400px" />
-                           
-                                
-                                <br />
-                            <p>If the image above is not the correct image,
-                                use the Re-Upload form below.</p>
-                                <label for="photo">Re-Upload:</label>
-                                <input class="tiny button" id="photo" type="file" name="photo" />
-                                <input type="hidden" name="image" value="@Html.DisplayFor(modelItem   => Model.ImageURL)" />
-
-                        }
-                        else
-                        {
-
-                            <label for="photo">Upload a Photo:</label>
-                            <input class="tiny button" id="photo" type="file" name="photo" />
-                            <input type="hidden" name="image" value="@Html.DisplayFor(modelItem   => Model.ImageURL)" />
-
-                        }
-                    </div>
-                    <!--Image upload code. Donot Delete. Donot Modify-->
-
-
-
-
-
-            <br/>
-            <br/>
-    <br />
-    <br />
-
-
-
-            <div class="medium-12 column" style="position: absolute; 
-bottom: 70px; width: 300px; margin-left: auto;margin-right: auto;left: 40%; right: 40%; ">
+                    <div class="medium-12 column">
                         <input class="tiny button" type="submit" value="Save" />
                         @Html.ActionLink("Back to List", "Index", null,
                             new {@class = "tiny button"})
                     </div>
-               
-            
+                </div>
+            </div>
 
         }
+<!--Image upload code. Donot Delete. Donot Modify-->
+<div id="imgUpload" style="float: right;width: 40%;">
+
+    @if (File.Exists(Server.MapPath("~/Images/Items/"
+                                    + Html.DisplayFor(modelItem => Model.ImageURL))))
+    {
+        <img alt="" src="~/Images/Items/@Html.DisplayFor(modelItem   => Model.ImageURL)" width="400px" />
+        <form action="/Item/DeletePhoto" method="post" name="deletePhoto">
+            @Html.AntiForgeryToken()
+            <br />
+            If the image above is not the correct image,
+            hit delete and Re-Upload.
+            <br />
+            <input type="text" name="photoFileName" value="@Html.DisplayFor(modelItem          => Model.ImageURL)" />
+
+            <input class="tiny button" type="submit" value="Delete" />
+        </form>
+    }
+    else
+    {
+        <form action="/Item/UploadPhoto" enctype="multipart/form-data" method="post">
+            <label for="photo">Upload a Photo:</label>
+            <input class="tiny button" id="photo" type="file" name="photo" />
+            <input class="tiny button" type="submit" value="Upload" />
+            <input type="hidden" name="image" value="@Html.DisplayFor(modelItem   => Model.ImageURL)" />
+        </form>
+    }
+</div>
+<!--Image upload code. Donot Delete. Donot Modify-->
         @section Scripts {
             @Scripts.Render("~/bundles/jqueryval")
         }

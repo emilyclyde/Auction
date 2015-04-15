@@ -11,8 +11,8 @@ namespace Auction.Models
 {
   public class Item
   {
-    
-    public int Id { get; set; }
+    [DatabaseGenerated(DatabaseGeneratedOption.None)]
+    public int ID { get; set; }
 
     [Required]
     [StringLength(50)]
