@@ -88,12 +88,18 @@ namespace Auction.Controllers
     }
 
 
-//**About Page********************************************************************************
+//**Contact Page********************************************************************************
     public ActionResult Contact()
     {
-      ViewBag.Message = "Your contact page.";
+        ContactVM cvm = new ContactVM();
+     foreach(var c in db.Contacts)
+     {
+        cvm.Name = c.Name;
+        cvm.Email = c.Email;
+        cvm.PhoneNumber=c.PhoneNumber;
+     }
 
-      return View();
+      return View(cvm);
     }
 
 
