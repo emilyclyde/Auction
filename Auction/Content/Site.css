@@ -81,9 +81,14 @@ body {
     text-align:left; 
     color:lightblue; 
     margin-top:10px;
-
 }
 
+#Label2
+{
+    margin-top:30px;
+    text-align:center; 
+    color:lightblue; 
+}
 #title
 {
     color:goldenrod;
