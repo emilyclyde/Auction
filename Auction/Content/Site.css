@@ -15,29 +15,30 @@ body {
     text-align:center;
    }
 
-#BackgroundGrad1 {
+#BackgroundGrad1 
+{
     
     background: -webkit-linear-gradient(130deg,lightblue, rgb(0, 100, 150)); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(130deg,lightblue, rgb(0, 100, 150)); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(130deg,lightblue, rgb(0, 100, 150)); /* For Firefox 3.6 to 15 */
     background:linear-gradient(130deg,lightblue, rgb(0, 100, 150)); /* Standard syntax (must be last) */
 }
-#BackgroundGrad2 {
-    
+#BackgroundGrad2 
+{
     background: -webkit-radial-gradient(rgb(0, 100, 150),lightblue); /* For Safari 5.1 to 6.0 */
     background: -o-radial-gradient(rgb(0, 100, 150),lightblue); /* For Opera 11.1 to 12.0 */
     background: -moz-radial-gradient(rgb(0, 100, 150),lightblue); /* For Firefox 3.6 to 15 */
     background: radial-gradient(rgb(0, 100, 150) 40%,lightblue); /* Standard syntax (must be last) */
 }
 
-#logo
+/*#logo
 {
    
-    border-radius: 15px; 
+    /*border-radius: 15px; 
     border-style: solid; 
     border-color:lightblue; 
     border-width:5px;
-}
+}*/
 #LogoCell
 {
     padding-left: 20px;

@@ -2,12 +2,13 @@
 @{
     ViewBag.Title = "Home Page";
 }
-<body id="BackgroundGrad2" >
+<body id="BackgroundGrad2">
     @*<div class="jumbotron"></div>*@
-    <table id="IndexTable" >
+    <table id="IndexTable">
         <tr>
             <td id="LogoCell">
-                <img src="~/Images/Logos Academy Logo.jpg" alt="Opps! Logo here" width="300" height="142" id="logo">            @*displays picture*@
+                @*<img src="~/Images/Logos Academy Logo.jpg" alt="Opps! Logo here" width="300" height="142" id="logo">*@
+                <img src="~/Images/Logos Academy Logo4.png" alt="Opps! Logo here" width="350" height="146" id="logo">            @*displays picture*@
             </td>
 
             <td class="TableDataIndex2">
@@ -24,12 +25,12 @@
         </tr>
         <tr>
             <td>
-                <h2 id="ListButton" ><a href="@Url.Action("List", "Home")"><b>View Auction Items</b></a></h2>
+                <h2 id="ListButton"><a href="@Url.Action("List", "Home")"><b>View Auction Items</b></a></h2>
             </td>
             <td class="TableDataIndex2" id="Times">
-                <h4 >@Html.DisplayFor(model => model.Time1)</h4>
-                <h4 >@Html.DisplayFor(model => model.Time2)</h4>
-                <h4 >@Html.DisplayFor(model => model.Time3)</h4>
+                <h4>@Html.DisplayFor(model => model.Time1)</h4>
+                <h4>@Html.DisplayFor(model => model.Time2)</h4>
+                <h4>@Html.DisplayFor(model => model.Time3)</h4>
             </td>
         </tr>
         <tr>

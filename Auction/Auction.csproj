@@ -199,10 +199,13 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\goatbaby - Copy.jpg" />
     <Content Include="Images\goatbaby.jpg" />
+    <Content Include="Images\Items1.jpg" />
     <Content Include="Images\Items\1.jpg" />
     <Content Include="Images\Items\goat.jpg" />
     <Content Include="Images\Items\test.jpg" />
     <Content Include="Images\Logos Academy Logo.jpg" />
+    <Content Include="Images\Logos Academy Logo3.png" />
+    <Content Include="Images\Logos Academy Logo4.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -267,6 +270,7 @@
     <Content Include="Views\Item\Details.cshtml" />
     <Content Include="Views\Item\Edit.cshtml" />
     <Content Include="Views\Item\Index.cshtml" />
+    <Content Include="Views\Home\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
