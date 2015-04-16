@@ -65,7 +65,8 @@ namespace Auction.Controllers
              list.PhoneNumber = c.PhoneNumber;
          }
 
-         list.CurrentDate = date.ToString("d");    //sets the current date
+         list.CurrentDate = String.Format("{0:D}", date);    //sets the current date
+         
 
          foreach(var i in db.Items)                //gets all Items that are Auction type 1(Live)
          {
