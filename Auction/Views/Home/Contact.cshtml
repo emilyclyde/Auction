@@ -1,17 +1,24 @@
-﻿@{
+﻿@model Auction.ViewModels.ContactVM
+@{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<body id="BackgroundGrad2">
+    <table id ="IndexTable">
+        <tr>
+            <td id="LogoCell">
+                <img src="~/Images/Logos Academy Logo4.png" alt="Opps! Logo here" width="500" height="208">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
-
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+    </table>
+    
+    
+    <div class="AuctionFooter">
+        <h3> For more information about this year's auction, or to donate items, please contact:</h3>
+        <h3>@Html.DisplayFor(model => model.Name)  @Html.DisplayFor(model => model.PhoneNumber)  or email:  @Html.DisplayFor(model => model.Email) </h3>
+        <h3 id="Label2">All donations are greatly appreciated.</h3>
+    </div>
+</body>
