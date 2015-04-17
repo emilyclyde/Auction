@@ -1,28 +1,47 @@
 ﻿@model Auction.ViewModels.ItemDetailVM
-    
 
-    <body id="BackgroundGrad2">
 
-        <table id="IndexTable">
-            <tr>
-                <td id="LogoCell">
-                    <img src="~/Images/Logos Academy Logo4.png" alt="Opps! Logo here" width="350" height="146">
-                </td>
+<body id="BackgroundGrad2">
 
-                <td class="TableDataIndex2">
-                    <h1 id="title"><b>Annual Benefit Auction</b></h1>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <h2> @Html.DisplayFor(model => model.Title) </h2>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <img src="@Url.Content("~/Images/Items/"+ Model.ImageURL)"  alt="Opps!" width="700" height="400">            @*displays picture*@
-                </td>
-            </tr>
+    <table id="IndexTable">
+        <tr>
+            <td id="LogoCell2" >
+                <img src="~/Images/Logos Academy Logo4.png" alt="Opps! Logo here" width="350" height="146">
+            </td>
 
-        </table>
-    </body>
+            @*<td class="TableDataIndex3">
+                <h1 id="title"><b>Annual Benefit Auction</b></h1>
+            </td>*@
+        </tr>
+        <tr>
+            <td >
+                <h2 id="DetailTitle"><b> @Html.DisplayFor(model => model.Title) </b></h2>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <img src="@Url.Content("~/Images/Items/"+ Model.ImageURL)" alt=" opps!" width="500" id="DetailImage">            @*displays picture*@
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" id="DetailCell">
+                <p id="DetailParagraph"> @Html.DisplayFor(model => model.Description) </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div style="width:500px; margin-left:auto; margin-right:auto" >
+                    <h3 id="ListButton"><a href="@Url.Action("List", "Home")"><b>Back to the list of live auction items</b></a></h3>
+                </div>
+            </td>
+        </tr>
+    </table>
+   
+
+</body>
+<footer class="AuctionFooter">
+    <div>
+        <h5> For more information, or to donate items, please contact:</h5>
+        <h5>@Html.DisplayFor(model => model.Name)  @Html.DisplayFor(model => model.PhoneNumber)  or email:  @Html.DisplayFor(model => model.Email) </h5>
+    </div>
+</footer>
