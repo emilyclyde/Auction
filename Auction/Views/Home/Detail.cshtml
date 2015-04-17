@@ -1,7 +1,6 @@
-﻿@model Auction.Models.Item
-    ViewBag.Title = "Detail";
-    }
-<h2>Detail</h2>
+﻿@model Auction.ViewModels.ItemDetailVM
+    
+
     <body id="BackgroundGrad2">
 
         <table id="IndexTable">
@@ -12,11 +11,18 @@
 
                 <td class="TableDataIndex2">
                     <h1 id="title"><b>Annual Benefit Auction</b></h1>
-                    <h2 id="Theme">Live Auction Items</h2>
                 </td>
             </tr>
-
-            
+            <tr>
+                <td colspan="2">
+                    <h2> @Html.DisplayFor(model => model.Title) </h2>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <img src="@Url.Content("~/Images/Items/"+ Model.ImageURL)"  alt="Opps!" width="700" height="400">            @*displays picture*@
+                </td>
+            </tr>
 
         </table>
     </body>
