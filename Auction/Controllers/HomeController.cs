@@ -78,6 +78,36 @@ namespace Auction.Controllers
 
          return View(list);
      }
+//**Detail Page********************************************************************************
+     public ActionResult Detail(int? id)
+     {
+         if (id == null)     // if no id was passed
+         {
+             return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
+         }
+         Item item = db.Items.Find(id);
+         if (item == null)
+         {
+             return HttpNotFound();
+         }
+
+         ItemDetailVM thisItem = new ItemDetailVM();
+
+         foreach (var c in db.Contacts)             // gets and sets contact info
+         {
+             thisItem.Name = c.Name;
+             thisItem.Email = c.Email;
+             thisItem.PhoneNumber = c.PhoneNumber;
+         }
+
+         thisItem.Title = item.Title;
+         thisItem.Description = item.Description;
+         thisItem.ImageURL = item.ImageURL;
+
+         return View(thisItem);
+     }
+
+
 
 //**About Page********************************************************************************
     public ActionResult About()
