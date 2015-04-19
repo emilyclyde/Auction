@@ -27,9 +27,9 @@
         { 
         <tr>
             <td colspan="2">
-                <h2 id="ListButton"><a href="@Url.Action("Detail", "Home",new { id = i.ID })"><b>@i.Title</b></a></h2>
-                @*<h2 id="ListButton"><a href="@Url.Action("index", "Home")"><b>@i.Title</b></a></h2>*@
-                @*<a href="@Url.Action("Detail", "Gallery",new { id = item.CarID })">*@
+                <div id="ListButtonDiv">
+                    <h3 id="ListButton"><a href="@Url.Action("Detail", "Home",new { id = i.ID })"><b>@i.Title</b></a></h3>
+                </div>
             </td>
         </tr>
         }
