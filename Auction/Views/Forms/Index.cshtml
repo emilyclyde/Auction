@@ -2,12 +2,13 @@
     ViewBag.Title = "Index";
 }
 
-<body>
+<body id="BackgroundGrad1">
 
-    <table>
+    <table id="IndexTable">
         <tr>
             <td colspan="2">
-                <h2>Auction Forms</h2>
+                <h1 id="title">Auction Forms</h1>
+                <br/>
             </td>
         </tr>
         <tr>
@@ -15,17 +16,8 @@
                 <h2> Donor</h2>
             </td>
             <td>
-                <h3 id="ListButton"><a href="@Url.Action("Create", "Donor")"><b>Add a new Donor</b></a></h3>
-                <h3 id="ListButton"><a href="@Url.Action("Index", "Donor")"><b>Edit a Donor</b></a></h3>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <h2> Auction Item</h2>
-            </td>
-            <td>
-                <h3 id="ListButton"><a href="@Url.Action("Create", "Item")"><b>Add a new Auction Item</b></a></h3>
-                <h3 id="ListButton"><a href="@Url.Action("Index", "Item")"><b>Edit an Auction Item</b></a></h3>
+                <h3 id="ListButton"><a href="@Url.Action("Create", "Donor")"><b>Add</b></a></h3>
+                <h3 id="ListButton"><a href="@Url.Action("Index", "Donor")"><b>Edit </b></a></h3>
             </td>
         </tr>
         <tr>
@@ -33,8 +25,26 @@
                 <h2> Bidder</h2>
             </td>
             <td>
-                <h3 id="ListButton"><a href="@Url.Action("Create", "Bidder")"><b>Add a new Bidder</b></a></h3>
-                <h3 id="ListButton"><a href="@Url.Action("index", "Bidder")"><b>Edit a Bidder</b></a></h3>
+                <h3 id="ListButton"><a href="@Url.Action("Create", "Bidder")"><b>Add </b></a></h3>
+                <h3 id="ListButton"><a href="@Url.Action("index", "Bidder")"><b>Edit </b></a></h3>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h2> Auction Item</h2>
+            </td>
+            <td>
+                <h3 id="ListButton"><a href="@Url.Action("Create", "Item")"><b>Add</b></a></h3>
+                <h3 id="ListButton"><a href="@Url.Action("Index", "Item")"><b>Edit </b></a></h3>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h2> Multiple Bidder Item</h2>
+            </td>
+            <td>
+                <h3 id="ListButton"><a href="@Url.Action("Create", "MultipleBidderItem")"><b>Add</b></a></h3>
+                <h3 id="ListButton"><a href="@Url.Action("Index", "MultipleBidderItem")"><b>Edit </b></a></h3>
             </td>
         </tr>
         <tr>
@@ -42,7 +52,7 @@
                 <h2> Auction Info </h2>
             </td>
             <td>
-                <h3 id="ListButton"><a href="@Url.Action("Edit", "AuctionDetail", new { id = 1 })"><b>Edit Auction Information </b></a></h3>
+                <h3 id="ListButton"><a href="@Url.Action("Edit", "AuctionDetail", new { id = 1 })"><b>Edit Auction Details </b></a></h3>
                 <h3 id="ListButton"><a href="@Url.Action("Edit", "Contact", new { id = 1 })"><b>Edit Contact Information </b></a></h3>
             </td>
         </tr> 
