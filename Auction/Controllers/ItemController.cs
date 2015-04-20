@@ -135,9 +135,26 @@ namespace Auction.Controllers
         // POST: Item/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int id, string photoFileName)
         {
             Item item = db.Items.Find(id);
+
+
+
+
+            var photoName = "";
+            photoName = item.ImageURL;
+            string fullPath = Request.MapPath("~/Images/Items/"
+            + photoName);
+
+            if (System.IO.File.Exists(fullPath))
+            {
+                System.IO.File.Delete(fullPath);
+
+            }
+
+
+
             db.Items.Remove(item);
             db.SaveChanges();
             return RedirectToAction("Index");

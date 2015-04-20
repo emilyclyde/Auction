@@ -180,3 +180,12 @@ $RECYCLE.BIN/
  
 # Visual Studio 2014 CTP
 **/*.sln.ide
+
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
+bin
+obj
+config
