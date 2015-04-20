@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 using Auction.Models;
@@ -14,12 +15,12 @@ namespace Auction.Controllers
 {
     public class ItemController : Controller
     {
-      //private ApplicationDbContext db = new ApplicationDbContext();
-      
-      //using LocalDB connection string and initializer for now
-      private AuctionContext db = new AuctionContext();
-       
-      // GET: Item
+        //private ApplicationDbContext db = new ApplicationDbContext();
+
+        //using LocalDB connection string and initializer for now
+        private AuctionContext db = new AuctionContext();
+
+        // GET: Item
         public ActionResult Index()
         {
             return View(db.Items.ToList());
@@ -52,10 +53,20 @@ namespace Auction.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(
-            [Bind(Include = "ID,Title,Description,ImageURL,AuctionType,WinningBidder,BidAmount")] Item item)
+            [Bind(Include = "ID,Title,Description,ImageURL,AuctionType,WinningBidder,BidAmount")] Item item,
+            string image,
+        HttpPostedFileBase photo)
         {
+            string path = HttpContext.Server.MapPath("~/Images/Items/" + image);
+           
+            path = path.Replace(" ", "");
+            path.Trim();
+
+            if (photo != null)
+                photo.SaveAs(path);
+
             // orriginal code
-             if (ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 db.Items.Add(item);
                 db.SaveChanges();
@@ -64,7 +75,7 @@ namespace Auction.Controllers
 
             return View(item);
         }
-           
+
 
 
         // GET: Item/Edit/5
@@ -88,12 +99,17 @@ namespace Auction.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Title,Description,ImageURL,AuctionType,WinningBidder,BidAmount")] Item item)
+        public ActionResult Edit([Bind(Include = "ID,Title,Description,ImageURL,AuctionType,WinningBidder,BidAmount")] Item item
+            , string image,
+        HttpPostedFileBase photo)
         {
- // orriginal code
-             if (ModelState.IsValid)
+            string path = HttpContext.Server.MapPath("~/Images/Items/" + image);
+            
+            if (photo != null)
+                photo.SaveAs(path);
+            // orriginal code
+            if (ModelState.IsValid)
             {
-                db.Items.Add(item);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -119,9 +135,26 @@ namespace Auction.Controllers
         // POST: Item/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int id, string photoFileName)
         {
             Item item = db.Items.Find(id);
+
+
+
+
+            var photoName = "";
+            photoName = item.ImageURL;
+            string fullPath = Request.MapPath("~/Images/Items/"
+            + photoName);
+
+            if (System.IO.File.Exists(fullPath))
+            {
+                System.IO.File.Delete(fullPath);
+
+            }
+
+
+
             db.Items.Remove(item);
             db.SaveChanges();
             return RedirectToAction("Index");
@@ -138,21 +171,6 @@ namespace Auction.Controllers
         //
         //
         [HttpPost]
-        public ActionResult UploadPhoto(string image,
-        HttpPostedFileBase photo)
-        {
-            string path = HttpContext.Server.MapPath("~/Images/Items/" + image);
-            /*string path = @"~/Images/Items/"
-            + image;
-            */
-            if (photo != null)
-                photo.SaveAs(path);
-
-            return RedirectToAction("Index");
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult DeletePhoto(string photoFileName)
         {
             var photoName = "";
@@ -163,8 +181,8 @@ namespace Auction.Controllers
             if (System.IO.File.Exists(fullPath))
             {
                 System.IO.File.Delete(fullPath);
-                
-            }return RedirectToAction("Index");
+
+            } return RedirectToAction("Index");
         }
         //
         //

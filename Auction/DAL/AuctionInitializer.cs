@@ -11,7 +11,6 @@ namespace Auction.DAL
   {
     protected override void Seed(AuctionContext context)
     {
-      //This is used in the view model
       var auctiondetails = new List<AuctionDetail> 
       {
         new AuctionDetail{ID=1, Theme="Polynesian Paradise", Date="May 23, 2015", LocationName = "Emanuel Baptist Church", LocationAddress = "3050 Game Farm Rd Springfield, OR",
@@ -21,8 +20,7 @@ namespace Auction.DAL
 
       auctiondetails.ForEach(d => context.AuctionDetails.Add(d));
       context.SaveChanges();
-      
-      //This is used in a view model
+
       var contacts = new List<Contact>
       {
         new Contact{ID= 1,Name = "Debra Norland", Email = "logosacademymusic@gmail.com", PhoneNumber = "(541)747-0702"},
@@ -72,7 +70,7 @@ namespace Auction.DAL
         {
           new Item{ID=1, AuctionType=2, Title="SkateWorld", Description="Addmission for two to Skate World"},
           new Item{ID=2, AuctionType=2, Title="Movie Night Basket", Description="5 Family DVDs, Popcorn, Cookie Mix and Disney Blanket" },
-          new Item{ID=3, AuctionType=1, Title="Cedar Creek Weekend Getaway", Description="2 night stay at a secuded 2 bedroom cabin along Cedar Creek."},
+          new Item{ID=3, AuctionType=1, Title="Cedar Creek Weekend Getaway", Description="Two night stay at Oregon’s famous Cedar Creek Bed & Breakfast. This premiere country resort is the perfect place to relax and enjoy Cedar Creek and the beautiful Umpqua River from. Offering theme decorated rooms & kitchen suites, decks with barbecues and a parlor-library in the Lodge. Easy access to the river, swimming hole, gazebo and picnic area. This weekend stay at any one our five luxurious cabins will be perfect for a whole family adventure or a romantic get-a-way for just the parents. Package includes a complete country breakfast and full access to our hot springs heated pool and spa.  Cabins will sleep up six people in two queen-sized, and two twin beds.  Local fishing guide service is also available through the fly shop in the Lodge."},
           new Item{ID=4, AuctionType=1, Title="Flowers for a Year", Description="Humbolt Florists will supply a colorful bouquet of seasonal flowers each month. Great for you home or office."},
           new Item{ID=5, AuctionType=1, Title="Oregon Coast Salmon fishing", Description="Bill Reynolds Salmon Carters, Florence OR, will take you and 3 guests out for a full day of Pacific salmon fishing. "},
           new Item{ID=6, AuctionType=1, Title="Hoodo Ski Trip", Description="Lift tickets and ski rental for two people at Hoodo ski resort "},
@@ -82,12 +80,11 @@ namespace Auction.DAL
       items.ForEach(i => context.Items.Add(i));
       context.SaveChanges();
 
-      var multiplebidderitems = new List<MultipleBidderItem>
-        {
-          new MultipleBidderItem{ ID=1,Title="Desert Dash" },
-          new MultipleBidderItem{ID=2, Title="Television Raffle"},
-          new MultipleBidderItem{ID=3, Title="Rase the Paddle"},
-        };
+      //  var multiplebidderitems = new List<MultipleBidderItem>
+      //  {
+      //    new MultipleBidderItem{},
+      //    new MultipleBidderItem{},
+      //  };
 
       //  multiplebidderitems.ForEach(m => context.MultipleBidderItems.Add(m));
       //  context.SaveChanges();

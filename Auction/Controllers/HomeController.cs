@@ -15,9 +15,9 @@ namespace Auction.Controllers
     private AuctionContext db = new AuctionContext();
 
 
-//**Index Home page********************************************************************************
+    //**Index Home page********************************************************************************
 
-      public ActionResult Index()
+    public ActionResult Index()
     {
 
       HomeVM contents = new HomeVM();
@@ -35,7 +35,7 @@ namespace Auction.Controllers
         contents.EarlyCost = d.EarlyCost;
         contents.EarlyTicketDate = d.EarlyTicketDate;
       }
-      
+
       foreach (var c in db.Contacts)
       {
         contents.Name = c.Name;
@@ -47,41 +47,69 @@ namespace Auction.Controllers
     }
 
 
-//**List Page************************************************************************************
-    
-     public ActionResult List()
-     {
-         //temporary hardcoded Data used untill the DB context is created
-         ListVM list = new ListVM();
-         DateTime date = new DateTime();
-         List<Item> items = new List<Item>(); 
-          
-         date = DateTime.Now;
+    //**List Page************************************************************************************
 
-         foreach (var c in db.Contacts)             // gets and sets contact info
-         {
-             list.Name = c.Name;
-             list.Email = c.Email;
-             list.PhoneNumber = c.PhoneNumber;
-         }
+    public ActionResult List()
+    {
+      //temporary hardcoded Data used untill the DB context is created
+      ListVM list = new ListVM();
+      DateTime date = new DateTime();
+      List<Item> items = new List<Item>();
 
-         list.CurrentDate = String.Format("{0:D}", date);    //sets the current date
+      date = DateTime.Now;
 
-         foreach(var i in db.Items)                //gets all Items that are Auction type 1(Live)
-         {
-             if (i.AuctionType == 1)
-                 items.Add(i);
-         }
+      foreach (var c in db.Contacts)             // gets and sets contact info
+      {
+        list.Name = c.Name;
+        list.Email = c.Email;
+        list.PhoneNumber = c.PhoneNumber;
+      }
 
-         list.ItemList = items;
+      list.CurrentDate = String.Format("{0:D}", date);    //sets the current date
 
-         foreach (var ad in db.AuctionDetails)
-             list.Theme = ad.Theme;
 
-         return View(list);
-     }
+      foreach (var i in db.Items)                //gets all Items that are Auction type 1(Live)
+      {
+        if (i.AuctionType == 1)
+          items.Add(i);
+      }
 
-//**About Page********************************************************************************
+      list.ItemList = items;
+
+      return View(list);
+    }
+    //**Detail Page********************************************************************************
+    public ActionResult Detail(int? id)
+    {
+      if (id == null)     // if no id was passed
+      {
+        return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
+      }
+      Item item = db.Items.Find(id);
+      if (item == null)
+      {
+        return HttpNotFound();
+      }
+
+      ItemDetailVM thisItem = new ItemDetailVM();
+
+      foreach (var c in db.Contacts)             // gets and sets contact info
+      {
+        thisItem.Name = c.Name;
+        thisItem.Email = c.Email;
+        thisItem.PhoneNumber = c.PhoneNumber;
+      }
+
+      thisItem.Title = item.Title;
+      thisItem.Description = item.Description;
+      thisItem.ImageURL = item.ImageURL;
+
+      return View(thisItem);
+    }
+
+
+
+    //**About Page********************************************************************************
     public ActionResult About()
     {
       ViewBag.Message = "Your application description page.";
@@ -90,10 +118,20 @@ namespace Auction.Controllers
     }
 
 
-//**About Page********************************************************************************
+    //**Contact Page********************************************************************************
     public ActionResult Contact()
     {
-      ViewBag.Message = "Your contact page.";
+      //Commenting out for now since and I want it to run, VM is not created yet correct?! 
+      //Go ahead and uncomment Rob when you get back here! :) Emily
+      //   ContactVM cvm = new ContactVM();
+      //foreach(var c in db.Contacts)
+      //{
+      //   cvm.Name = c.Name;
+      //   cvm.Email = c.Email;
+      //   cvm.PhoneNumber=c.PhoneNumber;
+      ////}
+
+      // return View(cvm);
 
       return View();
     }

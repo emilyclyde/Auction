@@ -7,12 +7,12 @@
     <table id="IndexTable">
         <tr>
             <td id="LogoCell">
-                <img src="~/Images/Logos Academy Logo.jpg" alt="Opps! Logo here" width="300" height="142" id="logo">            @*displays picture*@
+                <img src="~/Images/Logos Academy Logo4.png" alt="Opps! Logo here" width="350" height="146">
             </td>
 
             <td class="TableDataIndex2">
                 <h1 id="title"><b>Annual Benefit Auction</b></h1>
-                <h2 id="Theme">@Html.DisplayFor(model => model.Theme)</h2>
+                <h2 id="Theme">Live Auction Items</h2>
             </td>
         </tr>
         <tr>
@@ -23,26 +23,21 @@
                 <h4 id="Date">Current as of @Html.DisplayFor(model => model.CurrentDate)</h4>
             </td>
         </tr>
+        @foreach(var i in Model.ItemList)
+        { 
         <tr>
             <td colspan="2">
-                <h2> list Item Here</h2>
+                <div id="ListButtonDiv">
+                    <h3 id="ListButton"><a href="@Url.Action("Detail", "Home",new { id = i.ID })"><b>@i.Title</b></a></h3>
+                </div>
             </td>
         </tr>
+        }
     </table>
-    <table>
-        <tr>
-            <td>
-                
-            </td>
-            <td>
-                
-            </td>
-        </tr>
-    </table>
-
-
-
-
-
-
 </body>
+<footer class="AuctionFooter">
+    <div>
+        <h5> For more information, or to donate items, please contact:</h5>
+        <h5>@Html.DisplayFor(model => model.Name)  @Html.DisplayFor(model => model.PhoneNumber)  or email:  @Html.DisplayFor(model => model.Email) </h5>
+    </div>
+</footer>
