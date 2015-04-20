@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 using Auction.Models;
@@ -57,9 +58,10 @@ namespace Auction.Controllers
         HttpPostedFileBase photo)
         {
             string path = HttpContext.Server.MapPath("~/Images/Items/" + image);
-            /*string path = @"~/Images/Items/"
-            + image;
-            */
+           
+            path = path.Replace(" ", "");
+            path.Trim();
+
             if (photo != null)
                 photo.SaveAs(path);
 
@@ -102,15 +104,12 @@ namespace Auction.Controllers
         HttpPostedFileBase photo)
         {
             string path = HttpContext.Server.MapPath("~/Images/Items/" + image);
-            /*string path = @"~/Images/Items/"
-            + image;
-            */
+            
             if (photo != null)
                 photo.SaveAs(path);
             // orriginal code
             if (ModelState.IsValid)
             {
-                //db.Items.Add(item);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

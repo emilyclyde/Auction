@@ -24,7 +24,7 @@ namespace Auction.Models
 
     // Img saveing and naming 
     //do not change
-    [Display(Name = "Image URL")]
+    [Display(Name = "Image")]
     public string ImageURL
     {
       get { return Title.Replace(" ", string.Empty) + ".jpg"; }
@@ -34,10 +34,11 @@ namespace Auction.Models
 
     [Display(Name = "Auction Type")]
     public int AuctionType { get; set; }
+
     [Display(Name = "Winning Bidder")]
-    public int WinningBidder { get; set; }
+    public int? WinningBidder { get; set; }
     [Display(Name = "Bid Amount")]
-    public decimal BidAmount { get; set; }
+    public decimal? BidAmount { get; set; }
 
 
 
