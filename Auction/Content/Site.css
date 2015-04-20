@@ -30,6 +30,13 @@ body {
     background: radial-gradient(rgb(0, 100, 150) 40%,lightblue); /* Standard syntax (must be last) */
 }
 
+.CrudTitle
+{
+    text-shadow: 2px 2px #000000;
+    font-size:4em;
+    color:goldenrod;
+    font-family:'Berlin Sans FB';
+}
 #Date
 {
     margin-right:30px;
@@ -127,7 +134,11 @@ text-align:center;
     color:lightblue; 
     margin-top:10px;
 }
-
+.formItem
+{
+   font-weight:bold;
+   text-align:right;
+}
 #Label2
 {
     margin-top:30px;
@@ -136,6 +147,7 @@ text-align:center;
 }
 #title
 {
+    text-shadow: 2px 2px #000000;
     color:goldenrod;
     font-family:'Berlin Sans FB';
 }
