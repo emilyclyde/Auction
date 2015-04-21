@@ -13,5 +13,12 @@ namespace Auction.Controllers
         {
             return View();
         }
+
+
+// Add Winning Bids *************************************************************************************
+        public ActionResult AddWinningBids()
+        {
+            return View();
+        }
     }
 }
