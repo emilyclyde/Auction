@@ -134,6 +134,13 @@ text-align:center;
     color:lightblue; 
     margin-top:10px;
 }
+
+#Label2
+{
+    text-align:center; 
+    color:lightblue; 
+    margin-top:10px;
+}
 .formItem
 {
    font-weight:bold;
@@ -163,6 +170,8 @@ text-align:center;
 }
 .TableDataIndex2
 {
+    margin-left: auto;
+    margin-right: auto;
     padding:10px;
     text-align:center;
 }
@@ -172,6 +181,11 @@ text-align:center;
     padding:10px;
     margin-left:15px;
     text-align:left;
+}
+
+.TableDataIndex4
+{
+    text-align:center;
 }
 
  #Times
