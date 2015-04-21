@@ -20,12 +20,14 @@ namespace Auction.Controllers
         //using LocalDB connection string and initializer for now
         private AuctionContext db = new AuctionContext();
 
-        // GET: Item
+
+//Index **********************************************************************************************************
         public ActionResult Index()
         {
             return View(db.Items.ToList());
         }
 
+//Details ********************************************************************************************************
         // GET: Item/Details/5
         public ActionResult Details(int? id)
         {
@@ -41,15 +43,15 @@ namespace Auction.Controllers
             return View(item);
         }
 
-        // GET: Item/Create
+
+//Create *********************************************************************************************************
+        // GET****************************************************************************************************
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Item/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST:**************************************************************************************************
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(
@@ -77,8 +79,8 @@ namespace Auction.Controllers
         }
 
 
-
-        // GET: Item/Edit/5
+//EDIT ************************************************************************************************************
+        // GET ****************************************************************************************************
         public ActionResult Edit(int? id)
         {
             string sess = (string)System.Web.HttpContext.Current.Session["blah"];
@@ -94,7 +96,7 @@ namespace Auction.Controllers
             return View(item);
         }
 
-        // POST: Item/Edit/5
+        // POST ****************************************************************************************************
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -117,7 +119,9 @@ namespace Auction.Controllers
             return View(item);
         }
 
-        // GET: Item/Delete/5
+
+//Delete *****************************************************************************************************************************
+        // GET ***********************************************************************************************************************
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -132,7 +136,7 @@ namespace Auction.Controllers
             return View(item);
         }
 
-        // POST: Item/Delete/5
+        // POST ************************************************************************************************************************
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id, string photoFileName)
