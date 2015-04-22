@@ -8,7 +8,6 @@ using Auction.Models;
 
 namespace Auction.Controllers
 {
-    
 
     public class FormsController : Controller
     {
