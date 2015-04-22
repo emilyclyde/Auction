@@ -79,12 +79,13 @@ namespace Auction.Controllers
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditSilentItem([Bind(Include = "WinningBidder,BidAmount")] Item item)
+        public ActionResult EditSilentItem([Bind(Include = "ID,Title,Description,ImageURL,AuctionType,WinningBidder,BidAmount")] Item item)
         {
             if (ModelState.IsValid)
             {
+                db.Entry(item).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("AddWinningBidsSilent");
+                return RedirectToAction("AddWinningBidsSilent", "Forms");
             }
 
             return View(item);
