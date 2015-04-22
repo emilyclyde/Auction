@@ -7,7 +7,8 @@ using Auction.Models;
 
 namespace Auction.DAL
 {
-  public class AuctionInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<AuctionContext>
+  //public class AuctionInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<AuctionContext>
+  public class AuctionInitializer : System.Data.Entity.DropCreateDatabaseAlways<AuctionContext>     
   {
     protected override void Seed(AuctionContext context)
     {
@@ -74,7 +75,16 @@ namespace Auction.DAL
           new Item{ID=4, AuctionType=1, Title="Flowers for a Year", Description="Humbolt Florists will supply a colorful bouquet of seasonal flowers each month. Great for you home or office."},
           new Item{ID=5, AuctionType=1, Title="Oregon Coast Salmon fishing", Description="Bill Reynolds Salmon Carters, Florence OR, will take you and 3 guests out for a full day of Pacific salmon fishing. "},
           new Item{ID=6, AuctionType=1, Title="Hoodo Ski Trip", Description="Lift tickets and ski rental for two people at Hoodo ski resort "},
- 
+          new Item{ID=7, AuctionType=2, Title="Jerry's Gift Card", Description="$25 Gift card to Jerry's Home Inprovement Center"},
+          new Item{ID=8, AuctionType=2, Title="Shari's Gift Certificate", Description="Gift certificate for one of Shari's Signature Pies"},
+          new Item{ID=9, AuctionType=2, Title="Manacure", Description="One Manacure at Nail's-R-Us"},
+          new Item{ID=10, AuctionType=2, Title="Papa Murphy's Pizzas", Description="2 Family size pizzas from either Springfield Papa Murphy's"},
+          new Item{ID=11, AuctionType=2, Title="Oregon Ducks Picture", Description="Framed, Autographed picture of the Duck Women's basketball team "},
+          new Item{ID=12, AuctionType=2, Title="Art Caddy", Description="250 piece Art Caddy with sketch book "},
+          new Item{ID=13, AuctionType=2, Title="Galaxy Lanes", Description="3 Games of Bowling at Galaxy Lanes. Includes shoe rental."},
+          new Item{ID=14, AuctionType=2, Title="Baskin Robins", Description="One half-round ice cream cake from Springfield Baskin Robins"},
+          new Item{ID=15, AuctionType=2, Title="Dozen Roses", Description="One dozen roses from Patrica's Flower Pot"},
+          new Item{ID=1, AuctionType=2, Title="Quickie Lube", Description="One standard Oil, Lube and filter change at Quickie Lube"},
         };
 
       items.ForEach(i => context.Items.Add(i));
