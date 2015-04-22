@@ -9,7 +9,7 @@ namespace Auction.Models
 {
   public class Donor
   {
-    [DatabaseGenerated(DatabaseGeneratedOption.None)]
+   // [DatabaseGenerated(DatabaseGeneratedOption.None)]
     public int ID { get; set; }
     public string Name { get; set; }
     public string Email { get; set; }

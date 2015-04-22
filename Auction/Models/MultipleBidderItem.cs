@@ -9,7 +9,7 @@ namespace Auction.Models
 {
   public class MultipleBidderItem
   {
-    [DatabaseGenerated(DatabaseGeneratedOption.None)]
+    //[DatabaseGenerated(DatabaseGeneratedOption.None)]
     public int ID { get; set; }
    // [StringLength(50)]
     public string Title { get; set; }

@@ -9,7 +9,7 @@ namespace Auction.Models
 {
   public class Contact
   {
-    [DatabaseGenerated(DatabaseGeneratedOption.None)]
+    //[DatabaseGenerated(DatabaseGeneratedOption.None)]
     public int ID { get; set; }
 
     public string Name { get; set; }
