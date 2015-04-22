@@ -81,6 +81,8 @@ namespace Auction.Controllers
         public ActionResult EditSilentItem([Bind(Include = "ID,Title,Description,ImageURL,AuctionType,WinningBidder,BidAmount")] Item item)
         {
             if (ModelState.IsValid)
+// check for a valid bidder Number
+
             {
                 db.Entry(item).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
