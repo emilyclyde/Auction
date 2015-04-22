@@ -17,6 +17,10 @@ namespace Auction.Controllers
       
       //using LocalDB connection string and initializer for now
        private AuctionContext db = new AuctionContext();
+
+
+
+//Index *************************************************************************************************************
         // GET: Bidder
         public ActionResult Index()
         {
@@ -38,13 +42,14 @@ namespace Auction.Controllers
             return View(bidder);
         }
 
-        // GET: Bidder/Create
+//Create *************************************************************************************************************
+        // GET *******************************************************************************************************
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Bidder/Create
+        // POST ******************************************************************************************************
        
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -59,8 +64,8 @@ namespace Auction.Controllers
 
             return View(bidder);
         }
-
-        // GET: Bidder/Edit/5
+//Edit ****************************************************************************************************************
+        // GET*********************************************************************************************************
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -75,9 +80,8 @@ namespace Auction.Controllers
             return View(bidder);
         }
 
-        // POST: Bidder/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST********************************************************************************************************
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,BidderName,BidderNumber")] Bidder bidder)
@@ -91,7 +95,9 @@ namespace Auction.Controllers
             return View(bidder);
         }
 
-        // GET: Bidder/Delete/5
+
+//Delete ***************************************************************************************************************
+        // GET *********************************************************************************************************
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -106,7 +112,7 @@ namespace Auction.Controllers
             return View(bidder);
         }
 
-        // POST: Bidder/Delete/5
+        // POST *******************************************************************************************************
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
