@@ -188,7 +188,7 @@
         isActiveClass="false">
         <targetEnds>
           <association
-            Id="33577d0b-e96a-408a-9b77-5d47a3595e76"
+            Id="73738db9-380e-4d98-b58b-04869fabdc88"
             isDerived="false"
             sourceEndRoleName="MultipleBidderItem"
             targetEndRoleName="Bidder"
@@ -201,33 +201,20 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="53f3b6b7-db18-4535-b9ae-bddef3ffc0d8"
+                  Id="bd5c6c1d-fd39-4a49-b221-fc032d940a87"
                   name="MultipleBidderItem"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
                   isDerived="false"
                   isDerivedUnion="false"
-                  aggregation="Composite"
+                  aggregation="Shared"
                   isComposite="false"
-                  isNavigableOwned="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="84a8bc19-ed31-4b27-8581-01553eec3c28"
-                      name="Lower"
-                      value="1" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="d8b7e30c-3cda-4ded-9e0f-990a1d19248e"
-                      name="Upper"
-                      value="*" />
-                  </upperValueInternal>
-                </memberEnd>
+                  isNavigableOwned="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="bcbc5a2a-e19c-455b-9566-0dfa2a5c0440"
+                  Id="5241f8af-2b4f-41cb-92e1-91b818df50c9"
                   name="Bidder"
                   isLeaf="false"
                   isStatic="false"
@@ -235,16 +222,16 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="true">
+                  isComposite="false">
                   <lowerValueInternal>
                     <literalString
-                      Id="e0c6b08e-d5fe-4b7e-a442-5e212faa5e2b"
+                      Id="bc3e43af-2751-4f83-8933-400b146004cf"
                       name="Lower"
                       value="0" />
                   </lowerValueInternal>
                   <upperValueInternal>
                     <literalString
-                      Id="63b1938a-bffb-4187-b44e-916144909cf5"
+                      Id="37acd21f-d933-4761-8f53-b5cef21fc7fa"
                       name="Upper"
                       value="*" />
                   </upperValueInternal>
@@ -289,7 +276,7 @@
             isComposite="false" />
           <property
             Id="a8d3fa15-e917-4f48-9288-c5f6e8c2d32d"
-            name="Type"
+            name="Category"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -482,7 +469,20 @@
                   isDerivedUnion="false"
                   aggregation="Shared"
                   isComposite="false"
-                  isNavigableOwned="false" />
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="4fa2e3bd-5fb1-462f-b49b-e728f675aa9a"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="eb11ef39-c80c-413d-8610-e00c986dbb39"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
