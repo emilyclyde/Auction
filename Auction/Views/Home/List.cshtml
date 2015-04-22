@@ -16,23 +16,30 @@
             </td>
         </tr>
         <tr>
-            <td>
-                <h4 id="Label1">Select an item to view details</h4>
-            </td>
-            <td>
-                <h4 id="Date">Current as of @Html.DisplayFor(model => model.CurrentDate)</h4>
-            </td>
-        </tr>
-        @foreach(var i in Model.ItemList)
-        { 
-        <tr>
             <td colspan="2">
-                <div id="ListButtonDiv">
-                    <h3 id="ListButton"><a href="@Url.Action("Detail", "Home",new { id = i.ID })"><b>@i.Title</b></a></h3>
+                <div >
+                    <h4 id="Label2">Select an item to view details</h4>
                 </div>
             </td>
+            @*<td>
+                    <h4 id="Date">Current as of @Html.DisplayFor(model => model.CurrentDate)</h4>
+                </td>*@
         </tr>
+        @foreach (var i in Model.ItemList)
+        {
+            <tr>
+                <td colspan="2">
+                    <div id="ListButtonDiv">
+                        <h3 id="ListButton"><a href="@Url.Action("Detail", "Home",new { id = i.ID })"><b>@i.Title</b></a></h3>
+                    </div>
+                </td>
+            </tr>
         }
+        <tr>
+            <td colspan="2">
+                <h3 id="Label2" >More items will be added as they come in.</h3>
+            </td>
+        </tr>
     </table>
 </body>
 <footer class="AuctionFooter">
