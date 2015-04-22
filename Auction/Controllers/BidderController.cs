@@ -53,7 +53,7 @@ namespace Auction.Controllers
        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,BidderName,BidderNumber, BidderContact")] Bidder bidder)
+        public ActionResult Create([Bind(Include = "ID,BidderName,BidderNumber,BidderContact")] Bidder bidder)
         {
             if (ModelState.IsValid)
             {
@@ -61,8 +61,8 @@ namespace Auction.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
-            return View(bidder);
+            //return RedirectToAction("Index");
+          return View(bidder);
         }
 //Edit ****************************************************************************************************************
         // GET*********************************************************************************************************
