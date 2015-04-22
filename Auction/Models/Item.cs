@@ -11,7 +11,6 @@ namespace Auction.Models
 {
   public class Item
   {
-    //[DatabaseGenerated(DatabaseGeneratedOption.None)]
     public int ID { get; set; }
 
     [Required]
@@ -19,6 +18,7 @@ namespace Auction.Models
     public string Title { get; set; }
     //[StringLength(50, ErrorMessage = "Title cannot be longer than 50 characters.")]
     [Required]
+    [DataType(DataType.MultilineText)]
     public string Description { get; set; }
     //[StringLength(50, ErrorMessage = "Description cannot be longer than 50 characters.")]
 

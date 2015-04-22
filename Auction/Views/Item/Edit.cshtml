@@ -32,7 +32,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.TextAreaFor(model => model.Description, 5, 40, new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -72,7 +72,7 @@
                 use the Re-Upload form below.
             </p>
             <label for="photo">Re-Upload:</label>
-            <input class="tiny button" id="photo" type="file" name="photo" />
+            <input id="photo" type="file" name="photo" />
             <input type="hidden" name="image" value="@Html.DisplayFor(modelItem   => Model.ImageURL)" />
 
         }
@@ -80,7 +80,7 @@
         {
 
             <label for="photo">Upload a Photo:</label>
-            <input class="tiny button" id="photo" type="file" name="photo" />
+            <input id="photo" type="file" name="photo" />
             <input type="hidden" name="image" value="@Html.DisplayFor(modelItem   => Model.ImageURL)" />
 
         }
@@ -100,9 +100,8 @@
 
     <div class="medium-12 column" style="position: absolute;
 bottom: 70px; width: 300px; margin-left: auto;margin-right: auto;left: 40%; right: 40%; ">
-        <input class="tiny button" type="submit" value="Save" />
-        @Html.ActionLink("Back to List", "Index", null,
-                            new { @class = "tiny button" })
+        <input class="btn btn-default" type="submit" value="Save" />
+        <input type="submit" value="Cancel" onclick="location.href='@Url.Action("Index", "Item")';return false;" class="btn btn-default" />
     </div>
 
 
