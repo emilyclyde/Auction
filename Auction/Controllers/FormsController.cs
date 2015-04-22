@@ -58,8 +58,37 @@ namespace Auction.Controllers
         //POST *********************************************************************************************************
 
 
-// Edit Auction Items **************************************************************************************************
+// Edit Silent Auction Items **************************************************************************************************
+        // GET ****************************************************************************************************
+        public ActionResult EditSilentItem(int? id)
+        {
+            string sess = (string)System.Web.HttpContext.Current.Session["blah"];
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
+            }
+            Item item = db.Items.Find(id);
+            if (item == null)
+            {
+                return HttpNotFound();
+            }
+            return View(item);
+        }
 
+        // POST ****************************************************************************************************
+        
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditSilentItem([Bind(Include = "WinningBidder,BidAmount")] Item item)
+        {
+            if (ModelState.IsValid)
+            {
+                db.SaveChanges();
+                return RedirectToAction("AddWinningBidsSilent");
+            }
+
+            return View(item);
+        }
 
     }//end class
 }//end Namespace
