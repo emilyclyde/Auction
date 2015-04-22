@@ -24,7 +24,7 @@ namespace Auction.DAL
     public DbSet<Donor> Donors { get; set; }
     public DbSet<Item> Items { get; set; }
     public DbSet<MultipleBidderItem> MultipleBidderItems { get; set; }
-
+   
 
 
     protected override void OnModelCreating(System.Data.Entity.DbModelBuilder modelBuilder)
