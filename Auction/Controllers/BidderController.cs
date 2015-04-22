@@ -45,11 +45,10 @@ namespace Auction.Controllers
         }
 
         // POST: Bidder/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,BidderName")] Bidder bidder)
+        public ActionResult Create([Bind(Include = "ID,BidderName,BidderNumber, BidderContact")] Bidder bidder)
         {
             if (ModelState.IsValid)
             {
@@ -81,7 +80,7 @@ namespace Auction.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,BidderName")] Bidder bidder)
+        public ActionResult Edit([Bind(Include = "ID,BidderName,BidderNumber")] Bidder bidder)
         {
             if (ModelState.IsValid)
             {
