@@ -30,6 +30,10 @@ body {
     background: radial-gradient(rgb(0, 100, 150) 40%,lightblue); /* Standard syntax (must be last) */
 }
 
+.CrudDiv
+{
+    color:darkblue;
+}
 .CrudTitle
 {
     text-shadow: 2px 2px #000000;
@@ -72,6 +76,12 @@ body {
 {
 text-align:center;
  
+}
+
+
+important
+{
+   font-size:3em;
 }
 
 #IndexTable
