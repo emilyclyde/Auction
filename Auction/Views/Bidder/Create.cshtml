@@ -5,12 +5,12 @@
 }
 
 <h2>Create</h2>
+@*@using (Html.BeginForm("EditSilentItem", "Forms", FormMethod.Post, new { enctype = "multipart/form-data" }))*@
 
-
-@using (Html.BeginForm())
+@using (Html.BeginForm("Create", "Bidder", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-
+    @Html.HiddenFor(model => model.ID)
     <div class="form-horizontal">
         <h4>Bidder</h4>
         <hr />
