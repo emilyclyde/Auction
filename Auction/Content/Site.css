@@ -6,7 +6,7 @@ h4{font-size:1.3em; }
 h5{font-size:1em; }
 h6{ font-size:0.85em;}
 
-/*td{border:1px solid black;}*/
+td{border:1px solid black;}
 
 body {
     padding-top: 50px;
@@ -168,16 +168,19 @@ important
     color:goldenrod;
     font-family:'Berlin Sans FB';
 }
+
 #Theme
 {
     color:goldenrod; 
     font-style:italic;
 }
+
 .TableDataIndex1
 {
     padding:50px;
     text-align:center;
 }
+
 .TableDataIndex2
 {
     margin-left: auto;
