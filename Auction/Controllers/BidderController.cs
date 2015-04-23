@@ -84,7 +84,7 @@ namespace Auction.Controllers
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,BidderName,BidderNumber")] Bidder bidder)
+        public ActionResult Edit([Bind(Include = "ID,BidderName,BidderNumber,BidderContact")] Bidder bidder)
         {
             if (ModelState.IsValid)
             {
