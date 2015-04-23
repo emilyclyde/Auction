@@ -27,6 +27,7 @@ namespace Auction.Controllers
             return View(db.Bidders.ToList());
         }
 
+//Details ************************************************************************************************************
         // GET: Bidder/Details/5
         public ActionResult Details(int? id)
         {
@@ -59,7 +60,7 @@ namespace Auction.Controllers
             {
                 db.Bidders.Add(bidder);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("NewBidder", bidder );
             }
             //return RedirectToAction("Index");
           return View(bidder);
@@ -122,7 +123,24 @@ namespace Auction.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+//NewBidder *************************************************************************************************************
+        public ActionResult NewBidder( Bidder bidder)
+        {
 
+            if (bidder.ID == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            
+            if (bidder == null)
+            {
+                return HttpNotFound();
+            }
+            return View(bidder);
+        }
+
+
+// Dispose **************************************************************************************************************
         protected override void Dispose(bool disposing)
         {
             if (disposing)
