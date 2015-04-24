@@ -17,12 +17,17 @@ namespace Auction.Controllers
       
       //using LocalDB connection string and initializer for now
        private AuctionContext db = new AuctionContext();
+
+
+
+//Index *************************************************************************************************************
         // GET: Bidder
         public ActionResult Index()
         {
             return View(db.Bidders.ToList());
         }
 
+//Details ************************************************************************************************************
         // GET: Bidder/Details/5
         public ActionResult Details(int? id)
         {
@@ -38,29 +43,30 @@ namespace Auction.Controllers
             return View(bidder);
         }
 
-        // GET: Bidder/Create
+//Create *************************************************************************************************************
+        // GET *******************************************************************************************************
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Bidder/Create
+        // POST ******************************************************************************************************
        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,BidderName,BidderNumber, BidderContact")] Bidder bidder)
+        public ActionResult Create([Bind(Include = "ID,BidderName,BidderNumber,BidderContact")] Bidder bidder)
         {
             if (ModelState.IsValid)
             {
                 db.Bidders.Add(bidder);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("NewBidder", bidder );
             }
-
-            return View(bidder);
+            //return RedirectToAction("Index");
+          return View(bidder);
         }
-
-        // GET: Bidder/Edit/5
+//Edit ****************************************************************************************************************
+        // GET*********************************************************************************************************
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -75,12 +81,11 @@ namespace Auction.Controllers
             return View(bidder);
         }
 
-        // POST: Bidder/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST********************************************************************************************************
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,BidderName,BidderNumber")] Bidder bidder)
+        public ActionResult Edit([Bind(Include = "ID,BidderName,BidderNumber,BidderContact")] Bidder bidder)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +96,9 @@ namespace Auction.Controllers
             return View(bidder);
         }
 
-        // GET: Bidder/Delete/5
+
+//Delete ***************************************************************************************************************
+        // GET *********************************************************************************************************
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -106,7 +113,7 @@ namespace Auction.Controllers
             return View(bidder);
         }
 
-        // POST: Bidder/Delete/5
+        // POST *******************************************************************************************************
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
@@ -116,7 +123,24 @@ namespace Auction.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+//NewBidder *************************************************************************************************************
+        public ActionResult NewBidder( Bidder bidder)
+        {
 
+            if (bidder.ID == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            
+            if (bidder == null)
+            {
+                return HttpNotFound();
+            }
+            return View(bidder);
+        }
+
+
+// Dispose **************************************************************************************************************
         protected override void Dispose(bool disposing)
         {
             if (disposing)
