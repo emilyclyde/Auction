@@ -29,7 +29,12 @@ body {
     background: -moz-radial-gradient(rgb(0, 100, 150),lightblue); /* For Firefox 3.6 to 15 */
     background: radial-gradient(rgb(0, 100, 150) 40%,lightblue); /* Standard syntax (must be last) */
 }
-
+#BidNumber
+{
+    font-size:6em;
+    color:#990033;
+    text-shadow:2px 2px white;
+}
 .CrudDiv
 {
     color:darkblue;
