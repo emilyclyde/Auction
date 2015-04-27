@@ -19,6 +19,17 @@
                 <h1 id="BidNumber"><b> @Model.BidderNumber</b></h1>
             </td>
         </tr>
+        <tr>
+            <td>
+                <h2 id="ListButton"><a href="@Url.Action("Create", "Bidder")"><b>Add Another Bidder</b></a></h2>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h2 id="ListButton"><a href="@Url.Action("Index", "Forms")"><b>Back to Auction Forms</b></a></h2>
+                @*<input type="button" value="Add Another Bidder" onclick="location.href='@Url.Action("Create", "Bidder")';return false;" class="btn btn-default" />*@
+            </td>
+        </tr>
     </table>
     
    
