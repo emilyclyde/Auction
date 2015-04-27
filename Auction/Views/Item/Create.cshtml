@@ -18,7 +18,7 @@
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10" id="title">
+            <div class="col-md-10" id="TitleItem">
                 @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
             </div>
@@ -39,7 +39,7 @@
         listItems.Add(new SelectListItem
              {
                  Text = "-- Select Auction Type --",
-                 Value = "Not valid"
+                 Value = "-- Select Auction Type --"
              });
         listItems.Add(new SelectListItem
              {
@@ -67,16 +67,16 @@
         </style>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.AuctionType, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.AuctionType, htmlAttributes: new { @class = "control-label col-md-2", @data_val_number="Supply an integer, dude!" , @data_valmsg_replace = false })
             <div class="col-md-10">
                 <table>
                     <tr>
                         <th style="width:280px;">
-                            @Html.DropDownListFor(model => model.AuctionType, listItems, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.DropDownListFor(model => model.AuctionType, listItems, new { htmlAttributes = new { @class = "form-control", @data_val_number="Supply an integer, dude!" , @data_valmsg_replace = false} })
                         </th>
                     </tr>
                 </table>
-                @Html.ValidationMessageFor(model => model.AuctionType, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.AuctionType, "", new { @class = "text-danger", @data_val_number="Supply an integer, dude!" , @data_valmsg_replace = false })
             </div>
         </div>
         <!-------------Auction Type Dropdown---------------->
@@ -124,7 +124,7 @@
     <script>
         $(document).ready(function () {
             $("form").submit(function () {
-                var fname = $('#Title').val();
+                var fname = $('#TitleItem').val();
 
                 var ImageName = document.getElementById("ImageName");
                 ImageName.value = fname + ".jpg";

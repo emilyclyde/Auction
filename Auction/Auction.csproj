@@ -304,6 +304,10 @@
     <Content Include="Views\MultipleBidderItem\Index.cshtml" />
     <Content Include="Views\Forms\Index.cshtml" />
     <Content Include="Views\Home\Detail.cshtml" />
+    <Content Include="Views\Bidder\NewBidder.cshtml" />
+    <Content Include="Views\Forms\AddWinningBidsLive.cshtml" />
+    <Content Include="Views\Forms\AddWinningBidsSilent.cshtml" />
+    <Content Include="Views\Forms\EditSilentItem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
