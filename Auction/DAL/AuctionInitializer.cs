@@ -90,15 +90,16 @@ namespace Auction.DAL
       items.ForEach(i => context.Items.Add(i));
       context.SaveChanges();
 
-      //  var multiplebidderitems = new List<MultipleBidderItem>
-      //  {
-      //    new MultipleBidderItem{},
-      //    new MultipleBidderItem{},
-      //  };
 
-      //  multiplebidderitems.ForEach(m => context.MultipleBidderItems.Add(m));
-      //  context.SaveChanges();
-      //}
+        var multiplebidderitems = new List<MultipleBidderItem>
+        {
+          new MultipleBidderItem{ID=1, Title="Raise the Paddle"},
+          new MultipleBidderItem{ID=2, Title="Dessert Dash"},
+          new MultipleBidderItem{ID=3, Title="TV Raffle"},
+        };
+        multiplebidderitems.ForEach(m => context.MultipleBidderItems.Add(m));
+        context.SaveChanges();
+      }
     }
   }
-}
+
