@@ -3,7 +3,24 @@
     ViewBag.Title = "NewBidder";
 }
 <body id="BackgroundGrad1">
-    <h2>NewBidder</h2>
-    <h3> @Model.BidderName</h3>
-    <h2> @Model.BidderNumber</h2>
+    <table id="IndexTable">
+        <tr>
+            <td>
+                <h3 class="CrudTitle">New Bidder</h3>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h1> @Model.BidderName</h1>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h1 id="BidNumber"><b> @Model.BidderNumber</b></h1>
+            </td>
+        </tr>
+    </table>
+    
+   
+    
 </body>
