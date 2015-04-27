@@ -14,6 +14,9 @@ namespace Auction.Controllers
   {
     private AuctionContext db = new AuctionContext();
 
+
+    //**Index Home page********************************************************************************
+
     public ActionResult Index()
     {
 
@@ -32,7 +35,7 @@ namespace Auction.Controllers
         contents.EarlyCost = d.EarlyCost;
         contents.EarlyTicketDate = d.EarlyTicketDate;
       }
-      
+
       foreach (var c in db.Contacts)
       {
         contents.Name = c.Name;
@@ -43,32 +46,70 @@ namespace Auction.Controllers
       return View(contents);
     }
 
-    /* public ActionResult List()
-     {
-         //temporary hardcoded Data used untill the DB context is created
-         ListVM list = new ListVM();
-         DateTime date = new DateTime();
-         List<string> items = new List<string>(); 
- 
-         date = DateTime.Now;
 
-         list.Name = "Debra Norland";
-         list.Email = "logosacademymusic@gmail.com";
-         list.PhoneNumber = "(541)747-0702";
-         list.CurrentDate = date.ToString("d");
+    //**List Page************************************************************************************
 
-         items.Add("Sun River 5 Night Getaway");
-         items.Add("Mckenzie River Rafting Adventure");
-         items.Add("NewPort Deep Sea Fishing Excursion");
-         items.Add("Hoodoo Ski Weekend");
-         items.Add("24 Karat Diamond Necklace");
-         items.Add("Cedar Patio Furniture Set");
+    public ActionResult List()
+    {
+      //temporary hardcoded Data used untill the DB context is created
+      ListVM list = new ListVM();
+      DateTime date = new DateTime();
+      List<Item> items = new List<Item>();
 
-         list.ItemList = items;
+      date = DateTime.Now;
 
-         return View(list);
+      foreach (var c in db.Contacts)             // gets and sets contact info
+      {
+        list.Name = c.Name;
+        list.Email = c.Email;
+        list.PhoneNumber = c.PhoneNumber;
+      }
 
-     }*/
+      list.CurrentDate = String.Format("{0:D}", date);    //sets the current date
+
+
+      foreach (var i in db.Items)                //gets all Items that are Auction type 1(Live)
+      {
+        if (i.AuctionType == 1)
+          items.Add(i);
+      }
+
+      list.ItemList = items;
+
+      return View(list);
+    }
+    //**Detail Page********************************************************************************
+    public ActionResult Detail(int? id)
+    {
+      if (id == null)     // if no id was passed
+      {
+        return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
+      }
+      Item item = db.Items.Find(id);
+      if (item == null)
+      {
+        return HttpNotFound();
+      }
+
+      ItemDetailVM thisItem = new ItemDetailVM();
+
+      foreach (var c in db.Contacts)             // gets and sets contact info
+      {
+        thisItem.Name = c.Name;
+        thisItem.Email = c.Email;
+        thisItem.PhoneNumber = c.PhoneNumber;
+      }
+
+      thisItem.Title = item.Title;
+      thisItem.Description = item.Description;
+      thisItem.ImageURL = item.ImageURL;
+
+      return View(thisItem);
+    }
+
+
+
+    //**About Page********************************************************************************
     public ActionResult About()
     {
       ViewBag.Message = "Your application description page.";
@@ -76,9 +117,21 @@ namespace Auction.Controllers
       return View();
     }
 
+
+    //**Contact Page********************************************************************************
     public ActionResult Contact()
     {
-      ViewBag.Message = "Your contact page.";
+      //Commenting out for now since and I want it to run, VM is not created yet correct?! 
+      //Go ahead and uncomment Rob when you get back here! :) Emily
+      //   ContactVM cvm = new ContactVM();
+      //foreach(var c in db.Contacts)
+      //{
+      //   cvm.Name = c.Name;
+      //   cvm.Email = c.Email;
+      //   cvm.PhoneNumber=c.PhoneNumber;
+      ////}
+
+      // return View(cvm);
 
       return View();
     }

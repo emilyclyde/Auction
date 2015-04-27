@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<body id="BackgroundGrad1">
+
+    <table id="IndexTable">
+        <tr>
+            <td colspan="2">
+                <h1 class="CrudTitle">Auction Forms</h1>
+                <br/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h2 class="formItem"> Donor </h2>
+            </td>
+            <td>
+                <h3 id="ListButton"><a href="@Url.Action("Create", "Donor")"><b>Add</b></a></h3>
+                <h3 id="ListButton"><a href="@Url.Action("Index", "Donor")"><b>Edit </b></a></h3>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h2 class="formItem"> Bidder</h2>
+            </td>
+            <td>
+                <h3 id="ListButton"><a href="@Url.Action("Create", "Bidder")"><b>Add </b></a></h3>
+                <h3 id="ListButton"><a href="@Url.Action("index", "Bidder")"><b>Edit </b></a></h3>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h2 class="formItem"> Auction Item</h2>
+            </td>
+            <td>
+                <h3 id="ListButton"><a href="@Url.Action("Create", "Item")"><b>Add</b></a></h3>
+                <h3 id="ListButton"><a href="@Url.Action("Index", "Item")"><b>Edit </b></a></h3>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h2 class="formItem"> Multiple Bidder Item</h2>
+            </td>
+            <td>
+                <h3 id="ListButton"><a href="@Url.Action("Create", "MultipleBidderItem")"><b>Add</b></a></h3>
+                <h3 id="ListButton"><a href="@Url.Action("Index", "MultipleBidderItem")"><b>Edit </b></a></h3>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h2 class="formItem"> Auction Info </h2>
+            </td>
+            <td>
+                <h3 id="ListButton"><a href="@Url.Action("Edit", "AuctionDetail", new { id = 1 })"><b>Edit Auction Details </b></a></h3>
+                <h3 id="ListButton"><a href="@Url.Action("Edit", "Contact", new { id = 1 })"><b>Edit Contact Information </b></a></h3>
+            </td>
+        </tr> 
+        <tr>
+            <td>
+                <h2 class="formItem"> Update Bids </h2>
+            </td>
+            <td>
+                <h3 id="ListButton"><a href="@Url.Action("AddWinningBidsSilent", "Forms")"><b>Silent Auction </b></a></h3>
+                <h3 id="ListButton"><a href="@Url.Action("AddWinningBidsLive", "Forms")"><b>Live Auction </b></a></h3>
+            </td>
+        </tr> 
+    </table>
+
+
+</body>
+
+

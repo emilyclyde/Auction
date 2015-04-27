@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Auction.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace Auction.ViewModels
 {
     public class ListVM
     {
-        public List<String> ItemList { get; set; }
+        public List<Item> ItemList { get; set; }
 
         public string Name { get; set; }
 

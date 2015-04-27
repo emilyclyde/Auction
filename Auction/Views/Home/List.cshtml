@@ -2,33 +2,49 @@
 @{
     ViewBag.Title = "Live Auction List";
 }
-<body style="background-color:rgb(0, 100, 150); text-align:center">
-  
-    <table>
+<body id="BackgroundGrad2">
+
+    <table id="IndexTable">
         <tr>
-            <td>
-                <img src="~/Images/Logos Academy Logo.jpg" alt="Opps! Logo here" width="300" height="142" style="border-radius: 15px; border-style: solid; border-color:lightblue; border-width:5px">            @*displays picture*@
+            <td id="LogoCell">
+                <img src="~/Images/Logos Academy Logo4.png" alt="Opps! Logo here" width="350" height="146">
             </td>
 
-            <td style="padding:50px; text-align:center">
-                <h2 style="color:goldenrod"><b>Annual Benefit Auction</b></h2>
+            <td class="TableDataIndex2">
+                <h1 id="title"><b>Annual Benefit Auction</b></h1>
+                <h2 id="Theme">Live Auction Items</h2>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div >
+                    <h4 id="Label2">Select an item to view details</h4>
+                </div>
+            </td>
+            @*<td>
+                    <h4 id="Date">Current as of @Html.DisplayFor(model => model.CurrentDate)</h4>
+                </td>*@
+        </tr>
+        @foreach (var i in Model.ItemList)
+        {
+            <tr>
+                <td colspan="2">
+                    <div id="ListButtonDiv">
+                        <h3 id="ListButton"><a href="@Url.Action("Detail", "Home",new { id = i.ID })"><b>@i.Title</b></a></h3>
+                    </div>
+                </td>
+            </tr>
+        }
+        <tr>
+            <td colspan="2">
+                <h3 id="Label2" >More items will be added as they come in.</h3>
             </td>
         </tr>
     </table>
-    <table>
-        <tr>
-            <td>
-                <span>Select an item to view details</span>
-            </td>
-            <td>
-                <span>@Html.DisplayFor(model => model.CurrentDate)</span>
-            </td>
-        </tr>
-    </table>
-
-
-
-
-
-
 </body>
+<footer class="AuctionFooter">
+    <div>
+        <h5> For more information, or to donate items, please contact:</h5>
+        <h5>@Html.DisplayFor(model => model.Name)  @Html.DisplayFor(model => model.PhoneNumber)  or email:  @Html.DisplayFor(model => model.Email) </h5>
+    </div>
+</footer>

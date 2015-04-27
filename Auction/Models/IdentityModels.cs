@@ -21,7 +21,7 @@ namespace Auction.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("AuctionContext", throwIfV1Schema: false)
         {
         }
 
