@@ -20,7 +20,18 @@
         </tr>
         <tr>
             <td colspan="2">
-                <img src="@Url.Content("~/Images/Items/"+ Model.ImageURL)" alt=" opps!" width="500" id="DetailImage">            @*displays picture*@
+             @if (File.Exists(Server.MapPath("~/Images/Items/"
+                                    + Html.DisplayFor(modelItem => Model.ImageURL))))
+                    {
+                        <img alt="" src="~/Images/Items/@Html.DisplayFor(modelItem   => Model.ImageURL)" alt=" opps!" width="500" id="DetailImage">
+
+                    }
+                    else
+                    {
+                        <img alt="" src="~/Images/Items/default.png" alt=" opps!" width="500" id="DetailImage">
+                    }
+                
+    @*displays picture*@
             </td>
         </tr>
         <tr>
