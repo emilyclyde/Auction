@@ -30,10 +30,10 @@ namespace Auction.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<Auction.Models.Bidder> Bidders { get; set; }
+        //public System.Data.Entity.DbSet<Auction.Models.Bidder> Bidders { get; set; }
 
-        public System.Data.Entity.DbSet<Auction.Models.AuctionType> AuctionTypes { get; set; }
+        //public System.Data.Entity.DbSet<Auction.Models.AuctionType> AuctionTypes { get; set; }
 
-        public System.Data.Entity.DbSet<Auction.Models.Item> Items { get; set; }
+        //public System.Data.Entity.DbSet<Auction.Models.Item> Items { get; set; }
     }
 }
