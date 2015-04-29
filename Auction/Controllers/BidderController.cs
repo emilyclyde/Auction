@@ -54,19 +54,19 @@ namespace Auction.Controllers
        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,BidderName,BidderNumber,BidderContact")] Bidder bidder)
+        public ActionResult Create([Bind(Include = "ID,BidderName,BidderNumber,BidderContact, MultiItems")] Bidder bidder)
         {
             if (ModelState.IsValid)
             {
-                //foreach (var mi in db.MultipleBidderItems)
-                //{
-                //    var IMBI =new IndividualMultiBidderItem();
-                //    IMBI.Title = mi.Title;
-                //    bidder.MultiItems.Add(IMBI);
-                //}
+                foreach (var mi in db.MultipleBidderItems)
+                {
+                    var IMBI = new IndividualMultiBidderItem();
+                    IMBI.Title = mi.Title;
+                    bidder.MultiItems.Add(IMBI);
+                }
                 db.Bidders.Add(bidder);
                 db.SaveChanges();
-                return RedirectToAction("NewBidder", bidder );
+                return RedirectToAction("NewBidder", bidder);
             }
             //return RedirectToAction("Index");
           return View(bidder);
