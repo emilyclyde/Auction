@@ -186,6 +186,7 @@
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Donor.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\IndividualMultiBidderItem.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MultipleBidderItem.cs" />
@@ -209,8 +210,17 @@
     <Content Include="Images\goatbaby.jpg" />
     <Content Include="Images\Items1.jpg" />
     <Content Include="Images\Items\1.jpg" />
+    <Content Include="Images\Items\CedarCreekWeekendGetaway.jpg" />
+    <Content Include="Images\Items\default.png" />
+    <Content Include="Images\Items\FlowersforaYear.jpg" />
     <Content Include="Images\Items\goat.jpg" />
+    <Content Include="Images\Items\HoodoSkiTrip.jpg" />
+    <Content Include="Images\Items\Manacure.jpg" />
+    <Content Include="Images\Items\MovieNightBasket.jpg" />
+    <Content Include="Images\Items\OregonCoastSalmonfishing.jpg" />
+    <Content Include="Images\Items\SkateWorld.jpg" />
     <Content Include="Images\Items\test.jpg" />
+    <Content Include="Images\Items\thisisatesttitlewithalotofspaces.jpg" />
     <Content Include="Images\Logos Academy Logo.jpg" />
     <Content Include="Images\Logos Academy Logo3.png" />
     <Content Include="Images\Logos Academy Logo4.png" />
