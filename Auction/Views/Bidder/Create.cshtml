@@ -9,6 +9,7 @@
     {
         @Html.AntiForgeryToken()
         @*@Html.HiddenFor(model => model.ID)*@
+        @Html.HiddenFor(model => model.MultiItems)
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <table id="IndexTable">
             <tr>
