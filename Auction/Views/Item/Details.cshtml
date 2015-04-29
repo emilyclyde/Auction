@@ -9,7 +9,20 @@
 <div>
     <h4>Item</h4>
     <hr />
-    <img src="@Url.Content("~/Images/Items/"+ Model.ImageURL)" width="700px" alt="No Image" />
+    <div id="imgUpload" style="float: right;width: 40%;">
+
+        @if (File.Exists(Server.MapPath("~/Images/Items/"
+                                    + Html.DisplayFor(modelItem => Model.ImageURL))))
+        {
+            <img alt="" src="~/Images/Items/@Html.DisplayFor(modelItem   => Model.ImageURL)" width="400px" />
+
+        }
+        else
+        {
+            <img alt="" src="~/Images/Items/default.png" width="400px" />
+        }
+    </div>
+    <!--Image upload code. Donot Delete. Donot Modify-->
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Title)

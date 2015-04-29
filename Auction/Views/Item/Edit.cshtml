@@ -78,7 +78,11 @@
         }
         else
         {
-
+            <img alt="" src="~/Images/Items/default.png" width="300px" />
+            <br/>
+            <p>
+               This is a defualt image. If you would like to upload an image, use the form below.
+            </p>
             <label for="photo">Upload a Photo:</label>
             <input id="photo" type="file" name="photo" />
             <input type="hidden" name="image" value="@Html.DisplayFor(modelItem   => Model.ImageURL)" />

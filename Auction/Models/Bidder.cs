@@ -4,11 +4,13 @@ using System.Web;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
+using Auction.DAL;
 
 namespace Auction.Models
 {
   public class Bidder
   {
+      AuctionContext db = new AuctionContext();
     
     public int ID { get; set; }
 
@@ -28,5 +30,8 @@ namespace Auction.Models
     }
     [Display(Name = "Bidder Contact")]
     public string BidderContact { get; set; }
+
+
+    //public List<IndividualMultiBidderItem> MultiItems { get; set;}
   }
 }

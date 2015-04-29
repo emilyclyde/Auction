@@ -58,6 +58,12 @@ namespace Auction.Controllers
         {
             if (ModelState.IsValid)
             {
+                //foreach (var mi in db.MultipleBidderItems)
+                //{
+                //    var IMBI =new IndividualMultiBidderItem();
+                //    IMBI.Title = mi.Title;
+                //    bidder.MultiItems.Add(IMBI);
+                //}
                 db.Bidders.Add(bidder);
                 db.SaveChanges();
                 return RedirectToAction("NewBidder", bidder );

@@ -10,6 +10,22 @@
 <div>
     <h4>Item</h4>
     <hr />
+    <div>
+
+        @if (File.Exists(Server.MapPath("~/Images/Items/"
+                                    + Html.DisplayFor(modelItem => Model.ImageURL))))
+        {
+            <img alt="" src="~/Images/Items/@Html.DisplayFor(modelItem   => Model.ImageURL)" width="200px" />
+
+        }
+        else
+        {
+            <img alt="" src="~/Images/Items/default.png" width="200px" />
+        }
+    </div>
+    <!--Image upload code. Donot Delete. Donot Modify-->
+    
+
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Title)
@@ -25,14 +41,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.Description)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ImageURL)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ImageURL)
         </dd>
         
         <dt>

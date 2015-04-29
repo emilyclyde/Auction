@@ -37,6 +37,7 @@ namespace Auction.Models
 
     [Display(Name = "Winning Bidder")]
     public int? WinningBidder { get; set; }
+
     [Display(Name = "Bid Amount")]
     public decimal? BidAmount { get; set; }
 
