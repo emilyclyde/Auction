@@ -3,43 +3,52 @@
 @{
     ViewBag.Title = "Index";
 }
+<body id="BackgroundGrad1">
+    <h2 class="CrudTitle">Bidders</h2>
 
-<h2>Index</h2>
+    <p id="ListButton2">
+        @Html.ActionLink("Add a New Bidder", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th class="TableDataIndex4">
+                @Html.DisplayNameFor(model => model.BidderName)
+            </th>
+            <th class="TableDataIndex4">
+                @Html.DisplayNameFor(model => model.BidderNumber)
+            </th>
+            <th class="TableDataIndex4">
+                @Html.DisplayNameFor(model => model.BidderContact)
+            </th>
+            <th></th>
+        </tr>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.BidderName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BidderNumber)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BidderContact)
-        </th>
-        <th></th>
-    </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BidderName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BidderNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BidderContact)
+                </td>
+                <td class="TableDataIndex4">
+                    <table class="TableDataIndex5" >
+                        <tr>
+                            <td class="TableDataIndex5" >
+                                <div class="ButtonDiv1" >@Html.ActionLink("Edit", "Edit", new { id = item.ID }) </div>
+                            </td>
+                            <td class="TableDataIndex5" >
+                                <div class="ButtonDiv1">@Html.ActionLink("Delete", "Delete", new { id = item.ID }) </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.BidderName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BidderNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BidderContact)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
-}
-
-</table>
+    </table>
+</body>
