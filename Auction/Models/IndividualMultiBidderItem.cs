@@ -12,6 +12,8 @@ namespace Auction.Models
         public String Title { get; set; }
     
         public decimal? BidAmount { get; set; }
+
+        public int Bidder_ID { get; set; }
     }
 
    
