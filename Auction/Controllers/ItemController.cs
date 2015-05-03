@@ -105,6 +105,8 @@ namespace Auction.Controllers
             , string image,
         HttpPostedFileBase photo)
         {
+            bool bidderIsError = true;    //Flag to check for a valid bidder
+
             string path = HttpContext.Server.MapPath("~/Images/Items/" + image);
             
             if (photo != null)
@@ -112,6 +114,14 @@ namespace Auction.Controllers
             // orriginal code
             if (ModelState.IsValid)
             {
+                foreach (var b in db.Bidders)
+                    if (b.BidderNumber == item.WinningBidder)
+                       bidderIsError = false;
+
+                if (bidderIsError)
+                    item.WinningBidder = -1;
+
+                db.Entry(item).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
