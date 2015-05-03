@@ -15,12 +15,14 @@ namespace Auction.Controllers
     {
         private AuctionContext db = new AuctionContext();
 
-        // GET: MultipleBidderItem
+// Index *****************************************************************************************************************
         public ActionResult Index()
         {
             return View(db.MultipleBidderItems.ToList());
         }
 
+
+// Details ****************************************************************************************************************
         // GET: MultipleBidderItem/Details/5
         public ActionResult Details(int? id)
         {
@@ -36,21 +38,24 @@ namespace Auction.Controllers
             return View(multipleBidderItem);
         }
 
-        // GET: MultipleBidderItem/Create
+
+
+// Create ******************************************************************************************************************
+        // GET *************************************************************************************************************
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: MultipleBidderItem/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST ***********************************************************************************************************
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Title")] MultipleBidderItem multipleBidderItem)
         {
             if (ModelState.IsValid)
             {
+                if(multipleBidderItem.Title=="" || multipleBidderItem.Title == null || multipleBidderItem.Title ==" ")
+                    return RedirectToAction("Index");
                 db.MultipleBidderItems.Add(multipleBidderItem);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -59,7 +64,10 @@ namespace Auction.Controllers
             return View(multipleBidderItem);
         }
 
-        // GET: MultipleBidderItem/Edit/5
+
+
+// Edit ******************************************************************************************************************
+        // GET ***********************************************************************************************************
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -74,15 +82,16 @@ namespace Auction.Controllers
             return View(multipleBidderItem);
         }
 
-        // POST: MultipleBidderItem/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST ***********************************************************************************************************
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,Title")] MultipleBidderItem multipleBidderItem)
         {
             if (ModelState.IsValid)
             {
+                if (multipleBidderItem.Title == "" || multipleBidderItem.Title == null || multipleBidderItem.Title == " ")
+                    return RedirectToAction("Index");
+
                 db.Entry(multipleBidderItem).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -90,7 +99,10 @@ namespace Auction.Controllers
             return View(multipleBidderItem);
         }
 
-        // GET: MultipleBidderItem/Delete/5
+
+
+// Delete ******************************************************************************************************************
+        // GET**************************************************************************************************************
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -105,7 +117,7 @@ namespace Auction.Controllers
             return View(multipleBidderItem);
         }
 
-        // POST: MultipleBidderItem/Delete/5
+        // POST*************************************************************************************************************
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
@@ -116,6 +128,9 @@ namespace Auction.Controllers
             return RedirectToAction("Index");
         }
 
+
+
+// Dispose *****************************************************************************************************************
         protected override void Dispose(bool disposing)
         {
             if (disposing)
