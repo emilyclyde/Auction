@@ -59,7 +59,11 @@ body {
     color: #990033;
     text-shadow: 2px 2px white;
 }
-
+#BidNumberError {
+    font-size: 1em;
+    color: #990033;
+    
+}
 .ButtonDiv1 {
     background-color: lightcyan;
     border-radius: 3px;
