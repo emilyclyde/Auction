@@ -3,31 +3,31 @@
 @{
     ViewBag.Title = "Index";
 }
+<body id="BackgroundGrad1">
+    <h2 class="CrudTitle">Multiple Bidder Items</h2>
 
-<h2>Index</h2>
+    <p id="ListButton6">
+        @Html.ActionLink("Add a new  Multiple Bidder Item", "Create")
+    </p>
+       <table class="TableIndex2">
+        
+        @foreach (var item in Model)
+        {
+            <tr class="TableIndex3">
+                <td class="TableDataIndex2">
+                    <h4> @Html.DisplayFor(modelItem => item.Title)</h4>
+                </td>
+                <td>
+                    <h5 id="ListButton3">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+                    </h5>
+                    <h6 id="ListButton3">
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                    </h6>
+                </td>
+            </tr>
+        }
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th></th>
-    </tr>
+    </table>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
-}
-
-</table>
+</body>
