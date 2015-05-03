@@ -56,16 +56,23 @@ namespace Auction.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,BidderName,BidderNumber,BidderContact, MultiItems")] Bidder bidder)
         {
+            int newID = 0;
             if (ModelState.IsValid)
             {
+                foreach(var b in db.Bidders )   //determines what the next auto generated Id is going to be
+                    if (b.ID > newID)
+                        newID = b.ID;
+          
                 foreach (var mi in db.MultipleBidderItems)
                 {
                     var IMBI = new IndividualMultiBidderItem();
                     IMBI.Title = mi.Title;
+                    IMBI.Bidder_ID = newID + 1;
                     bidder.MultiItems.Add(IMBI);
                 }
                 db.Bidders.Add(bidder);
                 db.SaveChanges();
+
                 return RedirectToAction("NewBidder", bidder);
             }
             //return RedirectToAction("Index");
@@ -124,6 +131,14 @@ namespace Auction.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            foreach (var i in db.IndividualMultiBidderItems)            //remove the all individualMultiBidderItems associated with this bidder ID  for ref integrety 
+            {
+                if (i.Bidder_ID == id)
+                {
+                    db.IndividualMultiBidderItems.Remove(i);
+                }
+            }
+
             Bidder bidder = db.Bidders.Find(id);
             db.Bidders.Remove(bidder);
             db.SaveChanges();
