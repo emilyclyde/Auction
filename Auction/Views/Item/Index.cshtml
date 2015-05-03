@@ -68,17 +68,24 @@
                 </td>
                 <!--Show Image in list-->
                 <td>
-                    @if(item.AuctionType == 1)
+                    @if (item.AuctionType == 1)
                     {
                         <h5>Live</h5>
                     }
-                    @if(item.AuctionType == 2)
+                    @if (item.AuctionType == 2)
                     {
                         <h5> Silent</h5>
                     }
                 </td>
                 <td>
-                    <h5><b>@Html.DisplayFor(modelItem => item.WinningBidder)</b></h5>
+                    @if (item.WinningBidder == -1)
+                    {
+                        <h5 id="BidNumberError"><b> Ivalid Bidder Number </b></h5>
+                    }
+                    else
+                    {
+                        <h5><b>@Html.DisplayFor(modelItem => item.WinningBidder)</b></h5>
+                    }
                 </td>
                 <td>
                     <h5><b> @Html.DisplayFor(modelItem => item.BidAmount)</b></h5>
@@ -90,7 +97,7 @@
                     <p id="ListButton3">
                         @Html.ActionLink("Delete", "Delete", new { id = item.ID })
                     </p>
-</td>
+                </td>
             </tr>
         }
 
