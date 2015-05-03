@@ -40,6 +40,7 @@ namespace Auction.Controllers
 
 
 
+
 // Create ******************************************************************************************************************
         // GET *************************************************************************************************************
         public ActionResult Create()
@@ -60,7 +61,6 @@ namespace Auction.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             return View(multipleBidderItem);
         }
 
