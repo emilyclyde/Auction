@@ -188,6 +188,46 @@ important {
     padding: 5px;
     color: rgb(2,78,127);
 }
+
+#ListButton4 {
+    font-size: 1em;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80px;
+    border-radius: 5px;
+    background-color: lightblue;
+    text-align: center;
+    padding: 5px;
+    color: rgb(2,78,127);
+}
+#ListButton5 {
+    font-size: 1.2em;
+    margin-top: 40px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    border-radius: 5px;
+    background-color: lightblue;
+    text-align: center;
+    padding: 5px;
+    color: rgb(2,78,127);
+}
+#ListButton6 {
+    font-size: 1.2em;
+    margin-top: 40px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    border-radius: 5px;
+    background-color: lightblue;
+    text-align: center;
+    padding: 5px;
+    color: rgb(2,78,127);
+}
 #ListButtonDiv {
     width: 500px;
     margin-left: auto;
@@ -267,12 +307,20 @@ important {
      text-align:right;
      
 }
-.TableDataIndex8{
-    padding: 5px 5px 0px 25px ;
-    
-    
+.TableDataIndex8 {
+    padding: 5px 5px 0px 25px;
 }
-
+.TableIndex2 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:30px;
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid #dddddd;
+}
+.TableIndex3 {
+    border-top: 1px solid #dddddd;
+}
 #Times {
     font-style: normal;
     color: lightblue;
