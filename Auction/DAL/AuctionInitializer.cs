@@ -7,42 +7,42 @@ using Auction.Models;
 
 namespace Auction.DAL
 {
-  public class AuctionInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<AuctionContext>
-  //public class AuctionInitializer : System.Data.Entity.DropCreateDatabaseAlways<AuctionContext>     
-  {
-    protected override void Seed(AuctionContext context)
+    public class AuctionInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<AuctionContext>
+    //public class AuctionInitializer : System.Data.Entity.DropCreateDatabaseAlways<AuctionContext>     
     {
-      var auctiondetails = new List<AuctionDetail> 
+        protected override void Seed(AuctionContext context)
+        {
+            var auctiondetails = new List<AuctionDetail> 
       {
         new AuctionDetail{ID=1, Theme="Polynesian Paradise", Date="May 23, 2015", LocationName = "Emanuel Baptist Church", LocationAddress = "3050 Game Farm Rd Springfield, OR",
         Time1 = "Doors open at 5:30", Time2 = "Buffet Dinner at 6:30", Time3 = "Live Auction at 7:00",DoorCost = "$20.00", EarlyCost = "$15.00", EarlyTicketDate = "May 15, 2015"}, 
                 
       };
 
-      auctiondetails.ForEach(d => context.AuctionDetails.Add(d));
-      context.SaveChanges();
+            auctiondetails.ForEach(d => context.AuctionDetails.Add(d));
+            context.SaveChanges();
 
-      var contacts = new List<Contact>
+            var contacts = new List<Contact>
       {
         new Contact{ID= 1,Name = "Debra Norland", Email = "logosacademymusic@gmail.com", PhoneNumber = "(541)747-0702"},
                 
       };
 
-      contacts.ForEach(c => context.Contacts.Add(c));
-      context.SaveChanges();
+            contacts.ForEach(c => context.Contacts.Add(c));
+            context.SaveChanges();
 
 
-      var auctiontypes = new List<AuctionType>
+            var auctiontypes = new List<AuctionType>
         {
           new AuctionType{ID=1, Name="Live"},
           new AuctionType{ID=2, Name="Silent"},
           new AuctionType{ID=3, Name="Multi-Bidder"},
         };
 
-      auctiontypes.ForEach(t => context.AuctionTypes.Add(t));
-      context.SaveChanges();
+            auctiontypes.ForEach(t => context.AuctionTypes.Add(t));
+            context.SaveChanges();
 
-      var bidders = new List<Bidder>
+            var bidders = new List<Bidder>
         {
           new Bidder{ID=1, BidderName = "Rob and Karina Callahan", BidderContact="(541)736-0300"},
           new Bidder{ID=2, BidderName = "Erica Dundee", BidderContact="EricaD@gmail.com"},
@@ -51,11 +51,11 @@ namespace Auction.DAL
           new Bidder{ID=5, BidderName = "Rhoda Byke", BidderContact="(206)733-8805"},
         };
 
-      bidders.ForEach(b => context.Bidders.Add(b));
-      context.SaveChanges();
+            bidders.ForEach(b => context.Bidders.Add(b));
+            context.SaveChanges();
 
 
-      var donors = new List<Donor>
+            var donors = new List<Donor>
         {
           new Donor{ID=1, Name="Phil Night", Address="2800 Highview Dr.",  City="Beaverton", State="OR", Zip="97443", Email="MrPhil@Nike.com", Items="Autographed Duck BasketBall", Value=150 },
           new Donor{ID=2, Name="Adam Tubbs", Address="19034 West B st.",  City="Springfield", State="OR", Zip="97478", Email="ATubbs54@yahoo,com", Items="Rafting trip", Value=400 },
@@ -64,10 +64,10 @@ namespace Auction.DAL
         
         };
 
-      donors.ForEach(o => context.Donors.Add(o));
-      context.SaveChanges();
+            donors.ForEach(o => context.Donors.Add(o));
+            context.SaveChanges();
 
-      var items = new List<Item>
+            var items = new List<Item>
         {
           new Item{ID=1, AuctionType=2, Title="SkateWorld", Description="Addmission for two to Skate World"},
           new Item{ID=2, AuctionType=2, Title="Movie Night Basket", Description="5 Family DVDs, Popcorn, Cookie Mix and Disney Blanket" },
@@ -87,19 +87,45 @@ namespace Auction.DAL
           new Item{ID=0, AuctionType=2, Title="Quickie Lube", Description="One standard Oil, Lube and filter change at Quickie Lube"},
         };
 
-      items.ForEach(i => context.Items.Add(i));
-      context.SaveChanges();
+            items.ForEach(i => context.Items.Add(i));
+            context.SaveChanges();
 
 
-        var multiplebidderitems = new List<MultipleBidderItem>
+            var multiplebidderitems = new List<MultipleBidderItem>
         {
           new MultipleBidderItem{ID=1, Title="Raise the Paddle"},
           new MultipleBidderItem{ID=2, Title="Dessert Dash"},
           new MultipleBidderItem{ID=3, Title="TV Raffle"},
         };
-        multiplebidderitems.ForEach(m => context.MultipleBidderItems.Add(m));
-        context.SaveChanges();
-      }
+            multiplebidderitems.ForEach(m => context.MultipleBidderItems.Add(m));
+            context.SaveChanges();
+
+            var IMBI = new List<IndividualMultiBidderItem>
+            {
+                new IndividualMultiBidderItem {ID=1, Bidder_ID=1, Title="Raise the Paddle", BidAmount = null},
+                new IndividualMultiBidderItem {ID=2, Bidder_ID=1, Title="Dessert Dash", BidAmount = null},
+                new IndividualMultiBidderItem {ID=3, Bidder_ID=1, Title="TV Raffle", BidAmount = null},
+                new IndividualMultiBidderItem {ID=4, Bidder_ID=2, Title="Raise the Paddle", BidAmount = null},
+                new IndividualMultiBidderItem {ID=5, Bidder_ID=2, Title="Dessert Dash", BidAmount = null},
+                new IndividualMultiBidderItem {ID=6, Bidder_ID=2, Title="TV Raffle", BidAmount = null},
+                new IndividualMultiBidderItem {ID=7, Bidder_ID=3, Title="Raise the Paddle", BidAmount = null},
+                new IndividualMultiBidderItem {ID=8, Bidder_ID=3, Title="Dessert Dash", BidAmount = null},
+                new IndividualMultiBidderItem {ID=9, Bidder_ID=3, Title="TV Raffle", BidAmount = null},
+                new IndividualMultiBidderItem {ID=10, Bidder_ID=4, Title="Raise the Paddle", BidAmount = null},
+                new IndividualMultiBidderItem {ID=11, Bidder_ID=4, Title="Dessert Dash", BidAmount = null},
+                new IndividualMultiBidderItem {ID=12, Bidder_ID=4, Title="TV Raffle", BidAmount = null},
+                new IndividualMultiBidderItem {ID=13, Bidder_ID=5, Title="Raise the Paddle", BidAmount = null},
+                new IndividualMultiBidderItem {ID=14, Bidder_ID=5, Title="Dessert Dash", BidAmount = null},
+                new IndividualMultiBidderItem {ID=15, Bidder_ID=5, Title="TV Raffle", BidAmount = null},
+            };
+
+            IMBI.ForEach(i => context.IndividualMultiBidderItems.Add(i));
+            context.SaveChanges();
+
+
+        }
+
+
     }
-  }
+}
 
