@@ -57,12 +57,35 @@ namespace Auction.Controllers
             {
                 if(multipleBidderItem.Title=="" || multipleBidderItem.Title == null || multipleBidderItem.Title ==" ")
                     return RedirectToAction("Index");
-                db.MultipleBidderItems.Add(multipleBidderItem);
+
+
+
+
+
+                // in work please do not delete
+                //Add the new Multi Bidder Item to each Bidder already in the database
+                
+                //foreach (var b in db.Bidders)
+                //{
+                //    var IMBI = new IndividualMultiBidderItem();
+                //    IMBI.Title = multipleBidderItem.Title;
+                //    IMBI.Bidder_ID = b.BidderNumber;
+                //    b.MultiItems.Add(IMBI);
+                //    db.Entry(b).State = EntityState.Modified;
+                //}
+                
+                 db.MultipleBidderItems.Add(multipleBidderItem);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(multipleBidderItem);
         }
+
+
+
+
+
+
 
 
 
