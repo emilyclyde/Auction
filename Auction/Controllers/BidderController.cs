@@ -67,7 +67,7 @@ namespace Auction.Controllers
                 {
                     var IMBI = new IndividualMultiBidderItem();
                     IMBI.Title = mi.Title;
-                    IMBI.Bidder_ID = newID + 1;
+                    IMBI.Bidder_ID = newID + 101;
                     bidder.MultiItems.Add(IMBI);
                 }
                 db.Bidders.Add(bidder);
