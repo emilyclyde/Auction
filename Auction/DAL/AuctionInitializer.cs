@@ -102,21 +102,21 @@ namespace Auction.DAL
 
             var IMBI = new List<IndividualMultiBidderItem>
             {
-                new IndividualMultiBidderItem {ID=1, Bidder_ID=1, Title="Raise the Paddle", BidAmount = null},
-                new IndividualMultiBidderItem {ID=2, Bidder_ID=1, Title="Dessert Dash", BidAmount = null},
-                new IndividualMultiBidderItem {ID=3, Bidder_ID=1, Title="TV Raffle", BidAmount = null},
-                new IndividualMultiBidderItem {ID=4, Bidder_ID=2, Title="Raise the Paddle", BidAmount = null},
-                new IndividualMultiBidderItem {ID=5, Bidder_ID=2, Title="Dessert Dash", BidAmount = null},
-                new IndividualMultiBidderItem {ID=6, Bidder_ID=2, Title="TV Raffle", BidAmount = null},
-                new IndividualMultiBidderItem {ID=7, Bidder_ID=3, Title="Raise the Paddle", BidAmount = null},
-                new IndividualMultiBidderItem {ID=8, Bidder_ID=3, Title="Dessert Dash", BidAmount = null},
-                new IndividualMultiBidderItem {ID=9, Bidder_ID=3, Title="TV Raffle", BidAmount = null},
-                new IndividualMultiBidderItem {ID=10, Bidder_ID=4, Title="Raise the Paddle", BidAmount = null},
-                new IndividualMultiBidderItem {ID=11, Bidder_ID=4, Title="Dessert Dash", BidAmount = null},
-                new IndividualMultiBidderItem {ID=12, Bidder_ID=4, Title="TV Raffle", BidAmount = null},
-                new IndividualMultiBidderItem {ID=13, Bidder_ID=5, Title="Raise the Paddle", BidAmount = null},
-                new IndividualMultiBidderItem {ID=14, Bidder_ID=5, Title="Dessert Dash", BidAmount = null},
-                new IndividualMultiBidderItem {ID=15, Bidder_ID=5, Title="TV Raffle", BidAmount = null},
+                new IndividualMultiBidderItem {ID=1, Bidder_ID=101, Title="Raise the Paddle", BidAmount = null},
+                new IndividualMultiBidderItem {ID=2, Bidder_ID=101, Title="Dessert Dash", BidAmount = null},
+                new IndividualMultiBidderItem {ID=3, Bidder_ID=101, Title="TV Raffle", BidAmount = null},
+                new IndividualMultiBidderItem {ID=4, Bidder_ID=102, Title="Raise the Paddle", BidAmount = null},
+                new IndividualMultiBidderItem {ID=5, Bidder_ID=102, Title="Dessert Dash", BidAmount = null},
+                new IndividualMultiBidderItem {ID=6, Bidder_ID=102, Title="TV Raffle", BidAmount = null},
+                new IndividualMultiBidderItem {ID=7, Bidder_ID=103, Title="Raise the Paddle", BidAmount = null},
+                new IndividualMultiBidderItem {ID=8, Bidder_ID=103, Title="Dessert Dash", BidAmount = null},
+                new IndividualMultiBidderItem {ID=9, Bidder_ID=103, Title="TV Raffle", BidAmount = null},
+                new IndividualMultiBidderItem {ID=10, Bidder_ID=104, Title="Raise the Paddle", BidAmount = null},
+                new IndividualMultiBidderItem {ID=11, Bidder_ID=104, Title="Dessert Dash", BidAmount = null},
+                new IndividualMultiBidderItem {ID=12, Bidder_ID=104, Title="TV Raffle", BidAmount = null},
+                new IndividualMultiBidderItem {ID=13, Bidder_ID=105, Title="Raise the Paddle", BidAmount = null},
+                new IndividualMultiBidderItem {ID=14, Bidder_ID=105, Title="Dessert Dash", BidAmount = null},
+                new IndividualMultiBidderItem {ID=15, Bidder_ID=105, Title="TV Raffle", BidAmount = null},
             };
 
             IMBI.ForEach(i => context.IndividualMultiBidderItems.Add(i));
