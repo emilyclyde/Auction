@@ -251,7 +251,11 @@ important {
     font-weight: bold;
     text-align: right;
 }
-
+.formItem2 {
+    font-weight: bold;
+    text-align: right;
+    padding-right:5px;
+}
 #Label2 {
     margin-top: 30px;
     text-align: center;
