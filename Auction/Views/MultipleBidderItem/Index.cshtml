@@ -9,8 +9,9 @@
     <p id="ListButton6">
         @Html.ActionLink("Add a new  Multiple Bidder Item", "Create")
     </p>
-       <table class="TableIndex2">
-        
+
+    <table class="TableIndex2">
+
         @foreach (var item in Model)
         {
             <tr class="TableIndex3">
@@ -29,5 +30,8 @@
         }
 
     </table>
+    <p id="ListButton6">
+        @Html.ActionLink("Back to Forms List" , "Index", "Forms")
+    </p>
 
 </body>

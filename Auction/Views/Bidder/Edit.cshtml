@@ -17,44 +17,56 @@
             @*@Html.HiddenFor(model => model.ID)*@
             <table id="IndexTable">
                 <tr>
-                    <td class ="TableDataIndex7">
+                    <td class="TableDataIndex7">
                         <h4>Name</h4>
                     </td>
                     <td class="TableDataIndex8">
-                        @*<div class="form-group">*@
+                        <div class="form-group">
                             <div class="col-md-10">
                                 @Html.EditorFor(model => model.BidderName, new { htmlAttributes = new { @class = "form-control" } })
                                 @Html.ValidationMessageFor(model => model.BidderName, "", new { @class = "text-danger" })
                             </div>
-                        @*</div>*@
+                        </div>
                     </td>
                 </tr>
                 <tr>
                     <td class="TableDataIndex7">
-                        <h4>Contact</h4>
+                        <h4>Contact 1</h4>
                     </td>
                     <td class="TableDataIndex8">
-                        @*<div class="form-group">*@
+                        <div class="form-group">
                             <div class="col-md-10">
-                                 @Html.EditorFor(model => model.BidderContact, new { htmlAttributes = new { @class = "form-control" } })
-                                 @Html.ValidationMessageFor(model => model.BidderContact, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.BidderContact1, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.BidderContact1, "", new { @class = "text-danger" })
                             </div>
-                        @*</div>*@
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableDataIndex7">
+                        <h4>Contact 2</h4>
+                    </td>
+                    <td class="TableDataIndex8">
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.BidderContact2, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.BidderContact2, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2" class="TableDataIndex1">
-                            <div class="col-md-offset-2 col-md-10">
-                                <input type="submit" value="Save" class="btn btn-default" />
-                                <span class="btn btn-default"> @Html.ActionLink("Back to Bidder List", "Index")</span>
-                            </div>
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Save" class="btn btn-default" />
+                            <span class="btn btn-default"> @Html.ActionLink("Back to Forms List", "Index", "Forms")</span>
+                        </div>
                     </td>
                 </tr>
             </table>
         </div>
     }
-
-
+    
 </body>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
