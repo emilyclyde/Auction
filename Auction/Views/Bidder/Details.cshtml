@@ -3,40 +3,46 @@
 @{
     ViewBag.Title = "Details";
 }
+<body id="BackgroundGrad1">
+    <h2 class="CrudTitle">Bidder Details</h2>
 
-<h2>Details</h2>
+    <div>
 
-<div>
-    <h4>Bidder</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.BidderName)
-        </dt>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.BidderName)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.BidderName)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.BidderName)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.BidderNumber)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.BidderNumber)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.BidderNumber)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.BidderContact)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.BidderNumber)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.BidderContact1)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.BidderContact)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.BidderContact1)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.BidderContact2)
+            </dt>
 
+            <dd>
+                @Html.DisplayFor(model => model.BidderContact2)
+            </dd>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
