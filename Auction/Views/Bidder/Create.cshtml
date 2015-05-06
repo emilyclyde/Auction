@@ -32,9 +32,23 @@
                     <h6>Phone or Email</h6>
                 </td>
                 <td class="TableDataIndex2">
-                    @Html.EditorFor(model => model.BidderContact, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.BidderContact, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.BidderContact1, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.BidderContact1, "", new { @class = "text-danger" })
                 </td>
+
+
+            </tr>
+            <tr>
+                <td>
+                    <h4> Bidder Contact info</h4>
+                    <h6>Phone or Email</h6>
+                </td>
+                <td class="TableDataIndex2">
+                    @Html.EditorFor(model => model.BidderContact2, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.BidderContact2, "", new { @class = "text-danger" })
+                </td>
+
+
             </tr>
             <tr>
                 <td colspan ="2" class="TableDataIndex2">

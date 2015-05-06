@@ -44,11 +44,11 @@ namespace Auction.DAL
 
             var bidders = new List<Bidder>
         {
-          new Bidder{ID=1, BidderName = "Rob and Karina Callahan", BidderContact="(541)736-0300"},
-          new Bidder{ID=2, BidderName = "Erica Dundee", BidderContact="EricaD@gmail.com"},
-          new Bidder{ID=3, BidderName = "Keith and Laurita Blunk", BidderContact="(541)726-6915"},
-          new Bidder{ID=4, BidderName = "Arthur King", BidderContact="Arthur@Camilot.com"},
-          new Bidder{ID=5, BidderName = "Rhoda Byke", BidderContact="(206)733-8805"},
+          new Bidder{ID=1, BidderName = "Rob and Karina Callahan", BidderContact1="(541)736-0300", BidderContact2=""},
+          new Bidder{ID=2, BidderName = "Erica Dundee", BidderContact1="EricaD@gmail.com", BidderContact2=""},
+          new Bidder{ID=3, BidderName = "Keith and Laurita Blunk", BidderContact1="(541)726-6915", BidderContact2=""},
+          new Bidder{ID=4, BidderName = "Arthur King", BidderContact1="Arthur@Camilot.com", BidderContact2=""},
+          new Bidder{ID=5, BidderName = "Rhoda Byke", BidderContact1="(206)733-8805", BidderContact2=""},
         };
 
             bidders.ForEach(b => context.Bidders.Add(b));
