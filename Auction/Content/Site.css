@@ -328,6 +328,9 @@ important {
 .TableIndex3 {
     border-top: 1px solid #dddddd;
 }
+.TableIndex4 {
+    border-style:none !important;
+}
 #Times {
     font-style: normal;
     color: lightblue;

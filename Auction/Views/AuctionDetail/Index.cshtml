@@ -27,21 +27,21 @@
                 </th>
             </tr>
             <tr>
-                <td>
+                <td class="TableIndex4">
                     @Html.DisplayFor(modelItem => item.Theme)
                 </td>
-                <td>
+                <td class="TableIndex4">
                     @Html.DisplayFor(modelItem => item.Date)
                 </td>
-                <td>
+                <td class="TableIndex4">
                     @Html.DisplayFor(modelItem => item.LocationName)
                 </td>
-                <td>
+                <td class="TableIndex4">
                     @Html.DisplayFor(modelItem => item.LocationAddress)
                 </td>
             </tr>
             <tr>
-                <td>
+                <td class="TableIndex4">
                     <br />
                 </td>
             </tr>
@@ -60,22 +60,22 @@
                 </th>
             </tr>
             <tr>
-                <td>
+                <td class="TableIndex4">
                     @Html.DisplayFor(modelItem => item.Time1)
                 </td>
-                <td>
+                <td class="TableIndex4">
                     @Html.DisplayFor(modelItem => item.Time2)
                 </td>
-                <td>
+                <td class="TableIndex4">
                     @Html.DisplayFor(modelItem => item.Time3)
                 </td>
-                <td>
+                <td class="TableIndex4">
                     @Html.DisplayFor(modelItem => item.DoorCost)
                 </td>
             </tr>
             <tr>
-                <td>
-                    <br/>
+                <td class="TableIndex4">
+                    <br />
                 </td>
             </tr>
             <tr>
@@ -86,64 +86,39 @@
                     @Html.DisplayNameFor(model => model.EarlyTicketDate)
                 </th>
                 <th></th>
+                <th></th>
             </tr>
             <tr>
-                <td>
+                <td class="TableIndex4">
                     @Html.DisplayFor(modelItem => item.EarlyCost)
                 </td>
-                <td>
+                <td class="TableIndex4">
                     @Html.DisplayFor(modelItem => item.EarlyTicketDate)
                 </td>
-                <td></td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-                </td>
-
+                <td class="TableIndex4"></td>
+                <td class="TableIndex4"></td>
             </tr>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            
+            <tr>
+                <td colspan="4" class="TableIndex4">
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <span class="btn btn-default"> @Html.ActionLink("Edit", "Edit", new { id = item.ID })</span>
+                            <span class="btn btn-default"> @Html.ActionLink("Delete", "Delete", new { id = item.ID })</span>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+         </table>
 
-            @*@foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Theme)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Date)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.LocationName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.LocationAddress)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Time1)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Time2)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Time3)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.DoorCost)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.EarlyCost)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.EarlyTicketDate)
-                        </td>
-                        <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-                        </td>
-                    </tr>
-                }*@
+    
 
-        </table>
     }
+    
 </body>
