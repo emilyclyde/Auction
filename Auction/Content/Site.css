@@ -23,7 +23,7 @@ h6 {
     font-size: 0.85em;
 }
 
-/*td {border: 1px solid black;}*/
+td {border: 1px solid black;}
 
 
 
@@ -78,7 +78,10 @@ body {
 .CrudDiv {
     color: darkblue;
 }
-
+.CrudDiv1 {
+    color: darkblue;
+    font-size: 1.8em;
+}
 .CrudTitle {
     text-shadow: 2px 2px #000000;
     font-size: 4em;
