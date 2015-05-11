@@ -5,8 +5,13 @@
 }
 
 <body id="BackgroundGrad1">
+
     <h1 class="CrudTitle">Silent Auction</h1>
     <h2 id="Theme">Enter Winning Bids</h2>
+@using (Html.BeginForm("AddWinningBidsSilent", "Forms", FormMethod.Post, new {enctype = "multipart/form-data"}))
+{
+    @Html.AntiForgeryToken()
+
     <table class="table" id="IndexTable">
         <tr>
             <td>
@@ -29,6 +34,7 @@
 
         @foreach (var item in Model)
         {
+
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.ID)
@@ -45,8 +51,8 @@
                 {
                     <td>
                         <div class="col-md-10">
-                            @Html.EditorFor(model => item.WinningBidder, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => item.WinningBidder, "", new { @class = "text-danger" })
+                            @Html.EditorFor(modelItem => item.WinningBidder, new {htmlAttributes = new {@class = "form-control", @id = item.ID}})
+                            @Html.ValidationMessageFor(modelItem => item.WinningBidder, "", new {@class = "text-danger"})
                         </div>
                     </td>
                 }
@@ -61,8 +67,8 @@
                 {
                     <td>
                         <div class="col-md-10">
-                            @Html.EditorFor(model => item.BidAmount, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => item.BidAmount, "", new { @class = "text-danger" })
+                            @Html.EditorFor(modelItem => item.BidAmount, new {htmlAttributes = new {@class = "form-control", @id = item.ID}})
+                            @Html.ValidationMessageFor(modelItem => item.BidAmount, "", new {@class = "text-danger"})
                         </div>
                     </td>
 
@@ -75,16 +81,35 @@
                 }
 
                 <td>
-                    @if((item.BidAmount == null || item.BidAmount == 0)&&(item.WinningBidder == null || item.WinningBidder == 0))
-                    { 
-                    <div> Submit button </div>
+                    @if ((item.BidAmount == null || item.BidAmount == 0) && (item.WinningBidder == null || item.WinningBidder == 0))
+                    {
+                            @*<div> Submit button </div>*@
+                        
+                        
+                        @Html.HiddenFor(modelItem => item.AuctionType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(modelItem => item.AuctionType, "", new { @class = "text-danger" })
+
+    @Html.HiddenFor(modelItem => item.ID, new { htmlAttributes = new { @class = "form-control", } })
+    @Html.ValidationMessageFor(modelItem => item.ID, "", new { @class = "text-danger" })
+    @Html.HiddenFor(modelItem => item.Title, new { htmlAttributes = new { @class = "form-control", } })
+    @Html.ValidationMessageFor(modelItem => item.Title, "", new { @class = "text-danger" })
+    @Html.HiddenFor(modelItem => item.Description, new { htmlAttributes = new { @class = "form-control", } })
+    @Html.ValidationMessageFor(modelItem => item.Description, "", new { @class = "text-danger" })
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Save" class="btn btn-default" id=@item.ID />
+                            </div>
+                        </div>
                     }
                     else
                     {
-                        <div > @Html.ActionLink("Edit", "EditSilentItem",  new { id = item.ID }) </div>
-                    } 
+                        <div class="ButtonDiv1"> @Html.ActionLink("Edit", "EditSilentItem", new {id = item.ID}) </div>
+                    }
                 </td>
             </tr>
         }
+        
     </table>
-</body>
+}
+    </body>

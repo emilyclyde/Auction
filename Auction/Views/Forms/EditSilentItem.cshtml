@@ -14,7 +14,7 @@
 
 <body id="BackgroundGrad1">
     <hgroup class="title">
-        <h1>Edit Item</h1>
+        <h1 class="CrudTitle">Edit Silent Item Bid</h1>
         <hr />
     </hgroup>
     @using (Html.BeginForm("EditSilentItem", "Forms", FormMethod.Post, new { enctype = "multipart/form-data" }))
@@ -27,35 +27,39 @@
         @Html.HiddenFor(model => model.Description)
         @Html.HiddenFor(model => model.ImageURL)
         @Html.HiddenFor(model => model.Title)
-  
 
-        <table class="TableDataIndex2">
+
+        <table id="IndexTable" @*class="TableDataIndex2 TableIndex2"*@>
             <tr>
-                <td colspan="2" class="CrudTitle">
+                <td colspan="2" class="CrudDiv1">
                     @Html.DisplayFor(modelItem => Model.Title)
                 </td>
             </tr>
+
             <tr>
-                <td colspan="2" id="Theme">
-                    @Html.DisplayFor(modelItem => Model.Title)
+                <td class="TableDataIndex7">
+                     @Html.LabelFor(model => model.WinningBidder, htmlAttributes: new { @class = "control-label col-md-2" })
+                 </td>
+                <td class="TableDataIndex8">
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.WinningBidder, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.WinningBidder, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
                 </td>
             </tr>
             <tr>
-                <td id="Theme">
-                    @Html.LabelFor(model => model.WinningBidder, htmlAttributes: new { @class = "control-label col-md-2" })
-                </td>
-                <td class="col-md-10">
-                    @Html.EditorFor(model => model.WinningBidder, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.WinningBidder, "", new { @class = "text-danger" })
-                </td>
-            </tr>
-            <tr>
-                <td id="Theme">
+                <td class="TableDataIndex7">
                     @Html.LabelFor(model => model.BidAmount, htmlAttributes: new { @class = "control-label col-md-2" })
                 </td>
-                <td class="col-md-10">
-                    @Html.EditorFor(model => model.BidAmount, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.BidAmount, "", new { @class = "text-danger" })
+                <td class="TableDataIndex8">
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.BidAmount, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.BidAmount, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
                 </td>
             </tr>
             <tr>

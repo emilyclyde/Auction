@@ -36,8 +36,20 @@ namespace Auction.Controllers
         }
         
         //POST *********************************************************************************************************
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddWinningBidsSilent([Bind(Include = "ID,AuctionType,Title,Description,WinningBidder,BidAmount")]Item item)
+        {
+            if (ModelState.IsValid)
+            {
+                // check for a valid bidder Number
+                db.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("AddWinningBidsSilent", "Forms");
+            }
 
-
+            return View(item);
+        }
 
 
 // Add Winning Live Auction Bids *************************************************************************************
@@ -55,7 +67,7 @@ namespace Auction.Controllers
         }
     
         //POST *********************************************************************************************************
-
+        
 
 // Edit Silent Auction Items **************************************************************************************************
         // GET ****************************************************************************************************
@@ -81,9 +93,8 @@ namespace Auction.Controllers
         public ActionResult EditSilentItem([Bind(Include = "ID,Title,Description,ImageURL,AuctionType,WinningBidder,BidAmount")] Item item)
         {
             if (ModelState.IsValid)
-// check for a valid bidder Number
-
-            {
+           { 
+                // check for a valid bidder Number
                 db.Entry(item).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("AddWinningBidsSilent", "Forms");
