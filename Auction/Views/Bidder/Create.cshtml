@@ -41,8 +41,8 @@
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
                             <input type="submit" value="Add" class="btn btn-default" />
-                            <span class="btn btn-default"> @Html.ActionLink("Back to Forms List", "Index", "Forms")</span>
-                        </div>
+                            <input type="submit" value="Cancel" onclick="location.href='@Url.Action("Index", "Forms")';return false;" class="btn btn-default" />
+                            </div>
                     </div>
                 </td>
               </tr>
