@@ -7,8 +7,8 @@ using Auction.Models;
 
 namespace Auction.DAL
 {
-    public class AuctionInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<AuctionContext>
-    //public class AuctionInitializer : System.Data.Entity.DropCreateDatabaseAlways<AuctionContext>     
+    //public class AuctionInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<AuctionContext>
+    public class AuctionInitializer : System.Data.Entity.DropCreateDatabaseAlways<AuctionContext>     
     {
         protected override void Seed(AuctionContext context)
         {
@@ -44,11 +44,11 @@ namespace Auction.DAL
 
             var bidders = new List<Bidder>
         {
-          new Bidder{ID=1, BidderName = "Rob and Karina Callahan", BidderContact1="(541)736-0300", BidderContact2=""},
-          new Bidder{ID=2, BidderName = "Erica Dundee", BidderContact1="EricaD@gmail.com", BidderContact2=""},
-          new Bidder{ID=3, BidderName = "Keith and Laurita Blunk", BidderContact1="(541)726-6915", BidderContact2=""},
-          new Bidder{ID=4, BidderName = "Arthur King", BidderContact1="Arthur@Camilot.com", BidderContact2=""},
-          new Bidder{ID=5, BidderName = "Rhoda Byke", BidderContact1="(206)733-8805", BidderContact2=""},
+          new Bidder{ID=1, BidderName = "Rob and Karina Callahan", BidderContact1="(541)736-0300", BidderContact2="(541)285-5792", BidderContact3="CaddisflyRob@yahoo.com"},
+          new Bidder{ID=2, BidderName = "Erica Dundee", BidderContact1="EricaD@gmail.com", BidderContact2="(541)344-0377",BidderContact3="EDundee@yahoo.com"},
+          new Bidder{ID=3, BidderName = "Keith and Laurita Blunk", BidderContact1="(541)726-6915", BidderContact2="(541)275-3387",BidderContact3="KeithB62@comcast.net"},
+          new Bidder{ID=4, BidderName = "Arthur King", BidderContact1="Arthur@Camilot.com", BidderContact2="(206)597-1492", BidderContact3="(237)772-4086"},
+          new Bidder{ID=5, BidderName = "Rhoda Byke", BidderContact1="(206)733-8805", BidderContact2="Sprocket42@yahoo,com",BidderContact3="1-800-Flatire"},
         };
 
             bidders.ForEach(b => context.Bidders.Add(b));
