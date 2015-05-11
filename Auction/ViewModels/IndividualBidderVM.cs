@@ -8,8 +8,7 @@ namespace Auction.ViewModels
 {
     public class IndividualBidderVM
     {
-        public int ID { get; set; }
-
+        
         public string BidderName { get; set; }
 
         public int BidderNumber {get;set;}
@@ -26,13 +25,13 @@ namespace Auction.ViewModels
 
         public string BidderContact3 { get; set; }
 
-        public int SilentTotal { get; set; }
+        public decimal SilentTotal { get; set; }
 
-        public int LiveTotal { get; set; }
+        public decimal LiveTotal { get; set; }
 
-        public int MultiTotal { get; set; }
+        public decimal MultiTotal { get; set; }
 
-        public int ALLTotal { get; set; }
+        public decimal ALLTotal { get; set; }
     }
 
 }
