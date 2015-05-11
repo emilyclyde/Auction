@@ -43,6 +43,10 @@ namespace Auction.Controllers
             if (ModelState.IsValid)
             {
                 // check for a valid bidder Number
+
+                //foreach (var b in db.Bidders)
+
+
                 db.Entry(item).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("AddWinningBidsSilent", "Forms");
