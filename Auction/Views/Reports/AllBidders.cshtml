@@ -6,10 +6,7 @@
 }
 <body id="BackgroundGrad1">
     <h2 class="CrudTitle"> All Bidders</h2>
-
-    <p id="ListButton2">
-        @Html.ActionLink("Add a New Bidder", "Create")
-    </p>
+    
     <table class="table">
         <tr>
             <th class="TableDataIndex4">
@@ -24,7 +21,11 @@
             <th class="TableDataIndex4">
                 @Html.DisplayNameFor(model => model.BidderContact2)
             </th>
-            <th></th>
+            <th class="TableDataIndex4">
+                @Html.DisplayNameFor(model => model.BidderContact3)
+            </th><th>
+
+            </th>
         </tr>
 
         @foreach (var item in Model)
@@ -42,10 +43,12 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.BidderContact2)
                 </td>
-                
+                <td>
+                    @Html.DisplayFor(modelItem => item.BidderContact3)
+                </td>
             </tr>
         }
 
     </table>
-    <span class="btn btn-default" id="button1"> @Html.ActionLink("Back to Forms List", "Index", "Forms")</span>
+    <span class="btn btn-default" id="button1"> @Html.ActionLink("Back to Reoprts List", "Index", "Reports")</span>
 </body>
