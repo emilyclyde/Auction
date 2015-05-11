@@ -1,7 +1,61 @@
 ﻿
+@*
+ ***********************************************************************************************************   
+    This Page is under construction by Rob Please don't change it. I know it is not correct.
+************************************************************************************************************
+
+*@
+
+
+
+
+
+
+@model Auction.Models.Bidder
+
 @{
-    ViewBag.Title = "IndividualBidder";
+    ViewBag.Title = "Individual Bidder Report";
 }
+<body id="BackgroundGrad1">
+    <h2 class="CrudTitle">@Html.DisplayFor(model => model.BidderName) </h2>
 
-<h2>IndividualBidder</h2>
+    <div>
 
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.BidderName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BidderName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.BidderNumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BidderNumber)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.BidderContact1)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BidderContact1)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.BidderContact2)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BidderContact2)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
