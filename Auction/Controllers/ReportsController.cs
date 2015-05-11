@@ -1,4 +1,5 @@
 ﻿using Auction.DAL;
+using Auction.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,10 +28,20 @@ namespace Auction.Controllers
 
 
 //Individual Bidders *****************************************************************************
-        public ActionResult IndividualBidder()
+        public ActionResult IndividualBidder(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
+            }
+            Bidder bidder = db.Bidders.Find(id);
+            if (bidder == null)
+            {
+                return HttpNotFound();
+            }
+            return View(bidder);
         }
+       
 
 
 
