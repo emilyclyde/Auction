@@ -85,7 +85,7 @@ namespace Auction.Controllers
             {
                 db.Entry(contact).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index","Home");
+                return RedirectToAction("Index");
             }
             return View(contact);
         }

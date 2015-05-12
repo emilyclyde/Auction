@@ -33,7 +33,7 @@ namespace Auction.Models
     // Img saveing and naming 
 
     [Display(Name = "Auction Type")]
-    public int AuctionType { get; set; }  // 1=Live  2=silent
+    public int AuctionType { get; set; }
 
     [Display(Name = "Winning Bidder")]
     public int? WinningBidder { get; set; }
