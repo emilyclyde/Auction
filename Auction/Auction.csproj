@@ -169,6 +169,7 @@
     <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MultipleBidderItemController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="DAL\AuctionContext.cs" />
     <Compile Include="DAL\AuctionInitializer.cs" />
     <Compile Include="Global.asax.cs">
