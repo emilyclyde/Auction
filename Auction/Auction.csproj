@@ -320,10 +320,15 @@
     <Content Include="Views\Forms\AddWinningBidsLive.cshtml" />
     <Content Include="Views\Forms\AddWinningBidsSilent.cshtml" />
     <Content Include="Views\Forms\EditSilentItem.cshtml" />
+    <Content Include="Views\Reports\AllBidders.cshtml" />
+    <Content Include="Views\Reports\AllDonors.cshtml" />
+    <Content Include="Views\Reports\AuctionTotals.cshtml" />
+    <Content Include="Views\Reports\Index.cshtml" />
+    <Content Include="Views\Reports\IndividualBidder.cshtml" />
+    <Content Include="Views\Reports\IndividualDonor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Reports\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
