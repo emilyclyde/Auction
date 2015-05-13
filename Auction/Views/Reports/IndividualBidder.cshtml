@@ -7,10 +7,6 @@
 *@
 
 
-
-
-
-
 @model Auction.ViewModels.IndividualBidderVM
 
 @{
@@ -32,7 +28,10 @@
         {
             <tr>
                 <td>
-                    @si.
+                    @si.Title
+                </td>
+                <td>
+                    @si.BidAmount
                 </td>
             </tr>
         }
@@ -47,7 +46,7 @@
 
 
     </table>
-    <div>
+    @*<div>
 
         <dl class="dl-horizontal">
             <dt>
@@ -85,5 +84,5 @@
     <p>
         @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
         @Html.ActionLink("Back to List", "Index")
-    </p>
+    </p>*@
 </body>
