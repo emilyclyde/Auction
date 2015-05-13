@@ -169,6 +169,7 @@
     <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MultipleBidderItemController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="DAL\AuctionContext.cs" />
     <Compile Include="DAL\AuctionInitializer.cs" />
     <Compile Include="Global.asax.cs">
@@ -195,6 +196,7 @@
     <Compile Include="ViewModels\AddWinningBidsVM.cs" />
     <Compile Include="ViewModels\ContactVM.cs" />
     <Compile Include="ViewModels\HomeVM.cs" />
+    <Compile Include="ViewModels\IndividualBidderVM.cs" />
     <Compile Include="ViewModels\ItemDetailVM.cs" />
     <Compile Include="ViewModels\ListVM.cs" />
   </ItemGroup>
@@ -318,6 +320,12 @@
     <Content Include="Views\Forms\AddWinningBidsLive.cshtml" />
     <Content Include="Views\Forms\AddWinningBidsSilent.cshtml" />
     <Content Include="Views\Forms\EditSilentItem.cshtml" />
+    <Content Include="Views\Reports\AllBidders.cshtml" />
+    <Content Include="Views\Reports\AllDonors.cshtml" />
+    <Content Include="Views\Reports\AuctionTotals.cshtml" />
+    <Content Include="Views\Reports\Index.cshtml" />
+    <Content Include="Views\Reports\IndividualBidder.cshtml" />
+    <Content Include="Views\Reports\IndividualDonor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
