@@ -1,7 +1,55 @@
-﻿
-@{
-    ViewBag.Title = "Index";
+﻿@{
+    ViewBag.Title = "ReportsIndex";
 }
 
-<h2>Index</h2>
+<body id="BackgroundGrad1">
+
+    <table id="IndexTable">
+        <tr>
+            <td colspan="2">
+                <h1 class="CrudTitle">Auction Reports</h1>
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h3 class="formItem"> Bidders</h3>
+            </td>
+            <td>
+                <h4 id="ListButton"><a href="@Url.Action("AllBidders", "Reports")"><b>All Bidders </b></a></h4>
+                <h4 id="ListButton"><a href="@Url.Action("index", "Bidder")"><b>Individual Bidder </b></a></h4>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h3 class="formItem"> Auction Items</h3>
+            </td>
+            <td>
+                <h4 id="ListButton"><a href="@Url.Action("Create", "Item")"><b>Silent Items</b></a></h4>
+                <h4 id="ListButton"><a href="@Url.Action("Index", "Item")"><b>Live Items</b></a></h4>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h3 class="formItem"> Donors</h3>
+            </td>
+            <td>
+                <h4 id="ListButton"><a href="@Url.Action("Create", "MultipleBidderItem")"><b>All Donors</b></a></h4>
+                <h4 id="ListButton"><a href="@Url.Action("Index", "MultipleBidderItem")"><b>Individual Donor</b></a></h4>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h3 class="formItem">Auction Data </h3>
+            </td>
+            <td>
+                <h4 id="ListButton"><a href="@Url.Action("Edit", "AuctionDetail", new { id = 1 })"><b>Final Totals  </b></a></h4>
+            </td>
+        </tr>
+        <tr></tr>
+    </table>
+
+
+</body>
+
 

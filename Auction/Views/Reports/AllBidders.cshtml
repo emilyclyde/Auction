@@ -1,7 +1,55 @@
 ﻿
+@model IEnumerable<Auction.Models.Bidder>
+
 @{
-    ViewBag.Title = "AllBidders";
+    ViewBag.Title = "All Bidders";
 }
+<body id="BackgroundGrad1">
+    <h2 class="CrudTitle"> All Bidders</h2>
 
-<h2>AllBidders</h2>
+    <table class="table">
+        <tr>
+            <th class="TableDataIndex4">
+                @Html.DisplayNameFor(model => model.BidderName)
+            </th>
+            <th class="TableDataIndex4">
+                @Html.DisplayNameFor(model => model.BidderNumber)
+            </th>
+            <th class="TableDataIndex4">
+                @Html.DisplayNameFor(model => model.BidderContact1)
+            </th>
+            <th class="TableDataIndex4">
+                @Html.DisplayNameFor(model => model.BidderContact2)
+            </th>
+            <th class="TableDataIndex4">
+                @Html.DisplayNameFor(model => model.BidderContact3)
+            </th>
+            <th>
 
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BidderName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BidderNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BidderContact1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BidderContact2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BidderContact3)
+                </td>
+            </tr>
+        }
+
+    </table>
+    <span class="btn btn-default" id="button1"> @Html.ActionLink("Back to Reoprts List", "Index", "Reports")</span>
+</body>
