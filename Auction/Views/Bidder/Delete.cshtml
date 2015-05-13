@@ -15,10 +15,8 @@
             <tr>
                 <td id="BidNumber2" class="TableDataIndex6">@Html.DisplayFor(model => model.BidderNumber)</td>
                 <td class="TableDataIndex6"><h2>@Html.DisplayFor(model => model.BidderName)</h2></td>
-                <td class ="TableDataIndex6"><h2>@Html.DisplayFor(model => model.BidderContact1)</h2></td>
-                <td class="TableDataIndex6"><h2>@Html.DisplayFor(model => model.BidderContact2)</h2></td>
-                <td class="TableDataIndex6"><h2>@Html.DisplayFor(model => model.BidderContact3)</h2></td>
-             </tr>
+                <td class ="TableDataIndex6"><h2>@Html.DisplayFor(model => model.BidderContact)</h2></td>
+            </tr>
         </table>
 
 
@@ -28,7 +26,7 @@
 
             <div class="form-actions no-color">
                 <input type="submit" value="Delete" class="btn btn-default" />
-                <span class="btn btn-default"> @Html.ActionLink("Back to Bidder List", "Index")</span>
+                <input type="submit" value="Cancel" onclick="location.href='@Url.Action("Index", "Bidder")';return false;" class="btn btn-default" />
             </div>
         }
     </div>

@@ -8,31 +8,33 @@
 
     <h1 class="CrudTitle">Silent Auction</h1>
     <h2 id="Theme">Enter Winning Bids</h2>
-    <table class="table" id="IndexTable">
-        <tr>
-            <td>
-                <h4>Number</h4>
-            </td>
-            <td>
-                <h4>Item</h4>
-            </td>
-            <td>
-                <h4>Description</h4>
-            </td>
-            <td>
-                <h4>Winning Bidder #</h4>
-            </td>
-            <td>
-                <h4>Bid Amount</h4>
-            </td>
-            <td></td>
-        </tr>
+    @using (Html.BeginForm("AddWinningBidsSilent", "Forms", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
 
-        @foreach (var item in Model)
-        {
-            using (Html.BeginForm())
+        <table class="table" id="IndexTable">
+            <tr>
+                <td>
+                    <h4>Number</h4>
+                </td>
+                <td>
+                    <h4>Item</h4>
+                </td>
+                <td>
+                    <h4>Description</h4>
+                </td>
+                <td>
+                    <h4>Winning Bidder #</h4>
+                </td>
+                <td>
+                    <h4>Bid Amount</h4>
+                </td>
+                <td></td>
+            </tr>
+
+            @foreach (var item in Model)
             {
-                @Html.AntiForgeryToken()
+
                 <tr>
                     <td>
                         @Html.DisplayFor(modelItem => item.ID)
@@ -49,7 +51,7 @@
                     {
                         <td>
                             <div class="col-md-10">
-                                @Html.EditorFor(modelItem => item.WinningBidder, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.EditorFor(modelItem => item.WinningBidder, new { htmlAttributes = new { @class = "form-control", @id = item.ID } })
                                 @Html.ValidationMessageFor(modelItem => item.WinningBidder, "", new { @class = "text-danger" })
                             </div>
                         </td>
@@ -65,7 +67,7 @@
                     {
                         <td>
                             <div class="col-md-10">
-                                @Html.EditorFor(modelItem => item.BidAmount, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.EditorFor(modelItem => item.BidAmount, new { htmlAttributes = new { @class = "form-control", @id = item.ID } })
                                 @Html.ValidationMessageFor(modelItem => item.BidAmount, "", new { @class = "text-danger" })
                             </div>
                         </td>
@@ -81,12 +83,21 @@
                     <td>
                         @if ((item.BidAmount == null || item.BidAmount == 0) && (item.WinningBidder == null || item.WinningBidder == 0))
                         {
-                            <div> Submit button </div>
-                            @*<div class="form-group">
-                                    <div class="col-md-offset-2 col-md-10">
-                                        <input type="submit" value="Save" class="btn btn-default" />
-                                    </div>
-                            </div>*@
+                            @*<div> Submit button </div>*@
+
+
+                            @Html.HiddenFor(modelItem => item.AuctionType, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(modelItem => item.AuctionType, "", new { @class = "text-danger" })
+                            @Html.HiddenFor(modelItem => item.ID, new { htmlAttributes = new { @class = "form-control", } })
+                            @Html.HiddenFor(modelItem => item.Title, new { htmlAttributes = new { @class = "form-control", } })
+                            @Html.HiddenFor(modelItem => item.Description, new { htmlAttributes = new { @class = "form-control", } })
+
+
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" value="Save" class="btn btn-default" id=@item.ID />
+                                </div>
+                            </div>
                         }
                         else
                         {
@@ -95,7 +106,7 @@
                     </td>
                 </tr>
             }
-        }
+
         </table>
-        
-    </body>
+    }
+</body>

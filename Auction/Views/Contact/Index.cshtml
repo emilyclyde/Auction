@@ -3,53 +3,43 @@
 @{
     ViewBag.Title = "Index";
 }
-<body id="BackgroundGrad1">
-    <h2 class ="CrudTitle">Contact Information</h2>
 
-        <p>
-            @Html.ActionLink("Create New", "Create")
-        </p>
-        <table class="table">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Name)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Email)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.PhoneNumber)
-                </th>
-                <th></th>
-            </tr>
+<h2>Index</h2>
 
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Email)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.PhoneNumber)
-                    </td>
-                    <td>
-                        <table class="TableDataIndex5">
-                            <tr>
-                                <td class="TableDataIndex5">
-                                    <div class="ButtonDiv1">@Html.ActionLink("Edit", "Edit", new { id = item.ID }) </div>
-                                </td>
-                                <td class="TableDataIndex5">
-                                    <div class="ButtonDiv1">@Html.ActionLink("Delete", "Delete", new { id = item.ID }) </div>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            }
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+        <th></th>
+    </tr>
 
-        </table>
-    <span class="btn btn-default" id="button1"> @Html.ActionLink("Back to Forms List", "Index", "Forms")</span>
-</body>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

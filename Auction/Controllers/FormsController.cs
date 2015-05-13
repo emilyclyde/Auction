@@ -38,11 +38,15 @@ namespace Auction.Controllers
         //POST *********************************************************************************************************
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AddWinningBidsSilent([Bind(Include = "ID,Title,Description,ImageURL,AuctionType,WinningBidder,BidAmount")]Item item)
+        public ActionResult AddWinningBidsSilent([Bind(Include = "ID,AuctionType,Title,Description,WinningBidder,BidAmount")]Item item)
         {
             if (ModelState.IsValid)
             {
                 // check for a valid bidder Number
+
+                //foreach (var b in db.Bidders)
+
+
                 db.Entry(item).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("AddWinningBidsSilent", "Forms");
