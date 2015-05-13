@@ -169,6 +169,7 @@
     <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MultipleBidderItemController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="DAL\AuctionContext.cs" />
     <Compile Include="DAL\AuctionInitializer.cs" />
     <Compile Include="Global.asax.cs">
@@ -195,6 +196,7 @@
     <Compile Include="ViewModels\AddWinningBidsVM.cs" />
     <Compile Include="ViewModels\ContactVM.cs" />
     <Compile Include="ViewModels\HomeVM.cs" />
+    <Compile Include="ViewModels\IndividualBidderVM.cs" />
     <Compile Include="ViewModels\ItemDetailVM.cs" />
     <Compile Include="ViewModels\ListVM.cs" />
   </ItemGroup>
@@ -321,6 +323,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Reports\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
