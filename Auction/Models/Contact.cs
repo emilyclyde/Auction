@@ -2,8 +2,8 @@
 using System.Linq;
 using System.Web;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
+
+
 
 namespace Auction.Models
 {
@@ -15,7 +15,7 @@ namespace Auction.Models
     public string Name { get; set; }
 
     public string Email { get; set; }
-     [Column("Phone Number")]
+     //[Column("Phone Number")]
     public string PhoneNumber { get; set; }
 
    
