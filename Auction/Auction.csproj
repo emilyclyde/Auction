@@ -165,6 +165,7 @@
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DonorController.cs" />
     <Compile Include="Controllers\FormsController.cs" />
+    <Compile Include="Controllers\HelpController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -211,17 +212,14 @@
     <Content Include="Images\goatbaby - Copy.jpg" />
     <Content Include="Images\goatbaby.jpg" />
     <Content Include="Images\Items1.jpg" />
-    <Content Include="Images\Items\1.jpg" />
     <Content Include="Images\Items\CedarCreekWeekendGetaway.jpg" />
     <Content Include="Images\Items\default.png" />
     <Content Include="Images\Items\FlowersforaYear.jpg" />
-    <Content Include="Images\Items\goat.jpg" />
     <Content Include="Images\Items\HoodoSkiTrip.jpg" />
     <Content Include="Images\Items\Manacure.jpg" />
     <Content Include="Images\Items\MovieNightBasket.jpg" />
     <Content Include="Images\Items\OregonCoastSalmonfishing.jpg" />
     <Content Include="Images\Items\SkateWorld.jpg" />
-    <Content Include="Images\Items\test.jpg" />
     <Content Include="Images\Items\thisisatesttitlewithalotofspaces.jpg" />
     <Content Include="Images\Logos Academy Logo.jpg" />
     <Content Include="Images\Logos Academy Logo3.png" />
@@ -229,6 +227,8 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="AuctionClassDiagram.cd" />
+    <None Include="Properties\PublishProfiles\logosauction - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\logosauction - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -326,6 +326,7 @@
     <Content Include="Views\Reports\Index.cshtml" />
     <Content Include="Views\Reports\IndividualBidder.cshtml" />
     <Content Include="Views\Reports\IndividualDonor.cshtml" />
+    <Content Include="Views\Help\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
