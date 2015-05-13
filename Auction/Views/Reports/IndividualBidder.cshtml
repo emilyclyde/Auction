@@ -1,0 +1,89 @@
+﻿
+@*
+ ***********************************************************************************************************   
+    This Page is under construction by Rob Please don't change it. I know it is not correct.
+************************************************************************************************************
+
+*@
+
+
+
+
+
+
+@model Auction.ViewModels.IndividualBidderVM
+
+@{
+    ViewBag.Title = "Individual Bidder Report";
+}
+<body id="BackgroundGrad1">
+    <h2 class="CrudTitle">@Html.DisplayFor(model => model.BidderName) </h2>
+    <h3 >@Html.DisplayFor(model => model.BidderNumber) </h3>
+    <div id="BidNumber" class="TableDataIndex6">@Html.DisplayFor(model => model.BidderNumber)</div>
+
+    <table>
+        <tr>
+            <td colspan="3">
+                <h4> Silent Items</h4> 
+            </td>
+       </tr>
+        
+            @foreach (var si in Model.SilentItems)
+            {
+                <tr>
+                    <td>
+                        @si.
+                    </td>
+                </tr> 
+            }
+
+
+
+
+
+
+
+
+            
+
+    </table>
+    <div>
+
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.BidderName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BidderName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.BidderNumber)
+            </dt>
+
+            <dd>
+                
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.BidderContact1)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BidderContact1)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.BidderContact2)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BidderContact2)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
