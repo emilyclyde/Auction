@@ -54,7 +54,7 @@ namespace Auction.Controllers
        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,BidderName,BidderNumber,BidderContact, MultiItems")] Bidder bidder)
+        public ActionResult Create([Bind(Include = "ID,BidderName,BidderNumber,BidderContact, ")] Bidder bidder)
         {
             int newID = 0;
             if (ModelState.IsValid)
@@ -68,7 +68,7 @@ namespace Auction.Controllers
                     var IMBI = new IndividualMultiBidderItem();
                     IMBI.Title = mi.Title;
                     IMBI.Bidder_ID = newID + 101;
-                    bidder.MultiItems.Add(IMBI);
+                    //bidder.MultiItems.Add(IMBI);
                 }
                 db.Bidders.Add(bidder);
                 db.SaveChanges();

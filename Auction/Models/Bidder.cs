@@ -37,6 +37,6 @@ namespace Auction.Models
     [Display(Name = "Bidder Contact 3")]
     public string BidderContact3 { get; set; }
 
-    public List<IndividualMultiBidderItem> MultiItems { get; set; }
+    //public List<IndividualMultiBidderItem> MultiItems { get; set; }
   }
 }
