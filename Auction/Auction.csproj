@@ -328,6 +328,7 @@
     <Content Include="Views\Reports\IndividualDonor.cshtml" />
     <Content Include="Views\Help\Index.cshtml" />
     <Content Include="Views\Reports\IndividualBidderSelectList.cshtml" />
+    <Content Include="Views\Forms\EditLiveItem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

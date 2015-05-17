@@ -42,9 +42,11 @@ namespace Auction.Controllers
         {
             if (ModelState.IsValid)
             {
-                // check for a valid bidder Number
-                db.Entry(item).State = System.Data.Entity.EntityState.Modified;
-                db.SaveChanges();
+                if (IsValidBidder(item))
+                {
+                    db.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                }
                 return RedirectToAction("AddWinningBidsSilent", "Forms");
             }
 
@@ -67,7 +69,23 @@ namespace Auction.Controllers
         }
     
         //POST *********************************************************************************************************
-        
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddWinningBidsLive([Bind(Include = "ID,AuctionType,Title,Description,WinningBidder,BidAmount")]Item item)
+        {
+            if (ModelState.IsValid)
+            {
+                if (IsValidBidder(item))
+                {
+                    db.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                }
+                return RedirectToAction("AddWinningBidsLive", "Forms");
+            }
+
+            return View(item);
+        }
+
 
 // Edit Silent Auction Items **************************************************************************************************
         // GET ****************************************************************************************************
@@ -93,15 +111,65 @@ namespace Auction.Controllers
         public ActionResult EditSilentItem([Bind(Include = "ID,Title,Description,ImageURL,AuctionType,WinningBidder,BidAmount")] Item item)
         {
             if (ModelState.IsValid)
-           { 
-                // check for a valid bidder Number
-                db.Entry(item).State = System.Data.Entity.EntityState.Modified;
-                db.SaveChanges();
+           {
+               if (IsValidBidder(item))
+               {
+                   db.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                   db.SaveChanges();
+               }
                 return RedirectToAction("AddWinningBidsSilent", "Forms");
             }
 
             return View(item);
         }
+// Edit Live Auction Items **************************************************************************************************
+        // GET ****************************************************************************************************
+        public ActionResult EditLiveItem(int? id)
+        {
+            string sess = (string)System.Web.HttpContext.Current.Session["blah"];
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
+            }
+            Item item = db.Items.Find(id);
+            if (item == null)
+            {
+                return HttpNotFound();
+            }
+            return View(item);
+        }
+
+        // POST ****************************************************************************************************
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditLiveItem([Bind(Include = "ID,Title,Description,ImageURL,AuctionType,WinningBidder,BidAmount")] Item item)
+        {
+            if (ModelState.IsValid )
+            {
+                if(IsValidBidder(item))
+                { 
+                    db.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                }
+                return RedirectToAction("AddWinningBidsLive", "Forms");
+            }
+
+            return View(item);
+        }
+//Check for a valid abidder Number**********************************************************************************
+
+        public bool IsValidBidder(Item item)
+        {
+            foreach (var b in db.Bidders)
+                if (b.BidderNumber == item.WinningBidder)
+                    return true;
+               
+                return false; 
+        }
+
+
+
 
     }//end class
 }//end Namespace
