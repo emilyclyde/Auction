@@ -1,7 +1,53 @@
-﻿
+﻿@model IEnumerable<Auction.Models.Donor>
+
 @{
-    ViewBag.Title = "AllDonors";
+    ViewBag.Title = "All Donors";
 }
+<body id="BackgroundGrad1">
+    <h2 class="CrudTitle"> All Donors</h2>
 
-<h2>AllDonors</h2>
+    <table class="table">
+        @*<tr>
+            <th class="TableDataIndex4">
+                <h4>Name</h4>
+            </th>
+            <th class="TableDataIndex4">
+                <h4>Email</h4>
+            </th>
+            <th class="TableDataIndex4">
+                <h4>Phone</h4>
+            </th>
+            <th class="TableDataIndex4" colspan="2">
+                <h4>Adress</h4>
+            </th>
 
+
+        </tr>*@
+
+        @foreach (var item in Model)
+        {
+            <tr class="TopLine">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td >
+                    <div>@Html.DisplayFor(modelItem => item.Address),@Html.DisplayFor(modelItem => item.City), @Html.DisplayFor(modelItem => item.State)  @Html.DisplayFor(modelItem => item.Zip)    </div>
+                </td>
+               
+              </tr>
+            <tr >
+                <td colspan="4" class="TableDataIndex12">
+                    <h5>@Html.DisplayFor(modelItem => item.Items) . . . . . . Value: $<b>@Html.DisplayFor(modelItem => item.Value)</b></h5>
+                </td>
+            </tr>
+        }
+
+    </table>
+    <span class="btn btn-default" id="button1"> @Html.ActionLink("Back to Reoprts List", "Index", "Reports")</span>
+</body>

@@ -278,6 +278,9 @@ important {
     color: lightblue;
 }
 
+.TopLine{
+    border-top:2px solid black !important;
+}
 #title {
     text-shadow: 2px 2px #000000;
     color: goldenrod;
@@ -358,7 +361,7 @@ important {
 .TableDataIndex12 {
     text-align:right;
     padding-right:10px;
-    border-top: none;
+    border-top: none !important;
 }
 
 .TableDataIndex13 {

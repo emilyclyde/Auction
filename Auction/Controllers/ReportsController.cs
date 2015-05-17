@@ -88,8 +88,7 @@ namespace Auction.Controllers
                 if (mi.Bidder_ID == IBVM.BidderNumber)
                 {
                     multiItemList.Add(mi);
-                    if(mi.BidAmount != null)
-                        IBVM.MultiTotal += (decimal)mi.BidAmount;
+                    IBVM.MultiTotal += (decimal)mi.BidAmount;
                 }
             IBVM.MultiItems = multiItemList;
 
@@ -103,16 +102,25 @@ namespace Auction.Controllers
 
 
         //All Donors *************************************************************************************
+        public ActionResult AllDonors()
+        {
+            return View(db.Donors.ToList());
+        }
 
 
 
+        //All Silent Items ******************************************************************************
+        public ActionResult AllSilentItems()
+        {
+            return View(db.Items.ToList());
+        }
 
-        //Individual Donors ******************************************************************************
 
-
-
-
-
+        //All Live Items ********************************************************************************
+        public ActionResult AllLiveItems()
+        {
+            return View(db.Items.ToList());
+        }
 
 
 
