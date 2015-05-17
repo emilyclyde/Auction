@@ -5,8 +5,48 @@
     bool firstLine = true;
 }
 <body id="BackgroundGrad1">
-    <h2 class="CrudTitle">@Html.DisplayFor(model => model.BidderName) </h2>
-    <div id="BidNumber" class="TableDataIndex6">@Html.DisplayFor(model => model.BidderNumber)</div>
+    <table id="IndexTable">
+        <tr>
+            <td id="LogoCell">
+                <img src="~/Images/Logos Academy Logo4.png" alt="Opps! Logo here" width="250">            @*displays picture*@
+            </td>
+
+            <td class="TableDataIndex2">
+                <h1 class="BidderTitle">Auction Bid Report</h1>
+            </td>
+
+        </tr>
+        <tr>
+            <td class="TableDataIndex2">
+                <h2>@Html.DisplayFor(model => model.BidderName) </h2>
+            </td>
+            <td>
+                <h4> Bidder Number: <b id="Bigger">@Html.DisplayFor(model => model.BidderNumber)</b></h4>
+            </td>
+        </tr>
+    </table>
+    <table id="IndexTable2">
+        <tr>
+            <td class="TableDataIndex14">
+                @Html.DisplayFor(model => model.BidderContact1)
+            </td>
+            <td>
+                <h4>--</h4>
+            </td>
+            <td class="TableDataIndex14">
+                @Html.DisplayFor(model => model.BidderContact2)
+            </td>
+            <td>
+                <h4>--</h4>
+            </td>
+            <td class="TableDataIndex14">
+                @Html.DisplayFor(model => model.BidderContact3)
+            </td>
+        </tr>
+    </table>
+
+
+   
 
     <table class="TableIndex4">
         @if (Model.SilentItems.Count == 0)
@@ -52,7 +92,7 @@
                     </tr>
                 }
             }
-            <tr>
+            <tr class="BottomLine">
                 <td class="TableDataIndex12" colspan="2" width="40%">
                     <h5><b>Silent Auction Subtotal: </b></h5>
                 </td>
@@ -67,10 +107,10 @@
                 <h2></h2>
             </td>
         </tr>
-   
 
 
-    
+
+
         @if (Model.LiveItems.Count == 0)
         {
             <tr>
@@ -114,7 +154,7 @@
                     </tr>
                 }
             }
-            <tr>
+            <tr class="BottomLine">
                 <td class="TableDataIndex12" colspan="2" width="40%">
                     <h5><b>Live Auction Subtotal: </b></h5>
                 </td>
@@ -133,7 +173,7 @@
 
 
 
-   
+
         @foreach (var mi in Model.MultiItems)
         {
             if (firstLine)
@@ -163,9 +203,9 @@
                 </tr>
             }
         }
-        <tr>
+        <tr class ="BottomLine">
             <td></td>
-            <td class="TableDataIndex12"  width="40%">
+            <td class="TableDataIndex12" width="40%">
                 <h5><b>Extra Auction Subtotal: </b></h5>
             </td>
             <td class="TableDataIndex10">
@@ -178,20 +218,20 @@
                 <h2></h2>
             </td>
         </tr>
- 
 
-   
+
+
         <tr>
             <td class="TableDataIndex12" colspan="2" width="40%">
                 <h4><b>Auction Total: </b></h4>
             </td>
-            <td class="TableDataIndex10">
+            <td class="TableDataIndex9">
                 <h4><b>@Model.ALLTotal</b></h4>
             </td>
         </tr>
     </table>
 
-   
+
     @*<div>
 
             <dl class="dl-horizontal">

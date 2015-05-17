@@ -23,9 +23,11 @@ h6 {
     font-size: 0.85em;
 }
 
-td {border: 1px solid black;}
+/*td {border: 1px solid black;}*/
 
-
+#Bigger{
+font-size: 1.72em;
+}
 
 body {
     padding-top: 50px;
@@ -47,6 +49,13 @@ body {
     background: -moz-radial-gradient(rgb(0, 100, 150),lightblue); /* For Firefox 3.6 to 15 */
     background: radial-gradient(rgb(0, 100, 150) 40%,lightblue); /* Standard syntax (must be last) */
 }
+
+.BidderTitle {
+    
+    color: goldenrod;
+    font-family: 'Berlin Sans FB';
+}
+
 
 #BidNumber {
     font-size: 6em;
@@ -72,6 +81,9 @@ body {
     margin: 0px 10px 0px 0px !important;
 }
 
+.BottomLine{
+    border-bottom: 1px solid black;
+}
 .CrudDiv {
     color: darkblue;
 }
@@ -125,6 +137,10 @@ important {
     margin-right: auto;
 }
 
+#IndexTable2 {
+    margin-left: auto;
+    margin-right: auto;
+}
 #logo {
     border-radius: 15px;
     border-style: solid;
@@ -351,7 +367,11 @@ important {
     font-style:italic;
 }
 
-
+.TableDataIndex14 {
+    padding-left: 20px;
+     padding-right: 20px;
+    text-align: center;
+}
 .TableIndex2 {
     margin-left: auto;
     margin-right: auto;
