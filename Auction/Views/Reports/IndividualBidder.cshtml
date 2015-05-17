@@ -8,16 +8,17 @@
     <h2 class="CrudTitle">@Html.DisplayFor(model => model.BidderName) </h2>
     <div id="BidNumber" class="TableDataIndex6">@Html.DisplayFor(model => model.BidderNumber)</div>
 
-    <table class="TableIndex2">
+    <table class="TableIndex4">
         @if (Model.SilentItems.Count == 0)
         {
             <tr>
-                <td colspan="2">
+                <td class="TableDataIndex9">
                     <h4><b> Silent Auction Items:</b></h4>
                 </td>
-                <td>
-                    <h5>None</h5>
+                <td class="TableDataIndex13">
+                    <h5>No items won</h5>
                 </td>
+                <td></td>
             </tr>
         }
         else
@@ -28,10 +29,10 @@
                 {
                     firstLine = false;
                     <tr>
-                        <td class="TableDataIndex9" width="45%">
+                        <td class="TableDataIndex9" width="40%">
                             <h4><b> Silent Auction Items:</b></h4>
                         </td>
-                        <td class="TableDataIndex9" width="45%">
+                        <td class="TableDataIndex9" width="50%">
                             <h5>@si.Title</h5>
                         </td>
                         <td class="TableDataIndex9">
@@ -42,7 +43,7 @@
                 else
                 {
                     <tr>
-                        <td class="TableDataIndex9" colspan="2" width="80%">
+                        <td class="TableDataIndex9" colspan="2" width="40%">
                             <h5>@si.Title</h5>
                         </td>
                         <td class="TableDataIndex9">
@@ -52,7 +53,7 @@
                 }
             }
             <tr>
-                <td class="TableDataIndex10" colspan="2" width="80%">
+                <td class="TableDataIndex12" colspan="2" width="40%">
                     <h5><b>Silent Auction Subtotal: </b></h5>
                 </td>
                 <td class="TableDataIndex10">
@@ -66,19 +67,20 @@
                 <h2></h2>
             </td>
         </tr>
+   
 
 
-
-
+    
         @if (Model.LiveItems.Count == 0)
         {
             <tr>
-                <td colspan="2">
+                <td class="TableDataIndex9">
                     <h4><b> Live Auction Items:</b> </h4>
                 </td>
-                <td>
-                    <h5>None</h5>
+                <td class="TableDataIndex13">
+                    <h5>No items won</h5>
                 </td>
+                <td></td>
             </tr>
         }
         else
@@ -89,10 +91,10 @@
                 {
                     firstLine = false;
                     <tr>
-                        <td class="TableDataIndex9" width="45%">
+                        <td class="TableDataIndex9" width="30%">
                             <h4><b> Live Auction Items:</b></h4>
                         </td>
-                        <td class="TableDataIndex9" width="45%">
+                        <td class="TableDataIndex9" width="30%">
                             <h5>@li.Title</h5>
                         </td>
                         <td class="TableDataIndex9">
@@ -103,7 +105,7 @@
                 else
                 {
                     <tr>
-                        <td class="TableDataIndex9" colspan="2" width="80%">
+                        <td class="TableDataIndex9" colspan="2" width="40%">
                             <h5>@li.Title</h5>
                         </td>
                         <td class="TableDataIndex9">
@@ -113,7 +115,7 @@
                 }
             }
             <tr>
-                <td class="TableDataIndex10" colspan="2" width="80%">
+                <td class="TableDataIndex12" colspan="2" width="40%">
                     <h5><b>Live Auction Subtotal: </b></h5>
                 </td>
                 <td class="TableDataIndex10">
@@ -131,17 +133,17 @@
 
 
 
-
+   
         @foreach (var mi in Model.MultiItems)
         {
             if (firstLine)
             {
                 firstLine = false;
                 <tr>
-                    <td class="TableDataIndex9" width="45%">
+                    <td class="TableDataIndex9" width="30%">
                         <h4><b> Extra Auction Items:</b></h4>
                     </td>
-                    <td class="TableDataIndex9" width="45%">
+                    <td class="TableDataIndex9" width="30%">
                         <h5>@mi.Title</h5>
                     </td>
                     <td class="TableDataIndex9">
@@ -152,7 +154,7 @@
             else
             {
                 <tr>
-                    <td class="TableDataIndex9" colspan="2" width="80%">
+                    <td class="TableDataIndex9" colspan="2" width="40%">
                         <h5>@mi.Title</h5>
                     </td>
                     <td class="TableDataIndex9">
@@ -162,159 +164,34 @@
             }
         }
         <tr>
-            <td class="TableDataIndex10" colspan="2" width="80%">
+            <td></td>
+            <td class="TableDataIndex12"  width="40%">
                 <h5><b>Extra Auction Subtotal: </b></h5>
             </td>
             <td class="TableDataIndex10">
                 <h5><b>@Model.MultiTotal</b></h5>
             </td>
         </tr>
-        
+
         <tr>
             <td colspan="3">
                 <h2></h2>
             </td>
         </tr>
+ 
 
-
+   
         <tr>
-            <td class="TableDataIndex10" colspan="2" width="80%">
-                <h5><b>Auction Total: </b></h5>
+            <td class="TableDataIndex12" colspan="2" width="40%">
+                <h4><b>Auction Total: </b></h4>
             </td>
             <td class="TableDataIndex10">
-                <h5><b>@Model.ALLTotal</b></h5>
+                <h4><b>@Model.ALLTotal</b></h4>
             </td>
         </tr>
-
-
     </table>
 
-    @*<table class="TableIndex2">
-            <tr>
-                <td colspan="3">
-                    <h4><b> Silent Auction Items</b></h4>
-                </td>
-            </tr>
-
-            @if (Model.SilentItems.Count == 0)
-            {
-                <tr>
-                    <td colspan="3"> No silent auction items won. </td>
-                </tr>
-            }
-            else
-            {
-                foreach (var si in Model.SilentItems)
-                {
-                    <tr>
-                        <td class="TableDataIndex9" colspan="2" width="80%">
-                            <h5>@si.Title</h5>
-                        </td>
-                        <td class="TableDataIndex9">
-                            <h5>@si.BidAmount</h5>
-                        </td>
-                    </tr>
-                }
-                <tr>
-                    <td class="TableDataIndex9" colspan="2" width="80%">
-                        <h5><b>Silent Auction Subtotal: </b></h5>
-                    </td>
-                    <td class="TableDataIndex9">
-                        <h5><b>@Model.SilentTotal</b></h5>
-                    </td>
-                </tr>
-            }
-            <tr>
-                <td colspan="3">
-                    <h2></h2>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td colspan="3">
-                    <h4><b> Live Auction Items</b></h4>
-                </td>
-            </tr>
-
-            @if (Model.LiveItems.Count == 0)
-            {
-                <tr>
-                    <td colspan="3"> No live auction items won. </td>
-                </tr>
-            }
-            else
-            {
-                foreach (var si in Model.LiveItems)
-                {
-                    <tr>
-                        <td class="TableDataIndex9" colspan="2" width="80%">
-                            <h5>@si.Title</h5>
-                        </td>
-                        <td class="TableDataIndex9">
-                            <h5>@si.BidAmount</h5>
-                        </td>
-                    </tr>
-                }
-                <tr>
-                    <td class="TableDataIndex9" colspan="2" width="80%">
-                        <h5><b>Live Auction Subtotal: </b></h5>
-                    </td>
-                    <td class="TableDataIndex9">
-                        <h5><b>@Model.LiveTotal</b></h5>
-                    </td>
-                </tr>
-            }
-            <tr>
-                <td colspan="3">
-                    <h2></h2>
-                </td>
-            </tr>
-
-
-
-
-            <tr>
-                <td colspan="3">
-                    <h4><b> Extra Auction Items</b></h4>
-                </td>
-            </tr>
-
-            @foreach (var mi in Model.MultiItems)
-            {
-            <tr>
-                <td class="TableDataIndex9" colspan="2" width="80%">
-                    <h5>@mi.Title</h5>
-                </td>
-                <td class="TableDataIndex9">
-                    <h5>@mi.BidAmount</h5>
-                </td>
-            </tr>
-            }
-            <tr>
-                <td class="TableDataIndex9" colspan="2" width="80%">
-                    <h5><b>Extra Auction Items Subtotal: </b></h5>
-                </td>
-                <td class="TableDataIndex9">
-                    <h5><b>@Model.MultiTotal</b></h5>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="3">
-                    <h2></h2>
-                </td>
-            </tr>
-            <tr>
-                <td class="TableDataIndex9" colspan="2" width="80%">
-                    <h5><b>Auction Total: </b></h5>
-                </td>
-                <td class="TableDataIndex9">
-                    <h5><b>@Model.ALLTotal</b></h5>
-                </td>
-            </tr>
-
-
-        </table>*@
+   
     @*<div>
 
             <dl class="dl-horizontal">
