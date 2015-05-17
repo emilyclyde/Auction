@@ -14,7 +14,6 @@
             <td class="TableDataIndex2">
                 <h1 class="BidderTitle">Auction Bid Report</h1>
             </td>
-
         </tr>
         <tr>
             <td class="TableDataIndex2">
@@ -45,8 +44,6 @@
         </tr>
     </table>
 
-
-   
 
     <table class="TableIndex4">
         @if (Model.SilentItems.Count == 0)
@@ -107,8 +104,6 @@
                 <h2></h2>
             </td>
         </tr>
-
-
 
 
         @if (Model.LiveItems.Count == 0)
@@ -219,8 +214,6 @@
             </td>
         </tr>
 
-
-
         <tr>
             <td class="TableDataIndex12" colspan="2" width="40%">
                 <h4><b>Auction Total: </b></h4>
@@ -230,45 +223,23 @@
             </td>
         </tr>
     </table>
-
-
-    @*<div>
-
-            <dl class="dl-horizontal">
-                <dt>
-                    @Html.DisplayNameFor(model => model.BidderName)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.BidderName)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.BidderNumber)
-                </dt>
-
-                <dd>
-
-                </dd>
-                <dt>
-                    @Html.DisplayNameFor(model => model.BidderContact1)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.BidderContact1)
-                </dd>
-                <dt>
-                    @Html.DisplayNameFor(model => model.BidderContact2)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.BidderContact2)
-                </dd>
-
-            </dl>
-        </div>
-        <p>
-            @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-            @Html.ActionLink("Back to List", "Index")
-        </p>*@
+    <table id="IndexTable">
+        <tr>
+            <td>
+                <h4 id="ListButton"><a href="@Url.Action("IndividualBidderSelectList", "Reports")"><b>Select Another Bidder</b></a></h4>
+            </td>
+            <td>
+                <h4 id="ListButton"><a href="@Url.Action("Index", "Reports")"><b>Reports Menu</b></a></h4>
+            </td>
+            <td>
+                <h4 id="ListButton"><a href="@Url.Action("Index", "Reports")"><b>Print</b></a></h4>  @*add Print controls here*@
+            </td>
+            <td>
+                <h4 id="ListButton"><a href="@Url.Action("Index", "Reports")"><b>Save</b></a></h4>  @*add PDF controls here*@
+            </td>
+        </tr>
+    </table>
+    
+  
+       
 </body>

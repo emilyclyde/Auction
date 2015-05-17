@@ -116,10 +116,10 @@ namespace Auction.DAL
                 new IndividualMultiBidderItem {ID=9, Bidder_ID=103, Title="TV Raffle", BidAmount = 30},
                 new IndividualMultiBidderItem {ID=10, Bidder_ID=104, Title="Raise the Paddle", BidAmount = 0},
                 new IndividualMultiBidderItem {ID=11, Bidder_ID=104, Title="Dessert Dash", BidAmount = 10},
-                new IndividualMultiBidderItem {ID=12, Bidder_ID=104, Title="TV Raffle", BidAmount = null},
-                new IndividualMultiBidderItem {ID=13, Bidder_ID=105, Title="Raise the Paddle", BidAmount = null},
-                new IndividualMultiBidderItem {ID=14, Bidder_ID=105, Title="Dessert Dash", BidAmount = null},
-                new IndividualMultiBidderItem {ID=15, Bidder_ID=105, Title="TV Raffle", BidAmount = null},
+                new IndividualMultiBidderItem {ID=12, Bidder_ID=104, Title="TV Raffle", BidAmount = 0},
+                new IndividualMultiBidderItem {ID=13, Bidder_ID=105, Title="Raise the Paddle", BidAmount = 0},
+                new IndividualMultiBidderItem {ID=14, Bidder_ID=105, Title="Dessert Dash", BidAmount = 0},
+                new IndividualMultiBidderItem {ID=15, Bidder_ID=105, Title="TV Raffle", BidAmount =0},
             };
 
       IMBI.ForEach(i => context.IndividualMultiBidderItems.Add(i));
