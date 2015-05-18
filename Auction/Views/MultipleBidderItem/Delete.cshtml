@@ -5,6 +5,7 @@
 }
 <body id="BackgroundGrad1">
     <h2 class="CrudTitle">Delete Multiple Bidder Item</h2>
+    <input type="submit" value="Back to Forms List" onclick="location.href='@Url.Action("Index", "Forms")';return false;" class="btn btn-default" />
 
     <h3>Are you sure you want to delete <b> @Html.DisplayFor(model => model.Title)</b></h3>
     <div>
@@ -16,14 +17,14 @@
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" value="Save" class="btn btn-default" />
-            <span class="btn btn-default"> @Html.ActionLink("Back to List", "Index")</span>
+            @*<span class="btn btn-default"> @Html.ActionLink("Back to List", "Index")</span>*@
         </div>
     </div>
             
             <h2>**********************************</h2>
             <div class="form-actions no-color">
                 <input type="submit" value="Delete" class="btn btn-default" /> |
-                @Html.ActionLink("Back to List", "Index")
+                @*@Html.ActionLink("Back to List", "Index")*@
             </div>
         }
     </div>

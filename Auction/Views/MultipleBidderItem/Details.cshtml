@@ -4,23 +4,24 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<body id="BackgroundGrad1">
+    <h2>Extra Auction Item Details</h2>
+    <input type="submit" value="Back to Forms List" onclick="location.href='@Url.Action("Index", "Forms")';return false;" class="btn btn-default" />
+    <div>
+        <
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
 
-<div>
-    <h4>MultipleBidderItem</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+        @*@Html.ActionLink("Back to List", "Index")*@
+    </p>
+    </body>
