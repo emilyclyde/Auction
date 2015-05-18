@@ -223,19 +223,19 @@
             </td>
         </tr>
     </table>
-    <table id="IndexTable">
+    <table id="IndexTable" style="padding: 5px;">
         <tr>
             <td>
-                <h4 id="ListButton"><a href="@Url.Action("IndividualBidderSelectList", "Reports")"><b>Select Another Bidder</b></a></h4>
+                <input type="button" value="Select Another Bidder" onclick="location.href = '@Url.Action("IndividualBidderSelectList", "Reports")'; return false;" class="btn btn-default" />
             </td>
             <td>
-                <h4 id="ListButton"><a href="@Url.Action("Index", "Reports")"><b>Reports Menu</b></a></h4>
+                <input type="button" value="Reports Menu" onclick="location.href = '@Url.Action("Index", "Reports")'; return false;" class="btn btn-default" />
             </td>
             <td>
-                <h4 id="ListButton"><a href="@Url.Action("Index", "Reports")"><b>Print</b></a></h4>  @*add Print controls here*@
+                <input type="button" value="Print" onclick="javascript: window.print(); return false;" class="btn btn-default" />
             </td>
-            <td>
-                <h4 id="ListButton"><a href="@Url.Action("Index", "Reports")"><b>Save</b></a></h4>  @*add PDF controls here*@
+            <td> 
+                <input type="button" value="Save" onclick="location.href = '@string.Format("http://selectpdf.com/save-as-pdf/?pdf_name={0}_{1}_{2}",@Html.DisplayFor(model => model.BidderNumber), @Html.DisplayFor(model => model.BidderName), @DateTime.Now.Year)'; return false;" class="btn btn-default" />
             </td>
         </tr>
     </table>

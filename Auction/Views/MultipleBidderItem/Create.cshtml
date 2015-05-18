@@ -4,7 +4,8 @@
     ViewBag.Title = "Create";
 }
 <body id="BackgroundGrad1">
-    <h2 class="CrudTitle">Add a Multiple Bidder Item</h2>
+    <h2 class="CrudTitle">Extra Auction Items</h2>
+    <input type="submit" value="Back to Forms List" onclick="location.href='@Url.Action("Index", "Forms")';return false;" class="btn btn-default" />
 
     @using (Html.BeginForm())
     {
@@ -31,7 +32,7 @@
                         <div class="form-group">
                             <div class="col-md-offset-2 col-md-10">
                                 <input type="submit" value="Add" class="btn btn-default" />
-                                <span class="btn btn-default"> @Html.ActionLink("Back to Forms List", "Index")</span>
+                                @*<span class="btn btn-default"> @Html.ActionLink("Back to Forms List", "Index")</span>*@
                             </div>
                         </div>
                     </td>

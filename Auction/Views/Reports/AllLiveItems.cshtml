@@ -49,5 +49,17 @@
         }
 
     </table>
-    <span class="btn btn-default" id="button1"> @Html.ActionLink("Back to Reports List", "Index", "Reports")</span>
+    <table id="IndexTable" style="padding: 5px;">
+        <tr>
+            <td>
+                <input type="button" value="Reports Menu" onclick="location.href = '@Url.Action("Index", "Reports")'; return false;" class="btn btn-default" />
+            </td>
+            <td>
+                <input type="button" value="Print" onclick="javascript: window.print(); return false;" class="btn btn-default" />
+            </td>
+            <td>
+                <input type="button" value="Save" onclick="location.href = 'http://selectpdf.com/save-as-pdf'; return false;" class="btn btn-default" />
+            </td>
+        </tr>
+    </table>
 </body>
