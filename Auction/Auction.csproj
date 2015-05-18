@@ -339,6 +339,8 @@
     <Content Include="Views\Forms\EditLiveItem.cshtml" />
     <Content Include="Views\Reports\AllSilentItems.cshtml" />
     <Content Include="Views\Reports\AllLiveItems.cshtml" />
+    <Content Include="Views\Forms\AddMultiItemBids.cshtml" />
+    <Content Include="Views\Forms\AddMultiItemsList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

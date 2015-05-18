@@ -5,7 +5,7 @@
 }
 <body id="BackgroundGrad1">
 
-    <h2>Create</h2>
+    <h2>Create Contact</h2>
     <p>
         <span class="btn btn-default"> @Html.ActionLink("Back to Forms List", "Index", "Forms")</span>
     </p>
@@ -15,8 +15,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-horizontal">
-            <h4>Contact</h4>
-            <hr />
+            
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-group">
                 @Html.LabelFor(model => model.ID, htmlAttributes: new { @class = "control-label col-md-2" })
