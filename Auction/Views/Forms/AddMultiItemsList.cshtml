@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Auction.Models.MultipleBidderItem>
+@{
+    ViewBag.Title = "AddMultiItemsList";
+}
+
+<body id="BackgroundGrad1">
+    <table id="IndexTable">
+        <tr>
+            <td colspan="2">
+                <h1 class="CrudTitle">Load Bids for:</h1>
+                <br />
+            </td>
+        </tr>
+
+        @foreach (var mi in Model)
+        {
+            <tr>
+                <td>
+                    <h4 id="ListButton"><a href="@Url.Action("Index", "Forms" @*, new { id = 1 }*@)"><b>@Html.DisplayFor(modelItem => mi.Title) </b></a></h4>
+                </td>
+            </tr>
+
+        }
+
+    </table>
+</body>
+
+
