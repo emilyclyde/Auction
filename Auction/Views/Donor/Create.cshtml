@@ -5,6 +5,9 @@
 }
 <body id="BackgroundGrad1">
     <h2 class="CrudTitle">Add a Donnor</h2>
+    <p>
+        <span class="btn btn-default"> @Html.ActionLink("Back to Forms List", "Index", "Forms")</span>
+    </p>
 
 
     @using (Html.BeginForm())
@@ -121,7 +124,7 @@
                         <div class="form-group">
                             <div class="col-md-offset-2 col-md-10">
                                 <input type="submit" value="Add" class="btn btn-default" />
-                                <span class="btn btn-default"> @Html.ActionLink("Back to Forms List", "Index","Forms")</span>
+                                @*<span class="btn btn-default"> @Html.ActionLink("Back to Forms List", "Index","Forms")</span>*@
                             </div>
                         </div>
                     </td>

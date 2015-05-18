@@ -5,6 +5,9 @@
 }
 
 <h2>Details</h2>
+<p>
+    <span class="btn btn-default"> @Html.ActionLink("Back to Forms List", "Index", "Forms")</span>
+</p>
 
 <div>
     <h4>Donor</h4>
@@ -86,5 +89,5 @@
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @*@Html.ActionLink("Back to List", "Index")*@
 </p>

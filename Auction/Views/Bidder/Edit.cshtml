@@ -5,6 +5,9 @@
 }
 <body id="BackgroundGrad1">
     <h2 class="CrudTitle">Edit Bidder</h2>
+    <p>
+        <span class="btn btn-default"> @Html.ActionLink("Back to Forms List", "Index", "Forms")</span>
+    </p>
     <div id="BidNumber" class="TableDataIndex6">@Html.DisplayFor(model => model.BidderNumber)</div>
 
     @using (Html.BeginForm())

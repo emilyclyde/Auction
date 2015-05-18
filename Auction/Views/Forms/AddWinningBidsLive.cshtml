@@ -7,6 +7,9 @@
 <body id="BackgroundGrad1">
 
     <h1 class="CrudTitle">Live Auction</h1>
+    <p>
+        <span class="btn btn-default"> @Html.ActionLink("Back to Forms List", "Index", "Forms")</span>
+    </p>
     <h2 id="Theme">Enter Winning Bids</h2>
     @using (Html.BeginForm("AddWinningBidsLive", "Forms", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {

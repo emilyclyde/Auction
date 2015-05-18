@@ -5,7 +5,9 @@
 }
 
 <h2>Edit</h2>
-
+<p>
+    <span class="btn btn-default"> @Html.ActionLink("Back to Forms List", "Index", "Forms")</span>
+</p>
 
 @using (Html.BeginForm())
 {
@@ -50,7 +52,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @*@Html.ActionLink("Back to List", "Index")*@
 </div>
 
 @section Scripts {
