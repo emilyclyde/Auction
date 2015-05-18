@@ -13,28 +13,28 @@ namespace Auction.Controllers
     {
         private AuctionContext db = new AuctionContext();
 
-//index **************************************************************************************************
+        //index **************************************************************************************************
         public ActionResult Index()
         {
             return View();
         }
 
 
-// Add Winning Silent Auction Bids *************************************************************************************
-       //GET ***********************************************************************************************************
+        // Add Winning Silent Auction Bids *************************************************************************************
+        //GET ***********************************************************************************************************
         public ActionResult AddWinningBidsSilent()
         {
             var SilentItems = new List<Item>();
- 
-            foreach(var i in db.Items)
+
+            foreach (var i in db.Items)
             {
-                if(i.AuctionType==2)
+                if (i.AuctionType == 2)
                     SilentItems.Add(i);
             }
 
             return View(SilentItems);
         }
-        
+
         //POST *********************************************************************************************************
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -54,7 +54,7 @@ namespace Auction.Controllers
         }
 
 
-// Add Winning Live Auction Bids *************************************************************************************
+        // Add Winning Live Auction Bids *************************************************************************************
         public ActionResult AddWinningBidsLive()
         {
             var LiveItems = new List<Item>();
@@ -67,7 +67,7 @@ namespace Auction.Controllers
 
             return View(LiveItems);
         }
-    
+
         //POST *********************************************************************************************************
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -87,7 +87,20 @@ namespace Auction.Controllers
         }
 
 
-// Edit Silent Auction Items **************************************************************************************************
+
+        //Add Multiple Bidder Item Bids List *******************************************************************************************
+
+        public ActionResult AddMultiItemsList()
+        {
+            return View(db.MultipleBidderItems.ToList());
+        }
+
+
+
+
+
+
+        // Edit Silent Auction Items **************************************************************************************************
         // GET ****************************************************************************************************
         public ActionResult EditSilentItem(int? id)
         {
@@ -105,24 +118,24 @@ namespace Auction.Controllers
         }
 
         // POST ****************************************************************************************************
-        
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult EditSilentItem([Bind(Include = "ID,Title,Description,ImageURL,AuctionType,WinningBidder,BidAmount")] Item item)
         {
             if (ModelState.IsValid)
-           {
-               if (IsValidBidder(item))
-               {
-                   db.Entry(item).State = System.Data.Entity.EntityState.Modified;
-                   db.SaveChanges();
-               }
+            {
+                if (IsValidBidder(item))
+                {
+                    db.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                }
                 return RedirectToAction("AddWinningBidsSilent", "Forms");
             }
 
             return View(item);
         }
-// Edit Live Auction Items **************************************************************************************************
+        // Edit Live Auction Items **************************************************************************************************
         // GET ****************************************************************************************************
         public ActionResult EditLiveItem(int? id)
         {
@@ -145,10 +158,10 @@ namespace Auction.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult EditLiveItem([Bind(Include = "ID,Title,Description,ImageURL,AuctionType,WinningBidder,BidAmount")] Item item)
         {
-            if (ModelState.IsValid )
+            if (ModelState.IsValid)
             {
-                if(IsValidBidder(item))
-                { 
+                if (IsValidBidder(item))
+                {
                     db.Entry(item).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
                 }
@@ -157,15 +170,15 @@ namespace Auction.Controllers
 
             return View(item);
         }
-//Check for a valid abidder Number**********************************************************************************
+        //Check for a valid abidder Number**********************************************************************************
 
         public bool IsValidBidder(Item item)
         {
             foreach (var b in db.Bidders)
                 if (b.BidderNumber == item.WinningBidder)
                     return true;
-               
-                return false; 
+
+            return false;
         }
 
 
