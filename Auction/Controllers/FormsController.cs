@@ -96,6 +96,24 @@ namespace Auction.Controllers
         }
 
 
+        //Add Multiple Bidder Item Bids ************************************************************************************************
+        public ActionResult AddMultiItemBids(int? id)
+        {
+            String MultiItemTitle = "";
+
+            foreach (var mbi in db.MultipleBidderItems)      // gets the Title for the id passed in
+                if (mbi.ID == id)
+                    MultiItemTitle = mbi.Title;
+
+            List<IndividualMultiBidderItem> IMBIList = new List<IndividualMultiBidderItem>();
+            if (MultiItemTitle != "")
+            {
+                foreach (var i in db.IndividualMultiBidderItems)
+                    if (i.Title == MultiItemTitle)
+                        IMBIList.Add(i);
+            }
+            return View(IMBIList);
+        }
 
 
 
