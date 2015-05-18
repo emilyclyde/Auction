@@ -200,6 +200,7 @@
     <Compile Include="ViewModels\IndividualBidderVM.cs" />
     <Compile Include="ViewModels\ItemDetailVM.cs" />
     <Compile Include="ViewModels\ListVM.cs" />
+    <Compile Include="ViewModels\MultiBidderItemVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Auction.css" />
@@ -339,6 +340,8 @@
     <Content Include="Views\Forms\EditLiveItem.cshtml" />
     <Content Include="Views\Reports\AllSilentItems.cshtml" />
     <Content Include="Views\Reports\AllLiveItems.cshtml" />
+    <Content Include="Views\Forms\AddMultiItemBids.cshtml" />
+    <Content Include="Views\Forms\AddMultiItemsList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

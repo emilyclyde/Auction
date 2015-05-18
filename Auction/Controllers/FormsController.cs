@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Auction.Models;
+using Auction.ViewModels;
 
 namespace Auction.Controllers
 {
@@ -96,24 +97,38 @@ namespace Auction.Controllers
         }
 
 
-        //Add Multiple Bidder Item Bids ************************************************************************************************
-        public ActionResult AddMultiItemBids(int? id)
+        //Add Multiple Bidder Item Bids *************************************************************************************************
+        //GET************************************************************************
+        public ActionResult AddMultiItemBids(String Title)
         {
-            String MultiItemTitle = "";
-
-            foreach (var mbi in db.MultipleBidderItems)      // gets the Title for the id passed in
-                if (mbi.ID == id)
-                    MultiItemTitle = mbi.Title;
-
-            List<IndividualMultiBidderItem> IMBIList = new List<IndividualMultiBidderItem>();
-            if (MultiItemTitle != "")
-            {
-                foreach (var i in db.IndividualMultiBidderItems)
-                    if (i.Title == MultiItemTitle)
+           List<IndividualMultiBidderItem> IMBIList = new List<IndividualMultiBidderItem>();
+            foreach (var i in db.IndividualMultiBidderItems)
+                    if (i.Title == Title)
                         IMBIList.Add(i);
-            }
-            return View(IMBIList);
+            var MyList = new MultiBidderItemVM();
+            MyList.Title = Title;
+            MyList.IMBIList = IMBIList;
+            return View(MyList);
         }
+        //POST ***************************************************************************************************************************
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddMultiItemBids([Bind(Include = "ID,Title,Bidder_ID,BidAmount")]IndividualMultiBidderItem item)
+        {
+            if (ModelState.IsValid)
+            {
+                    db.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("AddMultiItemBids", "Forms", new { item.Title });
+            }
+
+            return View(item.Title);
+        }
+
+
+
+
+
 
 
 

@@ -16,7 +16,7 @@
         {
             <tr>
                 <td>
-                    <h4 id="ListButton"><a href="@Url.Action("Index", "Forms" @*, new { id = 1 }*@)"><b>@Html.DisplayFor(modelItem => mi.Title) </b></a></h4>
+                    <h4 id="ListButton"><a href="@Url.Action("AddMultiItemBids", "Forms" , new { mi.Title })"><b>@Html.DisplayFor(modelItem => mi.Title) </b></a></h4>
                 </td>
             </tr>
 

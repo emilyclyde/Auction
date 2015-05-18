@@ -1,7 +1,77 @@
 ﻿
+@model Auction.ViewModels.MultiBidderItemVM  
+
 @{
-    ViewBag.Title = "AddMultiItemBids";
+    ViewBag.Title = "Add Extra auction Bids";
 }
 
-<h2>AddMultiItemBids</h2>
+<body id="BackgroundGrad1">
+
+    <h1 class="CrudTitle">@Html.DisplayFor(modelItem => Model.Title)</h1>
+    <p>
+        <span class="btn btn-default"> @Html.ActionLink("Back to Forms List", "Index", "Forms")</span>
+    </p>
+    <h2 id="Theme">Enter bid amounts for each bidder </h2>
+    @using (Html.BeginForm("AddMultiItembids", "Forms", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <table class="table" id="IndexTable">
+            @foreach (var item in Model.IMBIList)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Bidder_ID)
+                    </td>
+                    
+                    @if (item.BidAmount == null || item.BidAmount < 1)
+                    {
+                        <td>
+                            <div class="col-md-10">
+                                @Html.EditorFor(modelItem => item.BidAmount, new { htmlAttributes = new { @class = "form-control", @id = item.ID } })
+                                @Html.ValidationMessageFor(modelItem => item.BidAmount, "", new { @class = "text-danger" })
+                            </div>
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BidAmount)
+                        </td>
+                    }
+
+                    
+
+                    <td>
+                        @if (item.BidAmount == null || item.BidAmount == 0) 
+                        {
+                            
+
+
+                            @Html.HiddenFor(modelItem => item.Bidder_ID, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(modelItem => item.Bidder_ID, "", new { @class = "text-danger" })
+                          
+                            @Html.HiddenFor(modelItem => item.Title, new { htmlAttributes = new { @class = "form-control", } })
+                            @Html.ValidationMessageFor(modelItem => item.Title, "", new { @class = "text-danger" })
+                            
+                            @Html.HiddenFor(modelItem => item.ID, new { htmlAttributes = new { @class = "form-control", } })
+                            @Html.ValidationMessageFor(modelItem => item.ID, "", new { @class = "text-danger" })
+
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" value="Save" class="btn btn-default" id=@item.ID />
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="ButtonDiv1"> @Html.ActionLink("Edit", "EditLiveItem", new { id = item.ID }) </div>
+                        }
+                    </td>
+                </tr>
+            }
+
+        </table>
+    }
+</body>
 
