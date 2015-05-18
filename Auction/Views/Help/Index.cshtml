@@ -4,26 +4,29 @@
 <body id="BackgroundHelp">
 
 
-    <h3>General Help</h3>
+    <h1 class="CrudTitle">Auction Help</h1>
     <table id="IndexTable">
-        <thead>Auction Basics</thead>
+        <tr>
+            <td style="font-weight:bold; font-size:large;">Auction Basics</td>
+        </tr>
         <tr>
             <td>
-                1. During the auction you will be given login and sign in as an Administrator.
-            </td>
-            </tr>
-        <tr>
-            <td>
-                2. All of your work will be conducted in the Administrative View. 
+                Login as an Administrator.
             </td>
         </tr>
-        
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+
         <tr>
             <td>
-                3. Click on Administration, a drop down menu will appear:
+                Then click on Administration and a drop down menu will appear:
             </td>
         </tr>
-        
+
         <tr>
             <td></td>
         </tr>
@@ -56,15 +59,17 @@
     <br /><br />
 
     <table id="IndexTable">
-        <thead>Auction Form Main</thead>
         <tr>
-            <td></td>
+            <td style="font-weight:bold; font-size:large;">Main Auction Form</td>
         </tr>
         <tr>
             <td></td>
         </tr>
         <tr>
-            <td> Auction Forms page will be your main page for bidders and all of your auction related events </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td> Auction Forms page will be your main page for all of your auction related events! </td>
         </tr>
 
         <tr>
@@ -75,9 +80,11 @@
     </table>
     <br /><br />
     <table id="IndexTable">
-        <thead>Back to Forms List Button</thead>
         <tr>
-            <td>Remember the back to forms List button is your go to button for all auction related work!</td>
+            <td style="font-weight:bold; font-size:large;">Back to Forms List Button</td>
+        </tr>
+        <tr>
+            <td style="color:red; font-weight:bold;"><em>Remember the back to forms List button is your go to button for all auction related work!</em></td>
 
         <tr>
             <td><span class="btn btn-default"> @Html.ActionLink("Back to Forms List", "Index", "Forms")</span></td>
@@ -90,7 +97,9 @@
 
     <br /><br />
     <table id="IndexTable">
-        <thead>Add/Edit Bidder</thead>
+        <tr>
+            <td style="font-weight:bold; font-size:large;">Add/Edit Bidder</td>
+        </tr>
         <tr>
             <td>How do I add a bidder to the auction?</td>
         </tr>
@@ -110,7 +119,9 @@
     </table>
     <br /><br />
     <table id="IndexTable">
-        <thead>Add/Edit Auction Item</thead>
+        <tr>
+            <td style="font-weight:bold; font-size:large;">Add/Edit Auction Item</td>
+        </tr>
         <tr>
             <td>How do I add an item to the auction?</td>
         </tr>
@@ -128,7 +139,7 @@
             </td>
         </tr>
         <tr>
-            <td>How do I add a multiple bidder item to the auction?</td>
+            <td>How do I add an extra auction item to the auction?</td>
         </tr>
         <tr>
             <td id="LogoCell">
@@ -137,28 +148,57 @@
         </tr>
 
     </table>
-
-    @*<h3>Winning Bidder</h3>
-        <p>
-            <h4>How do I load winning bids for silent and live auctions?</h4>
-        </p>
-
-        <h3>Donor</h3>
-        <p>
-            <h4>How do I add a donor to the auction</h4>
-        </p>
-
-        <h3>Auction Information</h3>
-        <p>
-            <h4>How do I edit the auction details?</h4>
-            <h4>How do I edit the contact details?</h4>
-
-        </p>
-        <h3>Printing Reports</h3>
-        <p>
-            <h4>How do I print reports from the auction?</h4>
-            <h4>How do I edit the contact details?</h4>
-        </p>*@*
-
+    <br /><br />
+    <table id="IndexTable">
+        <tr>
+            <td style="font-weight:bold; font-size:large;">Add Winning Bids</td>
+        </tr>
+        <tr>
+            <td>How do I load winning bids for silent and live auctions?</td>
+        </tr>
+        <tr>
+            <td id="LogoCell">
+                <img src="~/Images/silentbids.png" alt="silentbids" logo here" width="500" height="300">            @*displays picture*@
+            </td>
+        </tr>
+        <tr>
+            <td id="LogoCell">
+                <img src="~/Images/livebids.png" alt="livebids" logo here" width="500" height="300">            @*displays picture*@
+            </td>
+        </tr>
+    </table>
+    <br /><br />
+    <table id="IndexTable">
+        <tr>
+            <td style="font-weight:bold; font-size:large;">Donors</td>
+        </tr>
+        <tr>
+            <td>How do I add a donor to the auction</td>
+        </tr>
+    </table>
+    <br /><br />
+    <table id="IndexTable">
+        <tr>
+            <td style="font-weight:bold; font-size:large;">Auction Information</td>
+        </tr>
+        <tr>
+            <td>How do I edit the auction details?</td>
+        </tr>
+        <tr>
+            <td>How do I edit the contact details?</td>
+        </tr>
+    </table>
+    <br /><br />
+    <table id="IndexTable">
+        <tr>
+            <td style="font-weight:bold; font-size:large;">Printing Reports</td>
+        </tr>
+        <tr>
+            <td>How do I print reports from the auction?</td>
+        </tr>
+        <tr>
+            <td>How do I edit the contact details?</td>
+        </tr>
+    </table>
 
 </body>
