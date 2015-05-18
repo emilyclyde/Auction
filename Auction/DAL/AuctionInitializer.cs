@@ -74,7 +74,7 @@ namespace Auction.DAL
           new Item{ID=4, AuctionType=1, Title="Flowers for a Year", Description="Humbolt Florists will supply a colorful bouquet of seasonal flowers each month. Great for you home or office.", WinningBidder=101, BidAmount = 150},
           new Item{ID=5, AuctionType=1, Title="Oregon Coast Salmon fishing", Description="Bill Reynolds Salmon Carters, Florence OR, will take you and 3 guests out for a full day of Pacific salmon fishing. ", WinningBidder=102, BidAmount = 375},
           new Item{ID=6, AuctionType=1, Title="Hoodo Ski Trip", Description="Lift tickets and ski rental for two people at Hoodo ski resort ", WinningBidder=102, BidAmount = 100},
-          new Item{ID=7, AuctionType=2, Title="Jerry's Gift Card", Description="$25 Gift card to Jerry's Home Inprovement Center", WinningBidder=12, BidAmount=25},
+          new Item{ID=7, AuctionType=2, Title="Jerry's Gift Card", Description="$25 Gift card to Jerry's Home Inprovement Center", WinningBidder=105, BidAmount=25},
           new Item{ID=8, AuctionType=2, Title="Shari's Gift Certificate", Description="Gift certificate for one of Shari's Signature Pies", WinningBidder=101, BidAmount = 10},
           new Item{ID=9, AuctionType=2, Title="Manacure", Description="One Manacure at Nail's-R-Us", WinningBidder=103, BidAmount = 20},
           new Item{ID=10, AuctionType=2, Title="Papa Murphy's Pizzas", Description="2 Family size pizzas from either Springfield Papa Murphy's", WinningBidder=101, BidAmount = 30},

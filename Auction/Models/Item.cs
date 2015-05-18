@@ -16,6 +16,7 @@ namespace Auction.Models
     [Required]
     [StringLength(50)]
     public string Title { get; set; }
+
     //[StringLength(50, ErrorMessage = "Title cannot be longer than 50 characters.")]
     [Required]
     [DataType(DataType.MultilineText)]
@@ -41,7 +42,8 @@ namespace Auction.Models
     [Display(Name = "Bid Amount")]
     public decimal? BidAmount { get; set; }
 
-
+    //[Display(Name = "Value")]
+    //public decimal? Value { get; set; }
 
   }
 }
