@@ -1,60 +1,164 @@
 ﻿@{
     ViewBag.Title = "Index";
 }
-<body id="BackgroundGrad1">
+<body id="BackgroundHelp">
+
+
     <h3>General Help</h3>
-    <p>During the auction you will sign in as an Administrator. 
-        All of your work will be conducted in the Administrative Panel. 
-        This is located on the top in the navigation section. You will see a drop down menu.
-        This menu has three options: Auction Forms, Auction Reports and Auction Help.
-        <table id="IndexTable">
-            <tr>
-                <td id="LogoCell">
-                    <img src="~/Images/admindrop.png" alt="admin" Logo here" width="350" height="146">            @*displays picture*@
-                </td>
-            <tr>
-</table>
-<p>Remember the back to forms List button is your go to button for all auction related work!</p>
-    <p>
-        <span class="btn btn-default"> @Html.ActionLink("Back to Forms List", "Index", "Forms")</span>
-    </p>
+    <table id="IndexTable">
+        <thead>Auction Basics</thead>
+        <tr>
+            <td>
+                1. During the auction you will be given login and sign in as an Administrator.
+            </td>
+            </tr>
+        <tr>
+            <td>
+                2. All of your work will be conducted in the Administrative View. 
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                3. Click on Administration, a drop down menu will appear:
+            </td>
+        </tr>
+        
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td> Auction Forms</td>
+        </tr>
+        <tr>
+            <td> Auction Reports</td>
+        </tr>
+        <tr>
+            <td> Auction Help</td>
+        </tr>
 
-    <h3>Bidder</h3>
-    <p>
-        <h4>How do I add a bidder to the auction?</h4>
-        <h4>How do I edit a bidder to the auction?</h4>
-    </p>
 
-    <h3>Auction Item</h3>
-    <p>
-        <h4>How do I add an item to the auction?</h4>
-        <h4>How do I edit an item to the auction?</h4>
-        <h4>How do I add a multiple bidder item to the auction?</h4>
-        <h4>How do I edit a multiple bidder item to the auction?</h4>
-    </p>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="LogoCell">
+                <img src="~/Images/admindrop.png" alt="admin" logo here" width="500" height="300">            @*displays picture*@
+            </td>
+        <tr>
+    </table>
+    <br /><br />
 
+    <table id="IndexTable">
+        <thead>Auction Form Main</thead>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td> Auction Forms page will be your main page for bidders and all of your auction related events </td>
+        </tr>
 
-    <h3>Winning Bidder</h3>
-    <p>
-        <h4>How do I load winning bids for silent and live auctions?</h4>
-    </p>
+        <tr>
+            <td id="LogoCell">
+                <img src="~/Images/auctionform.png" alt="form" logo here" width="500" height="300">            @*displays picture*@
+            </td>
+        </tr>
+    </table>
+    <br /><br />
+    <table id="IndexTable">
+        <thead>Back to Forms List Button</thead>
+        <tr>
+            <td>Remember the back to forms List button is your go to button for all auction related work!</td>
 
-    <h3>Donor</h3>
-    <p>
-        <h4>How do I add a donor to the auction</h4>
-    </p>
+        <tr>
+            <td><span class="btn btn-default"> @Html.ActionLink("Back to Forms List", "Index", "Forms")</span></td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
 
-    <h3>Auction Information</h3>
-    <p>
-        <h4>How do I edit the auction details?</h4>
-        <h4>How do I edit the contact details?</h4>
+    </table>
 
-    </p>
-    <h3>Printing Reports</h3>
-    <p>
-        <h4>How do I print reports from the auction?</h4>
-        <h4>How do I edit the contact details?</h4>
-    </p>
-   
+    <br /><br />
+    <table id="IndexTable">
+        <thead>Add/Edit Bidder</thead>
+        <tr>
+            <td>How do I add a bidder to the auction?</td>
+        </tr>
+        <tr>
+            <td id="LogoCell">
+                <img src="~/Images/addbidder.png" alt="addbidder" logo here" width="500" height="300">            @*displays picture*@
+            </td>
+        </tr>
+        <tr>
+            <td>How do I edit a bidder to the auction?</td>
+        </tr>
+        <tr>
+            <td id="LogoCell">
+                <img src="~/Images/editbidder.png" alt="editbidder" logo here" width="500" height="300">            @*displays picture*@
+            </td>
+        </tr>
+    </table>
+    <br /><br />
+    <table id="IndexTable">
+        <thead>Add/Edit Auction Item</thead>
+        <tr>
+            <td>How do I add an item to the auction?</td>
+        </tr>
+        <tr>
+            <td id="LogoCell">
+                <img src="~/Images/additem.png" alt="additem" logo here" width="500" height="300">            @*displays picture*@
+            </td>
+        </tr>
+        <tr>
+            <td>How do I edit an item to the auction?</td>
+        </tr>
+        <tr>
+            <td id="LogoCell">
+                <img src="~/Images/edititem.png" alt="edititem" logo here" width="500" height="300">            @*displays picture*@
+            </td>
+        </tr>
+        <tr>
+            <td>How do I add a multiple bidder item to the auction?</td>
+        </tr>
+        <tr>
+            <td id="LogoCell">
+                <img src="~/Images/goatbaby.jpg" alt="edititem" logo here" width="500" height="300">            @*displays picture*@
+            </td>
+        </tr>
+
+    </table>
+
+    @*<h3>Winning Bidder</h3>
+        <p>
+            <h4>How do I load winning bids for silent and live auctions?</h4>
+        </p>
+
+        <h3>Donor</h3>
+        <p>
+            <h4>How do I add a donor to the auction</h4>
+        </p>
+
+        <h3>Auction Information</h3>
+        <p>
+            <h4>How do I edit the auction details?</h4>
+            <h4>How do I edit the contact details?</h4>
+
+        </p>
+        <h3>Printing Reports</h3>
+        <p>
+            <h4>How do I print reports from the auction?</h4>
+            <h4>How do I edit the contact details?</h4>
+        </p>*@*
+
 
 </body>
