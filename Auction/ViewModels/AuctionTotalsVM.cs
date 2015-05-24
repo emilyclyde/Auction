@@ -19,11 +19,11 @@ namespace Auction.ViewModels
 
         public decimal DoorTicketsTotal { get; set; }
         
+        public decimal AuctionTotal { get; set; }
+        
         public string Theme { get; set; }
 
         public string Date { get; set; }
-
-        public decimal TicketsTotal { get; set; }
 
     }
 }
