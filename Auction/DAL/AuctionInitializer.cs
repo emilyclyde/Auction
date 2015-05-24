@@ -125,6 +125,15 @@ namespace Auction.DAL
       context.SaveChanges();
 
 
+      var tickets = new List<Tickets>
+      {
+        new Tickets{ID= 1, NumEarlyTickets = 30, NumDoorTickets = 15, CostEarlyTickets = 15, CostDoorTickets= 25},
+                
+      };
+
+      tickets.ForEach(c => context.Tickets.Add(c));
+      context.SaveChanges();
+
     }
 
 
