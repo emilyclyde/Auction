@@ -1,0 +1,50 @@
+﻿@model Auction.Models.Tickets
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tickets</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NumEarlyTickets)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumEarlyTickets)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumDoorTickets)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumDoorTickets)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CostEarlyTickets)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CostEarlyTickets)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CostDoorTickets)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CostDoorTickets)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
