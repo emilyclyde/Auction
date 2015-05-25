@@ -25,5 +25,15 @@ namespace Auction.ViewModels
 
         public string Date { get; set; }
 
+        public int LiveCount { get; set; }
+
+        public int SilentCount { get; set; }
+
+        public int EarlyTicketCount { get; set; }
+
+        public int DoorTicketCount { get; set; }
+
+        public int BidderCount { get; set; }
+
     }
 }
