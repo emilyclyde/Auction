@@ -128,21 +128,37 @@ namespace Auction.Controllers
             AuctionTotalsVM totals = new AuctionTotalsVM();
             decimal? lTotal =0;
             decimal? sTotal =0;
+            int lCount = 0;
+            int sCount = 0;
+            List<Bidder> bidderList = db.Bidders.ToList();
             MultiBidderItemTotal mbit;
             List<IndividualMultiBidderItem> imbiList = db.IndividualMultiBidderItems.ToList();
             List<MultiBidderItemTotal> mbitList = new List<MultiBidderItemTotal>();
 
+            // Count Bidders
+            totals.BidderCount = bidderList.Count;
+
+
             //determine live auction items Total 
             foreach (var i in db.Items)
-                if(i.AuctionType == 1 && i.BidAmount != null)
-                      lTotal+=i.BidAmount;
+                if (i.AuctionType == 1 && i.BidAmount != null)
+                {
+                    lTotal += i.BidAmount;
+                    lCount++;
+                }
             totals.LiveTotal = (decimal)lTotal;
-    
+            totals.LiveCount = lCount;
+
+
             // determine Silent auction Item Total
             foreach (var i in db.Items)
-               if(i.AuctionType == 2 && i.BidAmount != null)
-                      sTotal+=i.BidAmount;
+                if (i.AuctionType == 2 && i.BidAmount != null)
+                {
+                    sTotal += i.BidAmount;
+                    sCount++;
+                }
             totals.SilentTotal = (decimal)sTotal;
+            totals.SilentCount = sCount;
 
 
             // determine each multi bidder item total
@@ -150,9 +166,9 @@ namespace Auction.Controllers
             {
                 mbit = new MultiBidderItemTotal();                          //create a new object for the view model list
                 mbit.Title = mbi.Title;
-                foreach (var imbi in imbiList)                                 //loop through all Individual Multibidder items
+                foreach (var imbi in imbiList)                              //loop through all Individual Multibidder items
                 {
-                    if (mbi.Title == imbi.Title)                             //check for a matching type of multi bidder item
+                    if (mbi.Title == imbi.Title)                            //check for a matching type of multi bidder item
                         mbit.Total += imbi.BidAmount;                       // increment the total
                 }
                 mbitList.Add(mbit);                                         //add the total object to the mbit List
@@ -164,11 +180,17 @@ namespace Auction.Controllers
 
             // determine total for early tickets sales
             foreach (var t in db.Tickets)
+            {
                 totals.EarlyTicketsTotal = t.NumEarlyTickets * t.CostEarlyTickets;
+                totals.EarlyTicketCount = t.NumEarlyTickets;
+            }
 
             // determine total for tickets sales at the door
             foreach (var t in db.Tickets)
+            {
                 totals.DoorTicketsTotal = t.NumDoorTickets * t.CostDoorTickets;
+                totals.DoorTicketCount = t.NumDoorTickets;
+            }
 
             //Auction Total
             totals.AuctionTotal = totals.EarlyTicketsTotal +

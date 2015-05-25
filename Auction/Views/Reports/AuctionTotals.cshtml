@@ -1,7 +1,6 @@
-﻿
-@**************************************************************
-This Page is in-work by Rob 
-**************************************************************@
+﻿@**************************************************************
+    This Page is in-work by Rob
+    **************************************************************@
 
 
 
@@ -10,20 +9,76 @@ This Page is in-work by Rob
     ViewBag.Title = "AuctionTotals";
 }
 
-<h2>AuctionTotals</h2>
 
-<h2>@Model.Date</h2>
-<h2>@Model.Theme</h2>
-<h2>@Model.LiveTotal</h2>
-<h2>@Model.SilentTotal</h2>
-<h2>@Model.EarlyTicketsTotal</h2>
-<h2>@Model.DoorTicketsTotal</h2>
+<body id="BackgroundGrad1">
+    <table id="IndexTable">
+        <tr>
+            <td id="LogoCell">
+                <img src="~/Images/Logos Academy Logo4.png" alt="Opps! Logo here" width="250" >            @*displays picture*@
+            </td>
 
-@foreach(var i in Model.MultiTotals)
-{ 
-    <h2>@i.Title : @i.Total</h2>
-}    
+            <td class="TableDataIndex2" colspan="2">
+                <h2 class="CrudTitle">Auction Totals</h2>
+                <h4 id="Theme">@Model.Theme</h4>
+                <h4 id="Theme">@Model.Date</h4>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" class="TableDataIndex4">
+                <h3>@Model.BidderCount   Registered Bidders</h3>
+            </td>
+        </tr>
+        <tr class="TopLine1">
+            <td class="TableDataIndex9 " colspan="2">
+                <h3>@Model.EarlyTicketCount Discount Tickets: </h3>
+            </td>
+            <td class="TableDataIndex9">
+                <h3>$ @Model.EarlyTicketsTotal</h3>
+            </td>
+        </tr>
+        <tr class="TopLine1">
+            <td class="TableDataIndex9" colspan="2">
+                <h3>@Model.DoorTicketCount Regular Tickets: </h3>
+            </td>
+            <td class="TableDataIndex9">
+                <h3>$ @Model.DoorTicketsTotal</h3>
+            </td>
+        </tr>
+        <tr class="TopLine1">
+            <td class="TableDataIndex9" colspan="2">
+                <h3>@Model.LiveCount Live Auction Items: </h3>
+            </td>
+            <td class="TableDataIndex9">
+                <h3>$ @Model.LiveTotal</h3>
+            </td>
+        </tr>
+        <tr class="TopLine1">
+            <td class="TableDataIndex9" colspan="2">
+                <h3>@Model.SilentCount Silent Auction Items: </h3>
+            </td>
+            <td class="TableDataIndex9">
+                <h3>$ @Model.SilentTotal</h3>
+            </td>
+        </tr>
 
-<h1>@Model.AuctionTotal</h1>
-
-
+        @foreach (var i in Model.MultiTotals)
+        {
+            <tr class="TopLine1">
+                <td class="TableDataIndex9" colspan="2">
+                    <h3>@i.Title : </h3>
+                </td>
+                <td class="TableDataIndex9">
+                    <h3>$ @i.Total</h3>
+                </td>
+            </tr>
+        }
+        <tr class="TopLine2">
+            <td class="TableDataIndex9" colspan="2">
+                <h3><b>Grand Total:</b></h3>
+            </td>
+            <td class="TableDataIndex9">
+                <h3><b> $ @Model.AuctionTotal</b></h3>
+            </td>
+        </tr>
+    </table>
+</body>
