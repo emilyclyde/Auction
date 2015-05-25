@@ -4,7 +4,7 @@
 <body id="BackgroundGrad1">
     <table id="IndexTable">
         <tr>
-            <td colspan="2">
+            <td colspan="3">
                 <h1 class="CrudTitle">Auction Forms</h1>
                 <br />
             </td>
@@ -17,6 +17,9 @@
                 <h4 id="ListButton"><a href="@Url.Action("Create", "Bidder")"><b>Add </b></a></h4>
                 <h4 id="ListButton"><a href="@Url.Action("index", "Bidder")"><b>Edit </b></a></h4>
             </td>
+            <td class="TableDataIndex15">
+                <h5><u>Bidder</u>: Auction participant who will use their assigned <i>Bidder Number</i> to bid on auction items. This may be an individual, couple or family.</h5>
+            </td>
         </tr>
         <tr>
             <td>
@@ -25,6 +28,9 @@
             <td>
                 <h4 id="ListButton"><a href="@Url.Action("Create", "Item")"><b>Add</b></a></h4>
                 <h4 id="ListButton"><a href="@Url.Action("Index", "Item")"><b>Edit </b></a></h4>
+            </td>
+            <td class="TableDataIndex15">
+                <h5><u>Auction Item</u>: Items or services that will be available to be bid on, in both the live auction or the silent auction.</h5>
             </td>
         </tr>
         <tr>
@@ -35,6 +41,9 @@
                 <h4 id="ListButton"><a href="@Url.Action("Create", "MultipleBidderItem")"><b>Add</b></a></h4>
                 <h4 id="ListButton"><a href="@Url.Action("Index", "MultipleBidderItem")"><b>Edit </b></a></h4>
             </td>
+            <td class="TableDataIndex15">
+                <h5><u>Extra Auction Item</u>: An item such as a raffle, cash donation or dessert dash, that all bidders have an opertunity to give towards.</h5>
+            </td>
         </tr>
         <tr>
             <td>
@@ -43,6 +52,9 @@
             <td>
                 <h4 id="ListButton"><a href="@Url.Action("Create", "Donor")"><b>Add</b></a></h4>
                 <h4 id="ListButton"><a href="@Url.Action("Index", "Donor")"><b>Edit </b></a></h4>
+            </td>
+            <td class="TableDataIndex15">
+                <h5><u>Donor</u>: Person, family or business that has donated items or services to be Auctioned off.</h5>
             </td>
         </tr>
         <tr>
@@ -54,6 +66,9 @@
                 <h4 id="ListButton"><a href="@Url.Action("AddWinningBidsLive", "Forms")"><b>Live Auction </b></a></h4>
                 <h4 id="ListButton"><a href="@Url.Action("AddMultiItemsList", "Forms")"><b>Extra Auction Items </b></a></h4>
             </td>
+            <td class="TableDataIndex15">
+                <h5> Enter the winning bid amounts after a particular auction has closed.</h5>
+            </td>
         </tr>
         <tr>
             <td>
@@ -61,8 +76,15 @@
             </td>
             <td>
                 <h4 id="ListButton"><a href="@Url.Action("Edit", "AuctionDetail", new { id = 1 })"><b>Edit Auction Details </b></a></h4>
-                <h4 id="ListButton"><a href="@Url.Action("Edit", "Contact", new { id = 1 })"><b>Edit Contact Information </b></a></h4>
-                <h4 id="ListButton"><a href="@Url.Action("Edit", "Tickets", new { id = 1 })"><b>Edit Ticket Sales Information </b></a></h4>
+                <h4 id="ListButton"><a href="@Url.Action("Edit", "Contact", new { id = 1 })"><b>Edit Contact Info </b></a></h4>
+                <h4 id="ListButton"><a href="@Url.Action("Edit", "Tickets", new { id = 1 })"><b>Edit Ticket Sales</b></a></h4>
+            </td>
+            <td class="TableDataIndex15">
+                <h5>Update the auction details shown on the Auction Home page.<br /> <br /><br /></h5>
+               
+                <h5>Update the Contact information shown at the bottom of certian pages. <br /><br /></h5>
+                
+                <h5>Update information pretaining to ticket sales, for use in Auction Reports.</h5>
             </td>
         </tr>
         <tr>
@@ -72,6 +94,9 @@
             </td>
             <td>
                 <h4 id="ListButton"><a href="@Url.Action("Index", "Help")"><b>Help</b></a></h4>
+            </td>
+            <td class="TableDataIndex15">
+                <h5>Get help on a particular area of the auction website.</h5>
             </td>
         </tr>
         <tr></tr>
