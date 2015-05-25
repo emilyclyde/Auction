@@ -379,6 +379,13 @@ important {
      padding-right: 20px;
     text-align: center;
 }
+
+.TableDataIndex15 {
+    text-align: left;
+    padding-left: 10px;
+    width:40%;
+}
+
 .TableIndex2 {
     margin-left: auto;
     margin-right: auto;
