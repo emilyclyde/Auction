@@ -23,7 +23,7 @@ h6 {
     font-size: 0.85em;
 }
 
-td {border: 1px solid black;}
+/*td {border: 1px solid black;}*/
 
 #Bigger{
 font-size: 1.72em;
@@ -409,6 +409,15 @@ important {
     border: none;
 }
 
+.TopLine1{
+   border-top: 1px solid black; 
+}
+.TopLine2{
+   border-top: 2px solid black; 
+}
+.TopLine3{
+   border-top: 3px solid black; 
+}
 
 #Times {
     font-style: normal;
