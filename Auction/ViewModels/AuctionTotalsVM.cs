@@ -13,7 +13,7 @@ namespace Auction.ViewModels
 
         public decimal SilentTotal { get; set; }
 
-        public List<IndividualMultiBidderItem> MultiTotals { get; set; }
+        public List<MultiBidderItemTotal> MultiTotals { get; set; }
 
         public decimal EarlyTicketsTotal { get; set; }
 

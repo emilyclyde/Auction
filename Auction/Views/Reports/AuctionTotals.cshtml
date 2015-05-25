@@ -1,7 +1,29 @@
 ﻿
+@**************************************************************
+This Page is in-work by Rob 
+**************************************************************@
+
+
+
+@model Auction.ViewModels.AuctionTotalsVM
 @{
     ViewBag.Title = "AuctionTotals";
 }
 
 <h2>AuctionTotals</h2>
+
+<h2>@Model.Date</h2>
+<h2>@Model.Theme</h2>
+<h2>@Model.LiveTotal</h2>
+<h2>@Model.SilentTotal</h2>
+<h2>@Model.EarlyTicketsTotal</h2>
+<h2>@Model.DoorTicketsTotal</h2>
+
+@foreach(var i in Model.MultiTotals)
+{ 
+    <h2>@i.Title : @i.Total</h2>
+}    
+
+<h1>@Model.AuctionTotal</h1>
+
 

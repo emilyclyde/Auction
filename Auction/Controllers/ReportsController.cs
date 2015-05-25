@@ -122,6 +122,75 @@ namespace Auction.Controllers
         }
 
 
+        // Auction Totals *******************************************************************************
+        public ActionResult AuctionTotals()
+        {
+            AuctionTotalsVM totals = new AuctionTotalsVM();
+            decimal? lTotal =0;
+            decimal? sTotal =0;
+            MultiBidderItemTotal mbit;
+            List<IndividualMultiBidderItem> imbiList = db.IndividualMultiBidderItems.ToList();
+            List<MultiBidderItemTotal> mbitList = new List<MultiBidderItemTotal>();
+
+            //determine live auction items Total 
+            foreach (var i in db.Items)
+                if(i.AuctionType == 1 && i.BidAmount != null)
+                      lTotal+=i.BidAmount;
+            totals.LiveTotal = (decimal)lTotal;
+    
+            // determine Silent auction Item Total
+            foreach (var i in db.Items)
+               if(i.AuctionType == 2 && i.BidAmount != null)
+                      sTotal+=i.BidAmount;
+            totals.SilentTotal = (decimal)sTotal;
+
+
+            // determine each multi bidder item total
+            foreach (var mbi in db.MultipleBidderItems)                     //Loop through each type of multi bidder item
+            {
+                mbit = new MultiBidderItemTotal();                          //create a new object for the view model list
+                mbit.Title = mbi.Title;
+                foreach (var imbi in imbiList)                                 //loop through all Individual Multibidder items
+                {
+                    if (mbi.Title == imbi.Title)                             //check for a matching type of multi bidder item
+                        mbit.Total += imbi.BidAmount;                       // increment the total
+                }
+                mbitList.Add(mbit);                                         //add the total object to the mbit List
+            }
+
+            totals.MultiTotals = mbitList ;                                 // add the mbit List to the VM
+
+
+
+            // determine total for early tickets sales
+            foreach (var t in db.Tickets)
+                totals.EarlyTicketsTotal = t.NumEarlyTickets * t.CostEarlyTickets;
+
+            // determine total for tickets sales at the door
+            foreach (var t in db.Tickets)
+                totals.DoorTicketsTotal = t.NumDoorTickets * t.CostDoorTickets;
+
+            //Auction Total
+            totals.AuctionTotal = totals.EarlyTicketsTotal +
+                                   totals.DoorTicketsTotal +
+                                   totals.LiveTotal +
+                                   totals.SilentTotal;
+                foreach (var i in totals.MultiTotals)    // get totals from Multi bidder items
+                    totals.AuctionTotal += i.Total;
+                
+            
+            //get Date and Theme
+                foreach (var d in db.AuctionDetails)
+                {
+                    totals.Date = d.Date;
+                    totals.Theme = d.Theme;
+                }
+
+            return View(totals);
+        }
+        
+        
+        
 
 
 
