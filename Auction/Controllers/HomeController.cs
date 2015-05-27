@@ -123,17 +123,17 @@ namespace Auction.Controllers
     {
       //Commenting out for now since and I want it to run, VM is not created yet correct?! 
       //Go ahead and uncomment Rob when you get back here! :) Emily
-      //   ContactVM cvm = new ContactVM();
-      //foreach(var c in db.Contacts)
-      //{
-      //   cvm.Name = c.Name;
-      //   cvm.Email = c.Email;
-      //   cvm.PhoneNumber=c.PhoneNumber;
-      ////}
+         ContactVM cvm = new ContactVM();
+      foreach(var c in db.Contacts)
+      {
+         cvm.Name = c.Name;
+         cvm.Email = c.Email;
+         cvm.PhoneNumber=c.PhoneNumber;
+      }
 
-      // return View(cvm);
+       return View(cvm);
 
-      return View();
+      
     }
 
 
