@@ -14,7 +14,7 @@
     }
 </style>
 
-<body id="BackgroundGrad1">
+<div id="BackgroundGrad1"  class="full">
     @using (Html.BeginForm("Create", "Bidder", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         @Html.AntiForgeryToken()
@@ -84,4 +84,4 @@
     @section Scripts {
         @Scripts.Render("~/bundles/jqueryval")
     }
-</body>
+</div>
