@@ -12,8 +12,9 @@ using Auction.Models;
 using Auction.DAL;
 
 namespace Auction.Controllers
-{
-  [Authorize(Users = "admin@test.com, admin1@auction.com, admin2@auction.com, admin3@auction.com")] //user: "" password: Pass_1234
+{ 
+  //[Authorize(Users = "admin@test.com, admin1@auction.com, admin2@auction.com, admin3@auction.com")] //user: "" password: Pass_1234
+
     public class ItemController : Controller
     {
         //private ApplicationDbContext db = new ApplicationDbContext();
