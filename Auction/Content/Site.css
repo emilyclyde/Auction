@@ -39,6 +39,24 @@ body {
 #BackgroundHelp {
     background-color:aliceblue;
 }
+.full {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+#center {
+        margin-left: 30%;
+        margin-right: 30%;
+        width: 500px;
+    }
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
 
 #BackgroundGrad1 {
     background: -webkit-linear-gradient(130deg,lightblue, rgb(0, 100, 150)); /* For Safari 5.1 to 6.0 */

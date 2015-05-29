@@ -1,15 +1,15 @@
 ﻿@model Auction.Models.Item
 
 
-<style>
+@*<style>
     footer {
         position: absolute;
         bottom: 0;
         width: 80%;
     }
-</style>
+</style>*@
 
-<body id="BackgroundGrad1">
+<div id="BackgroundGrad1"  class="full">
     <hgroup class="title">
         <h1 class="CrudTitle">Edit Item @Html.DisplayFor(Item => Item.ID)</h1>
         
@@ -146,4 +146,4 @@ bottom: 70px; width: 300px; margin-left: auto;margin-right: auto;left: 40%; righ
     @section Scripts {
         @Scripts.Render("~/bundles/jqueryval")
     }
-</body>
+</div>
