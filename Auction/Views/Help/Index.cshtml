@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = "Index";
 }
-<body id="BackgroundHelp" >
+<body id="BackgroundHelp">
     <h1 class="CrudTitle">Auction Help</h1>
     <table id="IndexTable">
         <tr>
@@ -32,13 +32,13 @@
             <td></td>
         </tr>
         <tr>
-            <td> Auction Forms</td>
+            <td> Auction Forms: This is your main event screen. You can add, edit, and delete bidders, items, donors, update details and contact information</td>
         </tr>
         <tr>
-            <td> Auction Reports</td>
+            <td> Auction Reports: This your screen where you can run reports for bidders, items, and donors. Here you can print and save reports for your records</td>
         </tr>
         <tr>
-            <td> Auction Help</td>
+            <td> Auction Help: If you have questions please come here!</td>
         </tr>
 
 
@@ -56,9 +56,9 @@
     </table>
 
     @*<hr style="border-style: inset; border-width: 1px ; margin-left: auto; margin-right: auto; box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);"
-    />*@
+        />*@
 
-    <hr style="height: 12px; border: 0; box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);"/>
+    <hr style="height: 12px; border: 0; box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);" />
 
     <table id="IndexTable">
         <tr>
@@ -71,12 +71,56 @@
             <td></td>
         </tr>
         <tr>
-            <td> Auction Forms page will be your main page for all of your auction related events! </td>
+            <td>Auction Forms page will be your main page for all of your auction related events! </td>
         </tr>
-
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td style="font-weight:bold; font-size:large;">Auction Form Definitions</td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Bidder: Auction participant who will use their assigned Bidder Number to bid on auction items. This may be an individual, couple or family.</td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Auction Item: Items or services that will be available to be bid on both the live auction, or the silent auction.</td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Extra Auction Item: An item such as a raffle, cash donation or dessert dash that all bidders have an opportunity to give towards.</td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Donor: Person, family or business that has donated items or services to be Auctioned off.</td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Load Winning Bids: Enter the winning bid amounts after a particular auction has closed.</td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Auction Info: Update the auction details shown on the Auction Home page. Update the Contact information shown at the bottom of certain page. Update information pertaining to ticket sales, for use in Auction Reports.</td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
         <tr>
             <td id="LogoCell">
-                <img src="~/Images/auctionform.png" alt="form" logo here" width="500" height="300">            @*displays picture*@
+                <img src="~/Images/auctionform1.png" alt="form" logo here" width="500" height="300">            @*displays picture*@
             </td>
         </tr>
     </table>
@@ -108,13 +152,34 @@
             <td>How do I add a bidder to the auction?</td>
         </tr>
         <tr>
+            <td>On the Auction Form Page click on Add Bidder</td>.
+        </tr>
+        <tr><td>1. Enter the Bidder Information</td></tr>
+        <tr><td>2. Click Add</td>
+
+        <tr>
             <td id="LogoCell">
                 <img src="~/Images/addbidder.png" alt="addbidder" logo here" width="500" height="300">            @*displays picture*@
             </td>
         </tr>
         <tr>
-            <td>How do I edit a bidder to the auction?</td>
+            <td>After Adding a new bidder will see the Bidder Information and Bidder Number.</td>
+            <td></td>
         </tr>
+        <tr></tr>
+        <tr>
+            <td id="LogoCell">
+                <img src="~/Images/newbidder1.png" alt="addbidder" logo here" width="500" height="300">            @*displays picture*@
+            </td>
+        </tr>
+        <tr>
+            <td>How do I edit/delete a bidder in the auction?</td>
+        </tr>
+        <tr>
+            <td>On the Auction Form Page click on Edit Bidder</td>.
+        </tr>
+        <tr><td>1. Enter the revised Bidder Information</td></tr>
+        <tr><td>2. Click Save or Cancel</td>
         <tr>
             <td id="LogoCell">
                 <img src="~/Images/editbidder.png" alt="editbidder" logo here" width="500" height="300">            @*displays picture*@
@@ -131,13 +196,23 @@
             <td>How do I add an item to the auction?</td>
         </tr>
         <tr>
+            <td>On the Auction Form Page click on Auction Item Add </td>.
+        </tr>
+        <tr><td>1. Enter the Auction Item Information</td></tr>
+        <tr><td>2. Click Add</td>
+        <tr>
             <td id="LogoCell">
                 <img src="~/Images/additem.png" alt="additem" logo here" width="500" height="300">            @*displays picture*@
             </td>
         </tr>
         <tr>
-            <td>How do I edit an item to the auction?</td>
+            <td>How do I edit/delete an item in the auction?</td>
         </tr>
+        <tr>
+            <td>On the Auction Form Page click on Auction Item Edit </td>.
+        </tr>
+        <tr><td>1. Enter the revised Auction Item Information</td></tr>
+        <tr><td>2. Click Edit or Delete</td>
         <tr>
             <td id="LogoCell">
                 <img src="~/Images/edititem.png" alt="edititem" logo here" width="500" height="300">            @*displays picture*@
@@ -146,6 +221,11 @@
         <tr>
             <td>How do I add an extra auction item to the auction?</td>
         </tr>
+        <tr>
+            <td>On the Auction Form Page click on Extra Auction Item Add </td>.
+        </tr>
+        <tr><td>1. Enter the Extra Auction Item Information</td></tr>
+        <tr><td>2. Click Add</td>
         <tr>
             <td id="LogoCell">
                 <img src="~/Images/extra.png" alt="edititem" logo here" width="500" height="300">            @*displays picture*@
@@ -160,8 +240,13 @@
             <td style="font-weight:bold; font-size:large;">Add Winning Bids</td>
         </tr>
         <tr>
-            <td>How do I load winning bids for silent and live auctions?</td>
+            <td>How do I load winning bids for silent, live and extar auctions?</td>
         </tr>
+        <tr>
+            <td>On the Auction Form Page choose the auction type (silent, live, extra)</td>.
+        </tr>
+        <tr><td>1. Enter the Winning Bidder Number and Winning Bid Amount</td></tr>
+        <tr><td>2. Click Save</td>
         <tr>
             <td id="LogoCell">
                 <img src="~/Images/silentbids.png" alt="silentbids" logo here" width="500" height="300">            @*displays picture*@
@@ -180,14 +265,27 @@
             <td style="font-weight:bold; font-size:large;">Donors</td>
         </tr>
         <tr>
-            <td>How do I add a donor to the auction</td>
+            <td>How do I add a donor to the auction?</td>
         </tr>
         <tr>
+            <td>On the Auction Form Page click on Donor Add </td>.
+        </tr>
+        <tr><td>1. Enter the Donor Information</td></tr>
+        <tr><td>2. Click Add</td>
+<tr>
             <td id="LogoCell">
                 <img src="~/Images/donor1.png" alt="donor" logo here" width="500" height="300">            @*displays picture*@
             </td>
         </tr>
-    </table>
+        <tr>
+            <td>How do I edit a donor to the auction?</td>
+        </tr>
+        <tr>
+            <td>On the Auction Form Page click on Donor Edit </td>.
+        </tr>
+        <tr><td>1. Enter the revised Donor Information</td></tr>
+        <tr><td>2. Click Eddt </td>
+</table>
     @*<hr style="border-style: inset; border-width: 1px ; margin-left: auto; margin-right: auto;" />*@
     <hr style="height: 12px; border: 0; box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);" />
     <table id="IndexTable">
@@ -195,15 +293,24 @@
             <td style="font-weight:bold; font-size:large;">Auction Information</td>
         </tr>
         <tr>
-            <td>How do I edit the auction details?</td>
+            <td>How do I edit the auction information?</td>
         </tr>
         <tr>
+            <td>On the Auction Form Page choose edit auction details, edit contact details, edit ticket sales </td>.
+        </tr>
+        <tr><td>1. Enter the revised information</td></tr>
+        <tr><td>2. Click Save</td>
+        <tr>
+            <td>Example auction details</td>
+        </tr>
+<tr>
+
             <td id="LogoCell">
                 <img src="~/Images/details.png" alt="details" logo here" width="500" height="300">            @*displays picture*@
             </td>
         </tr>
         <tr>
-            <td>How do I edit the contact details?</td>
+            <td>Example contact details</td>
         </tr>
         <tr>
             <td id="LogoCell">
@@ -211,7 +318,7 @@
             </td>
         </tr>
         <tr>
-            <td>How do I edit the ticket sales?</td>
+            <td>Example ticket sales</td>
         </tr>
         <tr>
             <td id="LogoCell">
@@ -230,11 +337,25 @@
             <td>How do I print reports from the auction?</td>
         </tr>
         <tr>
+            <td>Navigate to the Auction Reports Page</td>.
+        </tr>
+        <tr><td>1. Choose your report</td></tr>
+        <tr><td>2. Click Print or Save</td></tr>
+        <tr>
             <td id="LogoCell">
-                <img src="~/Images/report.png" alt="reportss" logo here" width="500" height="300">            @*displays picture*@
+                <img src="~/Images/mainreport.png" alt="reports" logo here" width="500" height="300">            @*displays picture*@
             </td>
         </tr>
-        
+        <tr>
+        <tr>
+            <td>Example Auction Report</td>
+        </tr>
+<tr>
+            <td id="LogoCell">
+                <img src="~/Images/report.png" alt="reports" logo here" width="500" height="300">            @*displays picture*@
+            </td>
+        </tr>
+
     </table>
 
 </body>

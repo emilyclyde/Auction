@@ -218,6 +218,7 @@
     <Content Include="Images\additem.png" />
     <Content Include="Images\admindrop.png" />
     <Content Include="Images\auctionform.png" />
+    <Content Include="Images\auctionform1.png" />
     <Content Include="Images\contact.png" />
     <Content Include="Images\details.png" />
     <Content Include="Images\donor1.png" />
@@ -240,6 +241,8 @@
     <Content Include="Images\Logos Academy Logo.jpg" />
     <Content Include="Images\Logos Academy Logo3.png" />
     <Content Include="Images\Logos Academy Logo4.png" />
+    <Content Include="Images\mainreport.png" />
+    <Content Include="Images\newbidder1.png" />
     <Content Include="Images\report.png" />
     <Content Include="Images\silentbids.png" />
     <Content Include="Images\ticket.png" />
