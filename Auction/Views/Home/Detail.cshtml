@@ -1,37 +1,37 @@
 ﻿@model Auction.ViewModels.ItemDetailVM
 
 
-<div id="BackgroundGrad2" class="full">
+<body id="BackgroundGrad2" class="full">
 
     <table id="IndexTable">
         <tr>
-            <td id="LogoCell2" >
+            <td id="LogoCell2">
                 <img src="~/Images/Logos Academy Logo4.png" alt="Opps! Logo here" width="350" height="146">
             </td>
 
             @*<td class="TableDataIndex3">
-                <h1 id="title"><b>Annual Benefit Auction</b></h1>
-            </td>*@
+                    <h1 id="title"><b>Annual Benefit Auction</b></h1>
+                </td>*@
         </tr>
         <tr>
-            <td >
+            <td>
                 <h2 id="DetailTitle"><b> @Html.DisplayFor(model => model.Title) </b></h2>
             </td>
         </tr>
         <tr>
             <td colspan="2">
-             @if (File.Exists(Server.MapPath("~/Images/Items/"
-                                    + Html.DisplayFor(modelItem => Model.ImageURL))))
-                    {
-                        <img alt="" src="~/Images/Items/@Html.DisplayFor(modelItem   => Model.ImageURL)" alt=" opps!" width="500" id="DetailImage">
+                @if (File.Exists(Server.MapPath("~/Images/Items/"
+                                + Html.DisplayFor(modelItem => Model.ImageURL))))
+                {
+                    <img alt="" src="~/Images/Items/@Html.DisplayFor(modelItem   => Model.ImageURL)" alt=" opps!" width="500" id="DetailImage">
 
-                    }
-                    else
-                    {
-                        <img alt="" src="~/Images/Items/default.png" alt=" opps!" width="500" id="DetailImage">
-                    }
-                
-    @*displays picture*@
+                }
+                else
+                {
+                    <img alt="" src="~/Images/Items/default.png" alt=" opps!" width="500" id="DetailImage">
+                }
+
+                @*displays picture*@
             </td>
         </tr>
         <tr>
@@ -41,14 +41,15 @@
         </tr>
         <tr>
             <td>
-                <div id="ListButtonDiv" >
+                <div id="ListButtonDiv">
                     <h3 id="ListButton"><a href="@Url.Action("List", "Home")"><b>Back to the list of live auction items</b></a></h3>
                 </div>
             </td>
         </tr>
     </table>
- 
-</div>
+
+</body>
+
 <footer class="AuctionFooter">
     <div>
         <h5> For more information, or to donate items, please contact:</h5>
