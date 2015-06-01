@@ -7,8 +7,8 @@ using Auction.Models;
 
 namespace Auction.DAL
 {
-  //public class AuctionInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<AuctionContext>
-  public class AuctionInitializer : System.Data.Entity.DropCreateDatabaseAlways<AuctionContext>
+  public class AuctionInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<AuctionContext>
+  //public class AuctionInitializer : System.Data.Entity.DropCreateDatabaseAlways<AuctionContext>
   {
     protected override void Seed(AuctionContext context)
     {

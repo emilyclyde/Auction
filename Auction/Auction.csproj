@@ -252,9 +252,11 @@
     <Content Include="AuctionClassDiagram.cd" />
     <None Include="Properties\PublishProfiles\LogosAuction - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\LogosAuction - FTP %283%29.pubxml" />
+    <None Include="Properties\PublishProfiles\LogosAuction - FTP %284%29.pubxml" />
     <None Include="Properties\PublishProfiles\logosauction - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\LogosAuction - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\LogosAuction - Web Deploy %283%29.pubxml" />
+    <None Include="Properties\PublishProfiles\LogosAuction - Web Deploy %284%29.pubxml" />
     <None Include="Properties\PublishProfiles\logosauction - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
