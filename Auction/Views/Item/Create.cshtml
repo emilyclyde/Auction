@@ -83,8 +83,9 @@
             <!-------------Auction Type Dropdown---------------->
             <!---------------Do Not Delete---------------------->
 
+            <!--Removed these fields for now-->
 
-            <div class="form-group" id="center">
+            @*<div class="form-group" id="center">
                 @Html.LabelFor(model => model.WinningBidder, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.WinningBidder, new { htmlAttributes = new { @class = "form-control" } })
@@ -98,7 +99,7 @@
                     @Html.EditorFor(model => model.BidAmount, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.BidAmount, "", new { @class = "text-danger" })
                 </div>
-            </div>
+            </div>*@
             <!--Image upload code. Donot Delete. Donot Modify-->
             <div class="form-group" id="center">
                 @Html.LabelFor(model => model.ImageURL, htmlAttributes: new { @class = "control-label col-md-2" })

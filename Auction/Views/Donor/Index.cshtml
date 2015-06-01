@@ -3,14 +3,14 @@
 @{
     ViewBag.Title = "Index";
 }
-<body id="BackgroundGrad1"  class="full">
-    <h2>Donor</h2>
+<body id="BackgroundGrad1" class="full">
+    <h2 class="CrudTitle">Donor</h2>
     <p>
         <span class="btn btn-default"> @Html.ActionLink("Back to Forms List", "Index", "Forms")</span>
     </p>
 
-    <p>
-        @Html.ActionLink("Create New", "Create")
+    <p id="ListButton2">
+        @Html.ActionLink("Add a New Donor", "Create")
     </p>
     <table class="table">
         <tr>
@@ -74,13 +74,29 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Value)
                 </td>
-                <td>
+                <td class="TableDataIndex4">
+                    <table class="TableDataIndex5">
+                        <tr>
+                            <td class="TableDataIndex5">
+                                <div class="ButtonDiv1">@Html.ActionLink("Edit", "Edit", new { id = item.ID }) </div>
+                            </td>
+                            <td class="TableDataIndex5">
+                                <div class="ButtonDiv1">@Html.ActionLink("Delete", "Delete", new { id = item.ID }) </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            @*<td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
                     @Html.ActionLink("Details", "Details", new { id = item.ID }) |
                     @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-                </td>
-            </tr>
+                </td>*@
+
+
+
         }
+
 
     </table>
 </body>
