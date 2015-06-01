@@ -85,7 +85,7 @@ namespace Auction.Controllers
             {
                 db.Entry(auctionDetail).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Forms");
             }
             return View(auctionDetail);
         }

@@ -4,13 +4,13 @@
     ViewBag.Title = "Index";
 }
 <body id="BackgroundGrad1"  class="full">
-    <h2>Auction Details</h2>
+    <h2 class="CrudTitle">Auction Details</h2>
     <p>
         <span class="btn btn-default"> @Html.ActionLink("Back to Forms List", "Index", "Forms")</span>
     </p>
 
-    <p>
-        @Html.ActionLink("Create New", "Create")
+    <p id="ListButton2">
+        @Html.ActionLink("New Auction Details", "Create")
     </p>
     <table class="table">
         <tr>
@@ -80,11 +80,11 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.EarlyTicketDate)
                 </td>
-                <td>
+                @*<td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
                     @Html.ActionLink("Details", "Details", new { id = item.ID }) |
                     @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-                </td>
+                </td>*@
             </tr>
         }
 

@@ -1,11 +1,10 @@
-﻿
-@model Auction.ViewModels.MultiBidderItemVM  
+﻿@model Auction.ViewModels.MultiBidderItemVM
 
 @{
     ViewBag.Title = "Add Extra auction Bids";
 }
 
-<body id="BackgroundGrad1"  class="full">
+<body id="BackgroundGrad1" class="full">
 
     <h1 class="CrudTitle">@Html.DisplayFor(modelItem => Model.Title)</h1>
     <p>
@@ -23,7 +22,7 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Bidder_ID)
                     </td>
-                    
+
                     @if (item.BidAmount == null || item.BidAmount < 1)
                     {
                         <td>
@@ -40,20 +39,20 @@
                         </td>
                     }
 
-                    
+
 
                     <td>
-                        @if (item.BidAmount == null || item.BidAmount == 0) 
+                        @if (item.BidAmount == null || item.BidAmount == 0)
                         {
-                            
+
 
 
                             @Html.HiddenFor(modelItem => item.Bidder_ID, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(modelItem => item.Bidder_ID, "", new { @class = "text-danger" })
-                          
+
                             @Html.HiddenFor(modelItem => item.Title, new { htmlAttributes = new { @class = "form-control", } })
                             @Html.ValidationMessageFor(modelItem => item.Title, "", new { @class = "text-danger" })
-                            
+
                             @Html.HiddenFor(modelItem => item.ID, new { htmlAttributes = new { @class = "form-control", } })
                             @Html.ValidationMessageFor(modelItem => item.ID, "", new { @class = "text-danger" })
 
@@ -65,7 +64,15 @@
                         }
                         else
                         {
-                            <div class="ButtonDiv1"> @Html.ActionLink("Edit", "EditLiveItem", new { id = item.ID }) </div>
+                            @*<div class="ButtonDiv1"> @Html.ActionLink("Edit", "EditLiveItem", new { id = item.ID }) </div>*@
+                            <table class="TableDataIndex5">
+                                <tr>
+                                    <td class="TableDataIndex5">
+                                        <div class="ButtonDiv1">@Html.ActionLink("Edit", "Edit", new { id = item.ID }) </div>
+                                    </td>
+
+                                </tr>
+                            </table>
                         }
                     </td>
                 </tr>
