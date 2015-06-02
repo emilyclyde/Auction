@@ -203,7 +203,52 @@ namespace Auction.Controllers
 
             return View(item);
         }
-        //Check for a valid abidder Number**********************************************************************************
+
+        // Edit Individual Multiple Bidder Items **************************************************************************************************
+        // GET ****************************************************************************************************
+        public ActionResult EditIndividualMultiBidderItem(int? id)
+        {
+            string sess = (string)System.Web.HttpContext.Current.Session["blah"];
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
+            }
+            IndividualMultiBidderItem item = db.IndividualMultiBidderItems.Find(id);
+            if (item == null)
+            {
+                return HttpNotFound();
+            }
+            return View(item);
+        }
+
+        // POST ****************************************************************************************************
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditIndividualMultiBidderItem([Bind(Include = "ID,Title,Bidder_ID,BidAmount")] IndividualMultiBidderItem item)
+        {
+            if (ModelState.IsValid)
+            {
+                if (IsValidBidder(item))
+                {
+                    db.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                }
+                return RedirectToAction("AddMultiItemBids", "Forms", new { item.Title });
+            }
+
+            return View(item);
+        }
+
+
+
+
+
+
+
+
+
+        //Check for a valid bidder Number w/Item**********************************************************************************
 
         public bool IsValidBidder(Item item)
         {
@@ -213,7 +258,15 @@ namespace Auction.Controllers
 
             return false;
         }
+        //Check for a valid abidder Number w/IndividualMultipleBidderItem**********************************************************************************
+        public bool IsValidBidder(IndividualMultiBidderItem item)
+        {
+            foreach (var b in db.Bidders)
+                if (b.BidderNumber == item.Bidder_ID)
+                    return true;
 
+            return false;
+        }
 
 
 

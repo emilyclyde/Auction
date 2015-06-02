@@ -54,7 +54,7 @@ namespace Auction.Controllers
        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,BidderName,BidderNumber,BidderContact, ")] Bidder bidder)
+        public ActionResult Create([Bind(Include = "ID,BidderName,BidderNumber,BidderContact1,BidderContact2,BidderContact3 ")] Bidder bidder)
         {
             int newID = 0;
             if (ModelState.IsValid)

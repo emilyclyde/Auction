@@ -1,7 +1,7 @@
-﻿@model Auction.Models.Item
+﻿@model Auction.Models.IndividualMultiBidderItem
 
 @{
-    ViewBag.Title = "EditLiveItem";
+    ViewBag.Title = "Edit IndividualMultiBidderItem";
 }
 
 <style>
@@ -12,46 +12,25 @@
     }
 </style>
 
-<body id="BackgroundGrad1"  class="full">
+<body id="BackgroundGrad1" class="full">
     <hgroup class="title">
-        <h1 class="CrudTitle">Edit Live Item Bid</h1>
+        <h1 class="CrudTitle">Edit bid @Model.Title bid for Bidder <b>@Model.Bidder_ID</b></h1>
         <hr />
     </hgroup>
     <p>
         <span class="btn btn-default"> @Html.ActionLink("Back to Forms List", "Index", "Forms")</span>
     </p>
-    @using (Html.BeginForm("EditLiveItem", "Forms", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    @using (Html.BeginForm("EditIndividualMultiBidderItem", "Forms", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         @Html.AntiForgeryToken()
-
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.ID)
-        @Html.HiddenFor(model => model.AuctionType)
-        @Html.HiddenFor(model => model.Description)
-        @Html.HiddenFor(model => model.ImageURL)
+        @Html.HiddenFor(model => model.Bidder_ID)
         @Html.HiddenFor(model => model.Title)
-
+       
 
         <table id="IndexTable" @*class="TableDataIndex2 TableIndex2"*@>
-            <tr>
-                <td colspan="2" class="CrudDiv1">
-                    @Html.DisplayFor(modelItem => Model.Title)
-                </td>
-            </tr>
-
-            <tr>
-                <td class="TableDataIndex7">
-                    @Html.LabelFor(model => model.WinningBidder, htmlAttributes: new { @class = "control-label col-md-2" })
-                </td>
-                <td class="TableDataIndex8">
-                    <div class="form-group">
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.WinningBidder, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.WinningBidder, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                </td>
-            </tr>
+            
             <tr>
                 <td class="TableDataIndex7">
                     @Html.LabelFor(model => model.BidAmount, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -68,23 +47,12 @@
             <tr>
                 <td colspan="2">
                     <input type="submit" value="Save" class="btn btn-default" />
-                    @*@Html.ActionLink("Back to List", "AddWinningBidsLive")*@
                 </td>
             </tr>
         </table>
-
     }
     @section Scripts {
         @Scripts.Render("~/bundles/jqueryval")
     }
 
 </body>
-
-
-
-
-
-
-
-
-
