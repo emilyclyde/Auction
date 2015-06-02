@@ -19,13 +19,13 @@
             @foreach (var item in Model.IMBIList)
             {
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Bidder_ID)
+                    <td class="TableDataIndex17">
+                        <h4>@Html.DisplayFor(modelItem => item.Bidder_ID)</h4>
                     </td>
 
                     @if (item.BidAmount == null || item.BidAmount < 1)
                     {
-                        <td>
+                        <td class="TableDataIndex17">
                             <div class="col-md-10">
                                 @Html.EditorFor(modelItem => item.BidAmount, new { htmlAttributes = new { @class = "form-control", @id = item.ID } })
                                 @Html.ValidationMessageFor(modelItem => item.BidAmount, "", new { @class = "text-danger" })
@@ -34,14 +34,14 @@
                     }
                     else
                     {
-                        <td>
+                        <td class="TableDataIndex17">
                             @Html.DisplayFor(modelItem => item.BidAmount)
                         </td>
                     }
 
 
 
-                    <td>
+                    <td class="TableDataIndex18">
                         @if (item.BidAmount == null || item.BidAmount == 0)
                         {
 
@@ -49,15 +49,13 @@
 
                             @Html.HiddenFor(modelItem => item.Bidder_ID, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(modelItem => item.Bidder_ID, "", new { @class = "text-danger" })
-
                             @Html.HiddenFor(modelItem => item.Title, new { htmlAttributes = new { @class = "form-control", } })
                             @Html.ValidationMessageFor(modelItem => item.Title, "", new { @class = "text-danger" })
-
                             @Html.HiddenFor(modelItem => item.ID, new { htmlAttributes = new { @class = "form-control", } })
                             @Html.ValidationMessageFor(modelItem => item.ID, "", new { @class = "text-danger" })
 
                             <div class="form-group">
-                                <div class="col-md-offset-2 col-md-10">
+                                <div class=" col-md-10">@*col-md-offset-2*@
                                     <input type="submit" value="Save" class="btn btn-default" id=@item.ID />
                                 </div>
                             </div>
@@ -67,7 +65,7 @@
                             @*<div class="ButtonDiv1"> @Html.ActionLink("Edit", "EditLiveItem", new { id = item.ID }) </div>*@
                             <table class="TableDataIndex5">
                                 <tr>
-                                    <td class="TableDataIndex5">
+                                    <td class="TableDataIndex17">
                                         <div class="ButtonDiv1">@Html.ActionLink("Edit", "EditIndividualMultiBidderItem", new { id = item.ID }) </div>
                                     </td>
 

@@ -14,7 +14,7 @@ namespace Auction.DAL
     {
       var auctiondetails = new List<AuctionDetail> 
       {
-        new AuctionDetail{ID=1, Theme="Polynesian Paradise", Date="May 23, 2015", LocationName = "Emanuel Baptist Church", LocationAddress = "3050 Game Farm Rd Springfield, OR",
+        new AuctionDetail{ID=1, Theme="Polynesian Paradise", Date="May 23, 2015", LocationName = "Immanuel Baptist Church", LocationAddress = "3050 Game Farm Rd Springfield, OR",
         Time1 = "Doors open at 5:30", Time2 = "Buffet Dinner at 6:30", Time3 = "Live Auction at 7:00",DoorCost = "$20.00", EarlyCost = "$15.00", EarlyTicketDate = "May 15, 2015"}, 
                 
       };
