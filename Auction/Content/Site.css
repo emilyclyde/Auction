@@ -508,11 +508,18 @@ textarea {
     .footer-nav {
         display: none;
     }
+    img {
+        max-width: 100px;
+    }
     @page {
 margin: 0.5cm;
         margin-top: 0;
+        padding-top: 0;
 }
-
+    body {
+        padding: 0;
+        margin: 0;
+    }
 
 
 
