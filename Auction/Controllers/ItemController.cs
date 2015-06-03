@@ -117,11 +117,11 @@ namespace Auction.Controllers
             if (ModelState.IsValid)
             {
                 foreach (var b in db.Bidders)
-                    if (b.BidderNumber == item.WinningBidder)
+                    if (b.BidderNumber == item.WinningBidder||item.WinningBidder == null)
                        bidderIsError = false;
 
                 if (bidderIsError)
-                    item.WinningBidder = -1;
+                    item.WinningBidder = null;
 
                 db.Entry(item).State = EntityState.Modified;
                 db.SaveChanges();
