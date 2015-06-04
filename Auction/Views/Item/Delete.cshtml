@@ -3,78 +3,80 @@
 @{
     ViewBag.Title = "Delete";
 }
+<body id="BackgroundGrad1" class="full">
+    <h2>Delete Auction Item</h2>
 
-<h2>Delete Auction Item</h2>
+    <h3>Are you sure you want to delete this?</h3>
+    <div id="center">
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    
-    <div>
+        <div>
 
-        @if (File.Exists(Server.MapPath("~/Images/Items/"
+            @if (File.Exists(Server.MapPath("~/Images/Items/"
                                     + Html.DisplayFor(modelItem => Model.ImageURL))))
-        {
-            <img alt="" src="~/Images/Items/@Html.DisplayFor(modelItem   => Model.ImageURL)" width="200px" />
+            {
+                <img alt="" src="~/Images/Items/@Html.DisplayFor(modelItem   => Model.ImageURL)" width="200px" />
 
-        }
-        else
+            }
+            else
+            {
+                <img alt="" src="~/Images/Items/default.png" width="200px" />
+            }
+        </div>
+        <!--Image upload code. Donot Delete. Donot Modify-->
+
+
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AuctionType)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AuctionType)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.WinningBidder)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.WinningBidder)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.BidAmount)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BidAmount)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
         {
-            <img alt="" src="~/Images/Items/default.png" width="200px" />
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" />
+                <input type="submit" value="Cancel" onclick="location.href='@Url.Action("Index", "Item")';return false;" class="btn btn-default" />
+
+            </div>
         }
     </div>
-    <!--Image upload code. Donot Delete. Donot Modify-->
-    
-
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        
-        <dt>
-            @Html.DisplayNameFor(model => model.AuctionType)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AuctionType)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.WinningBidder)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.WinningBidder)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.BidAmount)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BidAmount)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" />
-        <input type="submit" value="Cancel" onclick="location.href='@Url.Action("Index", "Item")';return false;" class="btn btn-default" />
-
-        </div>
-    }
-</div>
+</body>

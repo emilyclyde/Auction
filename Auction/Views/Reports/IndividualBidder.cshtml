@@ -234,9 +234,9 @@
             <td>
                 <input type="button" value="Print" onclick="javascript: window.print(); return false;" class="btn btn-default" />
             </td>
-            <td> 
+            @*<td> 
                 <input type="button" value="Save" onclick="location.href = '@string.Format("http://selectpdf.com/save-as-pdf/?pdf_name={0}_{1}_{2}",@Html.DisplayFor(model => model.BidderNumber), @Html.DisplayFor(model => model.BidderName), @DateTime.Now.Year)'; return false;" class="btn btn-default" />
-            </td>
+            </td>*@
         </tr>
     </table>
     
