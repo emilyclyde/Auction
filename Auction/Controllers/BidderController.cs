@@ -56,18 +56,29 @@ namespace Auction.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,BidderName,BidderNumber,BidderContact1,BidderContact2,BidderContact3 ")] Bidder bidder)
         {
-            int newID = 0;
+           
+            //int newID = 0;
+            int HighestNum = 99;
+            bidder.BidderNumber = 99;
             if (ModelState.IsValid)
             {
-                foreach(var b in db.Bidders )   //determines what the next auto generated Id is going to be
-                    if (b.ID > newID)
-                        newID = b.ID;
-          
+                //foreach(var b in db.Bidders )   //determines what the next auto generated Id is going to be
+                //    if (b.ID > newID)
+                //        newID = b.ID;
+
+            foreach(var b in db.Bidders )
+            {
+                if (b.BidderNumber > HighestNum)
+                    HighestNum = b.BidderNumber;
+            }
+                bidder.BidderNumber = HighestNum + 1;
+
+
                 foreach (var mi in db.MultipleBidderItems)
                 {
                     var IMBI = new IndividualMultiBidderItem();
                     IMBI.Title = mi.Title;
-                    IMBI.Bidder_ID = newID + 101;
+                    IMBI.Bidder_ID = bidder.BidderNumber;
                     db.IndividualMultiBidderItems.Add(IMBI);
                 }
                 db.Bidders.Add(bidder);
