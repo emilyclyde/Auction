@@ -7,8 +7,8 @@ using Auction.Models;
 
 namespace Auction.DAL
 {
-    public class AuctionInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<AuctionContext>
-    //public class AuctionInitializer : System.Data.Entity.DropCreateDatabaseAlways<AuctionContext>
+    //public class AuctionInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<AuctionContext>
+    public class AuctionInitializer : System.Data.Entity.DropCreateDatabaseAlways<AuctionContext>
   {
     protected override void Seed(AuctionContext context)
     {
@@ -44,11 +44,11 @@ namespace Auction.DAL
 
       var bidders = new List<Bidder>
         {
-          new Bidder{ID=1, BidderName = "Rob and Karina Callahan", BidderContact1="(541)736-0300", BidderContact2="(541)285-5792", BidderContact3="CaddisflyRob@yahoo.com"},
-          new Bidder{ID=2, BidderName = "Erica Dundee", BidderContact1="EricaD@gmail.com", BidderContact2="(541)344-0377",BidderContact3="EDundee@yahoo.com"},
-          new Bidder{ID=3, BidderName = "Keith and Laurita Blunk", BidderContact1="(541)726-6915", BidderContact2="(541)275-3387",BidderContact3="KeithB62@comcast.net"},
-          new Bidder{ID=4, BidderName = "Arthur King", BidderContact1="Arthur@Camilot.com", BidderContact2="(206)597-1492", BidderContact3="(237)772-4086"},
-          new Bidder{ID=5, BidderName = "Rhoda Byke", BidderContact1="(206)733-8805", BidderContact2="Sprocket42@yahoo,com",BidderContact3="1-800-Flatire"},
+          new Bidder{ID=1, BidderNumber= 100, BidderName = "Rob and Karina Callahan", BidderContact1="(541)736-0300", BidderContact2="(541)285-5792", BidderContact3="CaddisflyRob@yahoo.com"},
+          new Bidder{ID=2, BidderNumber= 101, BidderName = "Erica Dundee", BidderContact1="EricaD@gmail.com", BidderContact2="(541)344-0377",BidderContact3="EDundee@yahoo.com"},
+          new Bidder{ID=3, BidderNumber= 102, BidderName = "Keith and Laurita Blunk", BidderContact1="(541)726-6915", BidderContact2="(541)275-3387",BidderContact3="KeithB62@comcast.net"},
+          new Bidder{ID=4, BidderNumber= 103, BidderName = "Arthur King", BidderContact1="Arthur@Camilot.com", BidderContact2="(206)597-1492", BidderContact3="(237)772-4086"},
+          new Bidder{ID=5, BidderNumber= 104, BidderName = "Rhoda Byke", BidderContact1="(206)733-8805", BidderContact2="Sprocket42@yahoo,com",BidderContact3="1-800-Flatire"},
         };
 
       bidders.ForEach(b => context.Bidders.Add(b));
@@ -104,21 +104,21 @@ namespace Auction.DAL
 
       var IMBI = new List<IndividualMultiBidderItem>
             {
-                new IndividualMultiBidderItem {ID=1, Bidder_ID=101, Title="Raise the Paddle", BidAmount = 100},
-                new IndividualMultiBidderItem {ID=2, Bidder_ID=101, Title="Dessert Dash", BidAmount = 20},
-                new IndividualMultiBidderItem {ID=3, Bidder_ID=101, Title="TV Raffle", BidAmount = 20},
-                new IndividualMultiBidderItem {ID=4, Bidder_ID=102, Title="Raise the Paddle", BidAmount = 1000},
-                new IndividualMultiBidderItem {ID=5, Bidder_ID=102, Title="Dessert Dash", BidAmount = 30},
-                new IndividualMultiBidderItem {ID=6, Bidder_ID=102, Title="TV Raffle", BidAmount = 10},
-                new IndividualMultiBidderItem {ID=7, Bidder_ID=103, Title="Raise the Paddle", BidAmount = 50},
-                new IndividualMultiBidderItem {ID=8, Bidder_ID=103, Title="Dessert Dash", BidAmount = 60},
-                new IndividualMultiBidderItem {ID=9, Bidder_ID=103, Title="TV Raffle", BidAmount = 30},
-                new IndividualMultiBidderItem {ID=10, Bidder_ID=104, Title="Raise the Paddle", BidAmount = 0},
-                new IndividualMultiBidderItem {ID=11, Bidder_ID=104, Title="Dessert Dash", BidAmount = 10},
-                new IndividualMultiBidderItem {ID=12, Bidder_ID=104, Title="TV Raffle", BidAmount = 0},
-                new IndividualMultiBidderItem {ID=13, Bidder_ID=105, Title="Raise the Paddle", BidAmount = 0},
-                new IndividualMultiBidderItem {ID=14, Bidder_ID=105, Title="Dessert Dash", BidAmount = 0},
-                new IndividualMultiBidderItem {ID=15, Bidder_ID=105, Title="TV Raffle", BidAmount =0},
+                new IndividualMultiBidderItem {ID=1, Bidder_ID=100, Title="Raise the Paddle", BidAmount = 100},
+                new IndividualMultiBidderItem {ID=2, Bidder_ID=100, Title="Dessert Dash", BidAmount = 20},
+                new IndividualMultiBidderItem {ID=3, Bidder_ID=100, Title="TV Raffle", BidAmount = 20},
+                new IndividualMultiBidderItem {ID=4, Bidder_ID=101, Title="Raise the Paddle", BidAmount = 1000},
+                new IndividualMultiBidderItem {ID=5, Bidder_ID=101, Title="Dessert Dash", BidAmount = 30},
+                new IndividualMultiBidderItem {ID=6, Bidder_ID=101, Title="TV Raffle", BidAmount = 10},
+                new IndividualMultiBidderItem {ID=7, Bidder_ID=102, Title="Raise the Paddle", BidAmount = 50},
+                new IndividualMultiBidderItem {ID=8, Bidder_ID=102, Title="Dessert Dash", BidAmount = 60},
+                new IndividualMultiBidderItem {ID=9, Bidder_ID=102, Title="TV Raffle", BidAmount = 30},
+                new IndividualMultiBidderItem {ID=10, Bidder_ID=103, Title="Raise the Paddle", BidAmount = 0},
+                new IndividualMultiBidderItem {ID=11, Bidder_ID=103, Title="Dessert Dash", BidAmount = 10},
+                new IndividualMultiBidderItem {ID=12, Bidder_ID=103, Title="TV Raffle", BidAmount = 0},
+                new IndividualMultiBidderItem {ID=13, Bidder_ID=104, Title="Raise the Paddle", BidAmount = 0},
+                new IndividualMultiBidderItem {ID=14, Bidder_ID=104, Title="Dessert Dash", BidAmount = 0},
+                new IndividualMultiBidderItem {ID=15, Bidder_ID=104, Title="TV Raffle", BidAmount =0},
             };
 
       IMBI.ForEach(i => context.IndividualMultiBidderItems.Add(i));

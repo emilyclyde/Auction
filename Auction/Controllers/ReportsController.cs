@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace Auction.Controllers
 {
-  [Authorize(Users = "logosauction@outlook.com")] 
+  //[Authorize(Users = "logosauction@outlook.com")] 
     public class ReportsController : Controller
     {
         private AuctionContext db = new AuctionContext();
