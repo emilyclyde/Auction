@@ -89,7 +89,7 @@
                 <h5>Update information pertaining to ticket sales, for use in Auction Reports.</h5>
             </td>
         </tr>
-        <tr>
+     
         <tr>
             <td>
                 <h3 class="formItem">Help </h3>
@@ -101,7 +101,17 @@
                 <h5>Get help on a particular area of the auction website.</h5>
             </td>
         </tr>
-        <tr></tr>
+        <tr>
+            <td>
+                <h3 class="formItem"> Delete Auction </h3>
+            </td>
+            <td>
+                <h4 id="ListButton"><a href="@Url.Action("Delete", "ResetAuction", new { id = 1 })"><b>Clear the Database</b></a></h4>
+            </td>
+            <td class="TableDataIndex15">
+                <h5>This option will clear all the auction data from the Database to start a new auction.</h5>
+            </td>
+        </tr>
     </table>
 
 </body>

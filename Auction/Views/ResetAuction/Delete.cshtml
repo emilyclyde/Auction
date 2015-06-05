@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Delete";
+}
+<h2>Delete Auction</h2>
+
+<body id="BackgroundGrad1" class="full">
+    <h2 class="CrudTitle">Delete Entire Auction</h2>
+    <p>
+        <span class="btn btn-default"> @Html.ActionLink("Back to Forms List", "Index", "Forms")</span>
+    </p>
+
+    <h3>Are you sure you want to delete The entire Auction?</h3>
+
+
+    @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" />
+                <input type="submit" value="Cancel" onclick="location.href='@Url.Action("Index", "forms")';return false;" class="btn btn-default" />
+            </div>
+        }
+    
+</body>
