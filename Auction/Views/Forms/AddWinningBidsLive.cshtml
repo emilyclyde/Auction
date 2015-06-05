@@ -3,7 +3,7 @@
     ViewBag.Title = "AddWinningBidsLive";
 }
 
-<body id="BackgroundGrad1"  class="full">
+<body id="BackgroundGrad1" class="full">
 
     <h1 class="CrudTitle">Live Auction</h1>
     <p>
@@ -13,6 +13,7 @@
     @using (Html.BeginForm("AddWinningBidsLive", "Forms", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         @Html.AntiForgeryToken()
+       
 
         <table class="table" id="IndexTable">
             <tr>
@@ -23,8 +24,8 @@
                     <h4>Item</h4>
                 </td>
                 @*<td>
-                    <h4>Description</h4>
-                </td>*@
+                        <h4>Description</h4>
+                    </td>*@
                 <td>
                     <h4>Winning Bidder #</h4>
                 </td>
@@ -45,8 +46,8 @@
                         @Html.DisplayFor(modelItem => item.Title)
                     </td>
                     @*<td>
-                        @Html.DisplayFor(modelItem => item.Description)
-                    </td>*@
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>*@
 
 
                     @if (item.WinningBidder == null || item.WinningBidder == 0)
@@ -97,7 +98,8 @@
                             @Html.ValidationMessageFor(modelItem => item.Title, "", new { @class = "text-danger" })
                             @Html.HiddenFor(modelItem => item.Description, new { htmlAttributes = new { @class = "form-control", } })
                             @Html.ValidationMessageFor(modelItem => item.Description, "", new { @class = "text-danger" })
-
+                            @Html.HiddenFor(modelItem => item.ItemNumber, new { htmlAttributes = new { @class = "form-control", } })
+                            @Html.ValidationMessageFor(modelItem => item.ItemNumber, "", new { @class = "text-danger" })
                             <div class="form-group">
                                 <div class="col-md-offset-2 col-md-10">
                                     <input type="submit" value="Save" class="btn btn-default" id=@item.ID />

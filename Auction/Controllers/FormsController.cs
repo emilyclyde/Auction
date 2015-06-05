@@ -39,7 +39,7 @@ namespace Auction.Controllers
         //POST *********************************************************************************************************
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AddWinningBidsSilent([Bind(Include = "ID,AuctionType,Title,Description,WinningBidder,BidAmount")]Item item)
+        public ActionResult AddWinningBidsSilent([Bind(Include = "ID, ItemNumber, AuctionType,Title,Description,WinningBidder,BidAmount")]Item item)
         {
             if (ModelState.IsValid)
             {
@@ -72,7 +72,7 @@ namespace Auction.Controllers
         //POST *********************************************************************************************************
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AddWinningBidsLive([Bind(Include = "ID,AuctionType,Title,Description,WinningBidder,BidAmount")]Item item)
+        public ActionResult AddWinningBidsLive([Bind(Include = "ID, ItemNumber, AuctionType,Title,Description,WinningBidder,BidAmount")]Item item)
         {
             if (ModelState.IsValid)
             {

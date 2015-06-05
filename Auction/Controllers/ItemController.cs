@@ -13,7 +13,6 @@ using Auction.DAL;
 
 namespace Auction.Controllers
 { 
-  //[Authorize(Users = "admin@test.com, admin1@auction.com, admin2@auction.com, admin3@auction.com")] //user: "" password: Pass_1234
 
     public class ItemController : Controller
     {
@@ -177,8 +176,7 @@ namespace Auction.Controllers
 
             }
 
-
-
+          
             db.Items.Remove(item);
             db.SaveChanges();
             return RedirectToAction("Index");
