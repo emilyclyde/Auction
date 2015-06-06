@@ -9,7 +9,7 @@ using Auction.ViewModels;
 
 namespace Auction.Controllers
 {
-  //[Authorize(Users = "logosauction@outlook.com")] 
+  [Authorize(Users = "logosauction@outlook.com")] 
     public class FormsController : Controller
     {
         private AuctionContext db = new AuctionContext();

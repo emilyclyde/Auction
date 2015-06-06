@@ -223,6 +223,8 @@
     <Content Include="Images\auctionform1.png" />
     <Content Include="Images\Caution.PNG" />
     <Content Include="Images\contact.png" />
+    <Content Include="Images\delete.png" />
+    <Content Include="Images\deletepage.png" />
     <Content Include="Images\details.png" />
     <Content Include="Images\donor1.png" />
     <Content Include="Images\editbidder.png" />
