@@ -23,7 +23,7 @@ h6 {
     font-size: 0.85em;
 }
 
-td {border: 1px solid black;}
+/*td {border: 1px solid black;}*/
 
 #Bigger {
     font-size: 1.72em;
@@ -429,6 +429,12 @@ important {
     padding: 5px 5px 25px 0px;
     text-align: Left;
 }
+
+.TableDataIndex19 {
+    padding: 0;
+    border-style: none !important;
+    border: 1px solid black  ;
+    padding: 10px 10px 10px 10px ;
 
 .TableIndex2 {
     margin-left: auto;

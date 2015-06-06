@@ -54,8 +54,8 @@
                     {
                         <td>
                             <div class="col-md-10">
-                                @Html.EditorFor(modelItem => item.WinningBidder, new { htmlAttributes = new { @class = "form-control", @id = item.ID } })
-                                @Html.ValidationMessageFor(modelItem => item.WinningBidder, "", new { @class = "text-danger" })
+                                @*@Html.EditorFor(modelItem => item.WinningBidder, new { htmlAttributes = new { @class = "form-control", @id = item.ID } })
+                                @Html.ValidationMessageFor(modelItem => item.WinningBidder, "", new { @class = "text-danger" })*@
                             </div>
                         </td>
                     }
@@ -70,8 +70,8 @@
                     {
                         <td>
                             <div class="col-md-10">
-                                @Html.EditorFor(modelItem => item.BidAmount, new { htmlAttributes = new { @class = "form-control", @id = item.ID } })
-                                @Html.ValidationMessageFor(modelItem => item.BidAmount, "", new { @class = "text-danger" })
+                                @*@Html.EditorFor(modelItem => item.BidAmount, new { htmlAttributes = new { @class = "form-control", @id = item.ID } })
+                                @Html.ValidationMessageFor(modelItem => item.BidAmount, "", new { @class = "text-danger" })*@
                             </div>
                         </td>
 
@@ -102,7 +102,8 @@
                             @Html.ValidationMessageFor(modelItem => item.ItemNumber, "", new { @class = "text-danger" })
                             <div class="form-group">
                                 <div class="col-md-offset-2 col-md-10">
-                                    <input type="submit" value="Save" class="btn btn-default" id=@item.ID />
+                                    @*<input type="submit" value="Save" class="btn btn-default" id=@item.ID />*@
+                                    <div class="ButtonDiv1"> @Html.ActionLink("Load", "EditLiveItem", new { id = item.ID }) </div>
                                 </div>
                             </div>
                         }

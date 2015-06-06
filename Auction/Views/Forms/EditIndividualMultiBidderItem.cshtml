@@ -14,7 +14,7 @@
 
 <body id="BackgroundGrad1" class="full">
     <hgroup class="title">
-        <h1 class="CrudTitle">Edit bid @Model.Title bid for Bidder <b>@Model.Bidder_ID</b></h1>
+        <h1 class="CrudTitle"> @Model.Title bid @*for Bidder <span style="color:darkred">@Model.Bidder_ID</span>*@</h1>
         <hr />
     </hgroup>
     <p>
@@ -30,10 +30,18 @@
        
 
         <table id="IndexTable" @*class="TableDataIndex2 TableIndex2"*@>
-            
+            <tr>
+                <td>
+                    <h4><b>Bidder</b></h4>
+                </td>
+                <td>
+                    <h4><b>Bid Amount</b></h4>
+                </td>
+            </tr>
             <tr>
                 <td class="TableDataIndex7">
-                    @Html.LabelFor(model => model.BidAmount, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @*@Html.LabelFor(model => model.BidAmount, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                    <h2 Class="CrudTitle" style="color:darkred"> @Model.Bidder_ID</h2>
                 </td>
                 <td class="TableDataIndex8">
                     <div class="form-group">
@@ -43,8 +51,7 @@
                         </div>
                     </div>
                 </td>
-            </tr>
-            <tr>
+                       
                 <td colspan="2">
                     <input type="submit" value="Save" class="btn btn-default" />
                 </td>

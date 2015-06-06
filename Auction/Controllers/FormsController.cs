@@ -206,7 +206,15 @@ namespace Auction.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (IsValidBidder(item))
+                if (item.BidAmount == 0)
+                    item.BidAmount = null;
+                if (item.WinningBidder < 100)
+                {
+                    item.WinningBidder = null;
+                    item.BidAmount = null;
+                }
+
+                if (IsValidBidder(item)|| item.WinningBidder==null)
                 {
                     db.Entry(item).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
@@ -242,6 +250,9 @@ namespace Auction.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (item.BidAmount == 0)
+                    item.BidAmount = null;
+
                 if (IsValidBidder(item))
                 {
                     db.Entry(item).State = System.Data.Entity.EntityState.Modified;
@@ -252,12 +263,6 @@ namespace Auction.Controllers
 
             return View(item);
         }
-
-
-
-
-
-
 
 
 
