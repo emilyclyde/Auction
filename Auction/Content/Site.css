@@ -433,8 +433,9 @@ important {
 .TableDataIndex19 {
     padding: 0;
     border-style: none !important;
-    border: 1px solid black  ;
-    padding: 10px 10px 10px 10px ;
+    border: 1px solid black;
+    padding: 10px 10px 10px 10px;
+}
 
 .TableIndex2 {
     margin-left: auto;
