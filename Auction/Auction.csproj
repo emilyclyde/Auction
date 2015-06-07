@@ -229,6 +229,8 @@
     <Content Include="Images\donor1.png" />
     <Content Include="Images\editbidder.png" />
     <Content Include="Images\edititem.png" />
+    <Content Include="Images\editlive.png" />
+    <Content Include="Images\editsilent.png" />
     <Content Include="Images\extra.png" />
     <Content Include="Images\goatbaby - Copy.jpg" />
     <Content Include="Images\goatbaby.jpg" />
@@ -244,6 +246,7 @@
     <Content Include="Images\Items\SkateWorld.jpg" />
     <Content Include="Images\Items\thisisatesttitlewithalotofspaces.jpg" />
     <Content Include="Images\livebids.png" />
+    <Content Include="Images\livebids2.png" />
     <Content Include="Images\Logos Academy Logo.jpg" />
     <Content Include="Images\Logos Academy Logo3.png" />
     <Content Include="Images\Logos Academy Logo4.png" />
@@ -252,6 +255,7 @@
     <Content Include="Images\print.png" />
     <Content Include="Images\report.png" />
     <Content Include="Images\silentbids.png" />
+    <Content Include="Images\silentbids2.png" />
     <Content Include="Images\ticket.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
