@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace Auction.Controllers
 {
-  [Authorize(Users = "logosauction@outlook.com")] 
+  //[Authorize(Users = "logosauction@outlook.com")] 
     public class ReportsController : Controller
     {
         private AuctionContext db = new AuctionContext();
@@ -170,7 +170,7 @@ namespace Auction.Controllers
                 foreach (var imbi in imbiList)                              //loop through all Individual Multibidder items
                 {
                     if (mbi.Title == imbi.Title)                            //check for a matching type of multi bidder item
-                        mbit.Total += imbi.BidAmount;                       // increment the total
+                        mbit.Total += (decimal)imbi.BidAmount;                       // increment the total
                 }
                 mbitList.Add(mbit);                                         //add the total object to the mbit List
             }

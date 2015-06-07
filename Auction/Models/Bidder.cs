@@ -21,13 +21,8 @@ namespace Auction.Models
     // public string BidderNumber { get; set; }
 
     [Display(Name = "Bidder Number")]
-    public int BidderNumber
-    {
-      get
-      {
-        return ID + 100;
-      }
-    }
+    public int BidderNumber{ get; set; }
+    
     [Display(Name = "Bidder Contact 1")]
     public string BidderContact1 { get; set; }
 

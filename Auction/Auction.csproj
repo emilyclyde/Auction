@@ -172,6 +172,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MultipleBidderItemController.cs" />
     <Compile Include="Controllers\ReportsController.cs" />
+    <Compile Include="Controllers\ResetAuctionController.cs" />
     <Compile Include="Controllers\TicketsController.cs" />
     <Compile Include="DAL\AuctionContext.cs" />
     <Compile Include="DAL\AuctionInitializer.cs" />
@@ -220,7 +221,10 @@
     <Content Include="Images\admindrop.png" />
     <Content Include="Images\auctionform.png" />
     <Content Include="Images\auctionform1.png" />
+    <Content Include="Images\Caution.PNG" />
     <Content Include="Images\contact.png" />
+    <Content Include="Images\delete.png" />
+    <Content Include="Images\deletepage.png" />
     <Content Include="Images\details.png" />
     <Content Include="Images\donor1.png" />
     <Content Include="Images\editbidder.png" />
@@ -229,6 +233,7 @@
     <Content Include="Images\goatbaby - Copy.jpg" />
     <Content Include="Images\goatbaby.jpg" />
     <Content Include="Images\Items1.jpg" />
+    <Content Include="Images\Items\.jpg" />
     <Content Include="Images\Items\CedarCreekWeekendGetaway.jpg" />
     <Content Include="Images\Items\default.png" />
     <Content Include="Images\Items\FlowersforaYear.jpg" />
@@ -244,6 +249,7 @@
     <Content Include="Images\Logos Academy Logo4.png" />
     <Content Include="Images\mainreport.png" />
     <Content Include="Images\newbidder1.png" />
+    <Content Include="Images\print.png" />
     <Content Include="Images\report.png" />
     <Content Include="Images\silentbids.png" />
     <Content Include="Images\ticket.png" />
@@ -279,7 +285,9 @@
     <Content Include="Views\Contact\Index.cshtml">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -370,6 +378,7 @@
     <Content Include="Views\Tickets\Edit.cshtml" />
     <Content Include="Views\Tickets\Index.cshtml" />
     <Content Include="Views\Forms\EditIndividualMultiBidderItem.cshtml" />
+    <Content Include="Views\ResetAuction\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

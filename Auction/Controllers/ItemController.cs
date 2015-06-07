@@ -13,7 +13,6 @@ using Auction.DAL;
 
 namespace Auction.Controllers
 { 
-  //[Authorize(Users = "admin@test.com, admin1@auction.com, admin2@auction.com, admin3@auction.com")] //user: "" password: Pass_1234
 
     public class ItemController : Controller
     {
@@ -70,8 +69,16 @@ namespace Auction.Controllers
                 photo.SaveAs(path);
 
             // orriginal code
+            int HighestNum = 0;
+            item.ItemNumber = 0;
             if (ModelState.IsValid)
             {
+                foreach(var i in db.Items )
+                {
+                    if (i.ItemNumber > HighestNum)
+                        HighestNum = i.ItemNumber;
+                 }
+                item.ItemNumber = HighestNum + 1;
                 db.Items.Add(item);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -103,7 +110,7 @@ namespace Auction.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Title,Description,ImageURL,AuctionType,WinningBidder,BidAmount")] Item item
+        public ActionResult Edit([Bind(Include = "ID,ItemNumber,Title,Description,ImageURL,AuctionType,WinningBidder,BidAmount")] Item item
             , string image,
         HttpPostedFileBase photo)
         {
@@ -169,8 +176,7 @@ namespace Auction.Controllers
 
             }
 
-
-
+          
             db.Items.Remove(item);
             db.SaveChanges();
             return RedirectToAction("Index");

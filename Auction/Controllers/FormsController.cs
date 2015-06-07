@@ -9,7 +9,7 @@ using Auction.ViewModels;
 
 namespace Auction.Controllers
 {
-  [Authorize(Users = "logosauction@outlook.com")] 
+  //[Authorize(Users = "logosauction@outlook.com")] 
     public class FormsController : Controller
     {
         private AuctionContext db = new AuctionContext();
@@ -39,11 +39,16 @@ namespace Auction.Controllers
         //POST *********************************************************************************************************
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AddWinningBidsSilent([Bind(Include = "ID,AuctionType,Title,Description,WinningBidder,BidAmount")]Item item)
+        public ActionResult AddWinningBidsSilent([Bind(Include = "ID, ItemNumber, AuctionType,Title,Description,WinningBidder,BidAmount")]Item item)
         {
             if (ModelState.IsValid)
             {
-                if (IsValidBidder(item))
+                if (item.BidAmount == 0)
+                    item.BidAmount = null;
+                if (item.WinningBidder < 100)
+                    item.WinningBidder = null;
+
+                if (IsValidBidder(item)|| item.WinningBidder==null)
                 {
                     db.Entry(item).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
@@ -72,7 +77,7 @@ namespace Auction.Controllers
         //POST *********************************************************************************************************
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AddWinningBidsLive([Bind(Include = "ID,AuctionType,Title,Description,WinningBidder,BidAmount")]Item item)
+        public ActionResult AddWinningBidsLive([Bind(Include = "ID, ItemNumber, AuctionType,Title,Description,WinningBidder,BidAmount")]Item item)
         {
             if (ModelState.IsValid)
             {
@@ -158,7 +163,14 @@ namespace Auction.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (IsValidBidder(item))
+                if (item.BidAmount == 0 || item.BidAmount == null || !IsValidBidder(item))
+                {
+                    item.BidAmount = null;
+                    item.WinningBidder = null;
+                }
+
+
+                if (IsValidBidder(item) || item.WinningBidder == null)
                 {
                     db.Entry(item).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
@@ -193,7 +205,14 @@ namespace Auction.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (IsValidBidder(item))
+                if (item.BidAmount == 0 || item.BidAmount == null ||!IsValidBidder(item))
+                {
+                    item.BidAmount = null;
+                    item.WinningBidder = null;
+                }
+                
+
+                if (IsValidBidder(item)|| item.WinningBidder==null)
                 {
                     db.Entry(item).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
@@ -229,6 +248,9 @@ namespace Auction.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (item.BidAmount == 0)
+                    item.BidAmount = null;
+
                 if (IsValidBidder(item))
                 {
                     db.Entry(item).State = System.Data.Entity.EntityState.Modified;
@@ -239,12 +261,6 @@ namespace Auction.Controllers
 
             return View(item);
         }
-
-
-
-
-
-
 
 
 

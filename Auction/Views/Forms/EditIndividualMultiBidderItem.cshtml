@@ -14,8 +14,8 @@
 
 <body id="BackgroundGrad1" class="full">
     <hgroup class="title">
-        <h1 class="CrudTitle">Edit bid @Model.Title bid for Bidder <b>@Model.Bidder_ID</b></h1>
-        <hr />
+        <h1 class="CrudTitle"> @Model.Title bid @*for Bidder <span style="color:darkred">@Model.Bidder_ID</span>*@</h1>
+        
     </hgroup>
     <p>
         <span class="btn btn-default"> @Html.ActionLink("Back to Forms List", "Index", "Forms")</span>
@@ -27,24 +27,31 @@
         @Html.HiddenFor(model => model.ID)
         @Html.HiddenFor(model => model.Bidder_ID)
         @Html.HiddenFor(model => model.Title)
-       
+
 
         <table id="IndexTable" @*class="TableDataIndex2 TableIndex2"*@>
-            
+            <tr>
+                <td>
+                    <h4><b>Bidder</b></h4>
+                </td>
+                <td>
+                    <h4><b>Bid Amount</b></h4>
+                </td>
+            </tr>
             <tr>
                 <td class="TableDataIndex7">
-                    @Html.LabelFor(model => model.BidAmount, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @*@Html.LabelFor(model => model.BidAmount, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                    <h2 Class="CrudTitle" style="color:darkred"> @Model.Bidder_ID</h2>
                 </td>
                 <td class="TableDataIndex8">
                     <div class="form-group">
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.BidAmount, new { htmlAttributes = new { @class = "form-control" } })
+                        <div class="col-md-10" >
+                            @Html.EditorFor(model => model.BidAmount, new { htmlAttributes = new { @class = "form-control"} })
                             @Html.ValidationMessageFor(model => model.BidAmount, "", new { @class = "text-danger" })
                         </div>
                     </div>
                 </td>
-            </tr>
-            <tr>
+
                 <td colspan="2">
                     <input type="submit" value="Save" class="btn btn-default" />
                 </td>
