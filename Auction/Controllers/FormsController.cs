@@ -9,7 +9,7 @@ using Auction.ViewModels;
 
 namespace Auction.Controllers
 {
-  [Authorize(Users = "logosauction@outlook.com")] 
+  //[Authorize(Users = "logosauction@outlook.com")] 
     public class FormsController : Controller
     {
         private AuctionContext db = new AuctionContext();
@@ -163,15 +163,14 @@ namespace Auction.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (item.BidAmount == 0)
-                    item.BidAmount = null;
-                if (item.WinningBidder < 100)
+                if (item.BidAmount == 0 || item.BidAmount == null || !IsValidBidder(item))
                 {
-                    item.WinningBidder = null;
                     item.BidAmount = null;
+                    item.WinningBidder = null;
                 }
 
-                if (IsValidBidder(item)|| item.WinningBidder==null)
+
+                if (IsValidBidder(item) || item.WinningBidder == null)
                 {
                     db.Entry(item).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
@@ -206,13 +205,12 @@ namespace Auction.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (item.BidAmount == 0)
-                    item.BidAmount = null;
-                if (item.WinningBidder < 100)
+                if (item.BidAmount == 0 || item.BidAmount == null ||!IsValidBidder(item))
                 {
-                    item.WinningBidder = null;
                     item.BidAmount = null;
+                    item.WinningBidder = null;
                 }
+                
 
                 if (IsValidBidder(item)|| item.WinningBidder==null)
                 {
