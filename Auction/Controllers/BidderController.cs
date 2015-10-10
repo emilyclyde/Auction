@@ -115,7 +115,8 @@ namespace Auction.Controllers
             {
                 db.Entry(bidder).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                var index = "Index#" + bidder.BidderNumber;
+                return RedirectToAction(index);
             }
             return View(bidder);
         }
