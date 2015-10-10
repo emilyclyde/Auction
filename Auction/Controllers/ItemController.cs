@@ -137,7 +137,8 @@ namespace Auction.Controllers
 
                 db.Entry(item).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                var index = "Index#" + item.ItemNumber;
+                return RedirectToAction(index);
             }
 
             return View(item);
