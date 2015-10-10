@@ -60,9 +60,9 @@ namespace Auction.Controllers
             string image,
         HttpPostedFileBase photo)
         {
-            string path = HttpContext.Server.MapPath("~/Images/Items/" + image);
+            var path = HttpContext.Server.MapPath("~/Images/Items/" + image);
            
-            path = path.Replace(" ", "");
+            path = path.Replace(" ", string.Empty);
             path.Trim();
 
             if (photo != null)
@@ -114,12 +114,17 @@ namespace Auction.Controllers
             , string image,
         HttpPostedFileBase photo)
         {
-            bool bidderIsError = true;    //Flag to check for a valid bidder
+            var bidderIsError = true;    //Flag to check for a valid bidder
 
-            string path = HttpContext.Server.MapPath("~/Images/Items/" + image);
-            
+            var title = HttpContext.Server.MapPath("~/Images/Items/" + item.Title.Replace(" ", string.Empty) +".jpg");
+            var path = HttpContext.Server.MapPath("~/Images/Items/" + image);
+
+            if (path != title)
+                System.IO.File.Move(path, title);
+
             if (photo != null)
                 photo.SaveAs(path);
+
             // orriginal code
             if (ModelState.IsValid)
             {
