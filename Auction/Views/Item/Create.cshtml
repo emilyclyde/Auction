@@ -18,7 +18,7 @@
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-group" id="center">
-                @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2"})
                 <div class="col-md-10" id="TitleItem">
                     @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
@@ -105,7 +105,7 @@
                 @Html.LabelFor(model => model.ImageURL, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     <input class="tiny button" id="photo" type="file" name="photo" />
-                    <input type="hidden" id="ImageName" name="image" value="" />
+                    <input  id="ImageName" name="image" value="" />
                     <!--Image upload code. Donot Delete. Donot Modify-->
                 </div>
             </div>
@@ -126,7 +126,7 @@
 <script>
     $(document).ready(function () {
         $("form").submit(function () {
-            var fname = $('#TitleItem').val();
+            var fname = $('#Title').val();
 
             var ImageName = document.getElementById("ImageName");
             ImageName.value = fname + ".jpg";
