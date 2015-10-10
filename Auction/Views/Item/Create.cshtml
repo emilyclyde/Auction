@@ -104,8 +104,8 @@
             <div class="form-group" id="center">
                 @Html.LabelFor(model => model.ImageURL, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    <input class="tiny button" id="photo" type="file" name="photo" />
-                    <input  id="ImageName" name="image" value="" />
+                    <input class="tinybutton" id="photo" type="file" name="photo" />
+                    <input type="hidden" id="imageName" name="image" value="" />
                     <!--Image upload code. Donot Delete. Donot Modify-->
                 </div>
             </div>
@@ -128,8 +128,8 @@
         $("form").submit(function () {
             var fname = $('#Title').val();
 
-            var ImageName = document.getElementById("ImageName");
-            ImageName.value = fname + ".jpg";
+            var imageName = document.getElementById("imageName");
+            imageName.value = fname + ".jpg";
         });
     });
 </script>
