@@ -16,6 +16,9 @@ namespace Auction.Models
     [Required]
     [StringLength(50)]
     [RegularExpression("^[a-zA-Z0-9]+$", ErrorMessage = "Special characters are not permitted")]
+
+    //[RegularExpression("^[A-Za-z ][A-Za-z0-9!@#$%^&* ]*$", ErrorMessage = "Special characters are not permitted")]
+
     public string Title { get; set; }
 
     //[StringLength(50, ErrorMessage = "Title cannot be longer than 50 characters.")]
