@@ -15,7 +15,6 @@
 <body id="BackgroundGrad1"  class="full">
     <hgroup class="title">
         <h1 class="CrudTitle">Edit Silent Item Bid</h1>
-        <hr />
     </hgroup>
     <p>
         <span class="btn btn-default"> @Html.ActionLink("Back to Forms List", "Index", "Forms")</span>
@@ -35,7 +34,8 @@
         <table id="IndexTable" @*class="TableDataIndex2 TableIndex2"*@>
             <tr>
                 <td colspan="2" class="CrudDiv1">
-                    @Html.DisplayFor(modelItem => Model.Title)
+
+                    <h2> @Html.DisplayFor(modelItem => Model.Title)</h2>
                 </td>
             </tr>
 

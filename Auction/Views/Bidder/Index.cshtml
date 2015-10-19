@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Index";
 }
-<body id="BackgroundGrad1"  class="full">
+<body id="BackgroundGrad1" class="full">
     <h2 class="CrudTitle">Bidder</h2>
     <p>
         <span class="btn btn-default"> @Html.ActionLink("Back to Forms List", "Index", "Forms")</span>
@@ -36,6 +36,7 @@
         {
             <tr>
                 <td>
+                    <a name="@Html.DisplayFor(modelItem => item.BidderNumber)"></a>
                     @Html.DisplayFor(modelItem => item.BidderName)
                 </td>
                 <td>
@@ -51,12 +52,12 @@
                     @Html.DisplayFor(modelItem => item.BidderContact3)
                 </td>
                 <td class="TableDataIndex4">
-                    <table class="TableDataIndex5" >
+                    <table class="TableDataIndex5">
                         <tr>
-                            <td class="TableDataIndex5" >
-                                <div class="ButtonDiv1" >@Html.ActionLink("Edit", "Edit", new { id = item.ID }) </div>
+                            <td class="TableDataIndex5">
+                                <div class="ButtonDiv1">@Html.ActionLink("Edit", "Edit", new { id = item.ID }) </div>
                             </td>
-                            <td class="TableDataIndex5" >
+                            <td class="TableDataIndex5">
                                 <div class="ButtonDiv1">@Html.ActionLink("Delete", "Delete", new { id = item.ID }) </div>
                             </td>
                         </tr>

@@ -65,7 +65,7 @@
                     <td colspan="4" class="TableDataIndex1">
                             <div class="col-md-offset-2 col-md-10">
                                 <input type="submit" value="Save" class="btn btn-default" />
-                                <input type="submit" value="Cancel" onclick="location.href='@Url.Action("Index", "Bidder")';return false;" class="btn btn-default" />
+                                <input type="submit" value="Cancel" onclick="location.href='@Url.Action("Index#" + Model.BidderNumber, "Bidder")';return false;" class="btn btn-default" />
                                </div>
                     </td>
                 </tr>

@@ -1,4 +1,5 @@
-﻿@model Auction.Models.Item
+﻿@using Auction.Models
+@model Auction.Models.Item
 
 
 <style>
@@ -136,7 +137,7 @@
         <div class="medium-12 column" style="position: absolute;
 bottom: 70px; width: 300px; margin-left: auto;margin-right: auto;left: 40%; right: 40%; ">
             <input class="btn btn-default" type="submit" value="Save" />
-            <input type="submit" value="Cancel" onclick="location.href='@Url.Action("Index", "Item")';return false;" class="btn btn-default" />
+            <input type="submit" value="Cancel" onclick="location.href='@Url.Action("Index#" + Model.ItemNumber, "Item")';return false;" class="btn btn-default" />
         </div>
 
 
