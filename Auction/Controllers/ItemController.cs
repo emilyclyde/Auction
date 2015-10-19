@@ -73,7 +73,7 @@ namespace Auction.Controllers
             item.ItemNumber = 0;
             if (ModelState.IsValid)
             {
-                foreach(var i in db.Items )
+        foreach (var i in db.Items)
                 {
                     if (i.ItemNumber > HighestNum)
                         HighestNum = i.ItemNumber;
@@ -114,22 +114,17 @@ namespace Auction.Controllers
             , string image,
         HttpPostedFileBase photo)
         {
-            var bidderIsError = true;    //Flag to check for a valid bidder
+            bool bidderIsError = true;    //Flag to check for a valid bidder
 
-            var title = HttpContext.Server.MapPath("~/Images/Items/" + item.Title.Replace(" ", string.Empty) +".jpg");
-            var path = HttpContext.Server.MapPath("~/Images/Items/" + image);
-
-            if (path != title)
-                System.IO.File.Move(path, title);
-
+            string path = HttpContext.Server.MapPath("~/Images/Items/" + image);
+            
             if (photo != null)
                 photo.SaveAs(path);
-
             // orriginal code
             if (ModelState.IsValid)
             {
                 foreach (var b in db.Bidders)
-                    if (b.BidderNumber == item.WinningBidder||item.WinningBidder == null)
+          if (b.BidderNumber == item.WinningBidder || item.WinningBidder == null)
                        bidderIsError = false;
 
                 if (bidderIsError)
