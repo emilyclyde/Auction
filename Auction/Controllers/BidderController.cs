@@ -56,6 +56,7 @@ namespace Auction.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,BidderName,BidderNumber,BidderContact1,BidderContact2,BidderContact3 ")] Bidder bidder)
         {
+
            
             //int newID = 0;
             int HighestNum = 99;

@@ -243,7 +243,6 @@
     <Content Include="Images\Items\Manacure.jpg" />
     <Content Include="Images\Items\MovieNightBasket.jpg" />
     <Content Include="Images\Items\OregonCoastSalmonfishing.jpg" />
-    <Content Include="Images\Items\SkateWorld.jpg" />
     <Content Include="Images\Items\thisisatesttitlewithalotofspaces.jpg" />
     <Content Include="Images\livebids.png" />
     <Content Include="Images\livebids2.png" />
@@ -262,6 +261,7 @@
     <Content Include="AuctionClassDiagram.cd" />
     <Content Include="Content\Documents\CapstoneFinalDocumentation.docx" />
     <Content Include="Content\Documents\CapstoneProjectDevelopment.docx" />
+    <None Include="Properties\PublishProfiles\logosacademyauction.pubxml" />
     <None Include="Properties\PublishProfiles\LogosAuction - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\LogosAuction - FTP %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\LogosAuction - FTP %284%29.pubxml" />
